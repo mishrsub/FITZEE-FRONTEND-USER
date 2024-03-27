@@ -66,7 +66,7 @@ const CourseCard = ({ studentClass, program,subPrograms,classId }) => {
 
 const CourseSection = () => {
   const { isLoading, error, newData } = getAllData(
-    "http://localhost:8000/api/course",
+    "http://65.1.94.113:8000/api/course",
     "class"
   );
 

@@ -5,7 +5,7 @@ export const AddContact = () => {
   const mutation = useMutation({
     mutationFn: (newContact) => {
       return axios.post(
-        "http://localhost:8000/api/contact",
+        "http://65.1.94.113:8000/api/contact",
         newContact,
         {
           headers: {

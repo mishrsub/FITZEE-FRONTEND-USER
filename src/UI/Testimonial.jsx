@@ -14,7 +14,7 @@ const Testimonial = () => {
     error,
     newData: testimonial,
   } = getAllData(
-    "http://localhost:8000/api/testimonial/getTestimonial",
+    "http://65.1.94.113:8000/api/testimonial/getTestimonial",
     "testimonial"
   );
 
