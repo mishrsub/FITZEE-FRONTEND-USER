@@ -107,8 +107,8 @@ const CourseSection = () => {
   };
 
   const items = newData.flatMap((classData) =>
-  classData.programs.slice(0,1).flatMap((program) =>
-    program.subprograms.slice(0,1).map((programData,i) => (
+  classData.programs.flatMap((program) =>
+    program.subprograms.slice(0, 3).map((programData,i) => (
       <CourseCard
         key={programData._id}
         program={program}
