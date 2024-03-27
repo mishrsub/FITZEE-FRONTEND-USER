@@ -27,7 +27,7 @@ const fetchCompetitiveCourseById = async (url) => {
 };
 
 export const getCourseByClassId = (param) => {
-    const url = `http://localhost:8000/api/course/class/${param}`;
+    const url = `http://65.1.94.113:8000/api/course/class/${param}`;
 
     const { isLoading, error, data, refetch } = useQuery({
         queryKey: ["course"],
@@ -37,7 +37,7 @@ export const getCourseByClassId = (param) => {
 };
 
 export const getCourseAndProgramByClassId = (classId, programId) => {
-    const url = `http://localhost:8000/api/course/class/${classId}/program/${programId}`;
+    const url = `http://65.1.94.113:8000/api/course/class/${classId}/program/${programId}`;
 
     const { isLoading, error, data, refetch } = useQuery({
         queryKey: ["course"],
@@ -47,7 +47,7 @@ export const getCourseAndProgramByClassId = (classId, programId) => {
 };
 
 export const getCourseDetail = (programId, subProgramId) => {
-    const url = `http://localhost:8000/api/course/programDetail/${programId}/${subProgramId}`;
+    const url = `http://65.1.94.113:8000/api/course/programDetail/${programId}/${subProgramId}`;
 
     const { isLoading, error, data, refetch } = useQuery({
         queryKey: ["courseDetail"],
@@ -59,7 +59,7 @@ export const getCourseDetail = (programId, subProgramId) => {
 };
 
 export const getAllCompetitiveCourse = () => {
-    const url = `http://localhost:8000/api/course/competitive/`;
+    const url = `http://65.1.94.113:8000/api/course/competitive/`;
 
     const { isLoading, error, data, refetch } = useQuery({
         queryKey: ["courseCompetitive"],

@@ -10,7 +10,7 @@ import Loading from '../../UI/Loading'
 const Course = () => {
   const { classId,programId } = useParams();
   let course = {};
-
+  
   // State to manage loading indicator
   if(classId && programId) {
     course = getCourseAndProgramByClassId(classId,programId);
