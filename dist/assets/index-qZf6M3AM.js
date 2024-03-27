@@ -340,3 +340,6 @@ PERFORMANCE OF THIS SOFTWARE.
 *
 * Date: Nov 26, 2013
 */(function(e){e.fn.counterUp=function(t){var n=e.extend({time:400,delay:10},t);return this.each(function(){var s=e(this),i=n,r=function(){var a=[],l=i.time/i.delay,c=s.text(),u=/[0-9]+,[0-9]+/.test(c);c=c.replace(/,/g,"");for(var h=/^[0-9]+\.[0-9]+$/.test(c),m=h?(c.split(".")[1]||[]).length:0,p=l;p>=1;p--){var d=parseInt(c/l*p);if(h&&(d=parseFloat(c/l*p).toFixed(m)),u)for(;/(\d+)(\d{3})/.test(d.toString());)d=d.toString().replace(/(\d+)(\d{3})/,"$1,$2");a.unshift(d)}s.data("counterup-nums",a),s.text("0");var y=function(){s.text(s.data("counterup-nums").shift()),s.data("counterup-nums").length?setTimeout(s.data("counterup-func"),i.delay):(delete s.data("counterup-nums"),s.data("counterup-nums",null),s.data("counterup-func",null))};s.data("counterup-func",y),setTimeout(s.data("counterup-func"),i.delay)};s.waypoint(r,{offset:"100%",triggerOnce:!0})})}})(jQuery)});export default fP();
+
+
+//javascript
