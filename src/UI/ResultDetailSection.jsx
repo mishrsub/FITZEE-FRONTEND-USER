@@ -27,7 +27,7 @@ const ResultDetailSection = () => {
 
   const { resultId } = useParams();
   const { data, isLoading, error, refetch } = getAllResult(
-    `http://localhost:8000/api/course/result/${resultId}`
+    `http://65.1.94.113:8000/api/course/result/${resultId}`
   );
 
   useEffect(() => {
@@ -79,13 +79,13 @@ const ResultDetailSection = () => {
                       style={{ margin: "5px" }}
                       data-lg-size="1406-1390"
                       className="gallery-item"
-                      data-src={`http://localhost:8000/uploads/${val}`}
+                      data-src={`http://65.1.94.113:8000/uploads/${val}`}
                       data-sub-html="<h4>Photo by - <a href='https://unsplash.com/@entrycube' >Diego Guzmán </a></h4> <p> Location - <a href='https://unsplash.com/s/photos/fushimi-inari-taisha-shrine-senbontorii%2C-68%E7%95%AA%E5%9C%B0-fukakusa-yabunouchicho%2C-fushimi-ward%2C-kyoto%2C-japan'>Fushimi Ward, Kyoto, Japan</a></p>"
                     >
                       <img
                         className="img-responsive"
                         key={index}
-                        src={`http://localhost:8000/uploads/${val}`}
+                        src={`http://65.1.94.113:8000/uploads/${val}`}
                         alt={`Image ${index + 1}`}
                         style={{
                           width: "200px", // Set your desired width
@@ -118,7 +118,7 @@ const ResultDetailSection = () => {
                 >
                   <div className="single-item">
                     <img
-                      src={`http://localhost:8000/uploads/${newData?.programImg}`}
+                      src={`http://65.1.94.113:8000/uploads/${newData?.programImg}`}
                       alt=""
                     />
                     <div className="opacity tran3s">

@@ -13,7 +13,7 @@ const EventDetailSection = () => {
   const { workshopId } = useParams();
   const navigate = useNavigate();
   const { data, isLoading, error, refetch } = getWorkshopDetail(
-    `http://localhost:8000/api/workshop/detail/${workshopId}`
+    `http://65.1.94.113:8000/api/workshop/detail/${workshopId}`
   );
   const words = data?.description.split(" ");
 
@@ -74,7 +74,7 @@ const EventDetailSection = () => {
               </div>{" "}
               {/* /.title */}
               <img
-                src={`http://localhost:8000/uploads/${data.image}`}
+                src={`http://65.1.94.113:8000/uploads/${data.image}`}
                 alt=""
                 style={{ width: "100%" }}
               />

@@ -12,7 +12,7 @@ import { Link } from "react-router-dom";
 
 const BlogSection = () => {
     const { data, isLoading, error, refetch } = getAllBlog(
-        "http://localhost:8000/api/news/getNews"
+        "http://65.1.94.113:8000/api/news/getNews"
     );
 
     console.log("DATA LOADER: ", data);
@@ -36,7 +36,7 @@ const BlogSection = () => {
                                     <div className="single-blog">
                                         <div className="image">
                                             <img
-                                                src={`http://localhost:8000/uploads/${val.image}`}
+                                                src={`http://65.1.94.113:8000/uploads/${val.image}`}
                                                 alt=""
                                             />
                                         </div>

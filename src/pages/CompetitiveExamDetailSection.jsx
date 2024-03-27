@@ -76,7 +76,7 @@ const CompetitiveExamDetailSection = () => {
                       {data?.programDetailImg?.length>0 && data?.programDetailImg.map((val, i) => (
                         <div className={i === 0 ? "item active" : "item"}>
                           <img
-                            src={`http://localhost:8000/uploads/${val}`}
+                            src={`http://65.1.94.113:8000/uploads/${val}`}
                             alt=""
                           />
                         </div>

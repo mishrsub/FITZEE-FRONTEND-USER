@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 const EventSection = () => {
   const [filter, setFilter] = useState("");
   const { data, error, refetch, isLoading } = getAllWorkshop(
-    `http://localhost:8000/api/workshop/getWorkshop?catalog=${filter}`
+    `http://65.1.94.113:8000/api/workshop/getWorkshop?catalog=${filter}`
   );
 
   console.log("====================================");
@@ -129,7 +129,7 @@ const EventSection = () => {
                   </div>
                   <div className="event-right">
                     <img
-                      src={`http://localhost:8000/uploads/${val.image}`}
+                      src={`http://65.1.94.113:8000/uploads/${val.image}`}
                       alt="fiitjee mumbai"
                       style={{ width: "750px", maxWidth: "100%" }}
                       loading="lazy"

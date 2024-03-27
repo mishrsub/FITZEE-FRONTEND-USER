@@ -156,7 +156,7 @@ const CourseDetailSection = ({ getData }) => {
                               className={`item ${index === 0 ? "active" : ""}`}
                             >
                               <img
-                                src={`http://localhost:8000/uploads/${val}`}
+                                src={`http://65.1.94.113:8000/uploads/${val}`}
                                 alt=""
                               />
                             </div>

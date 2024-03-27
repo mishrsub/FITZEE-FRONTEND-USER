@@ -29,7 +29,7 @@ const CompetitiveExamSection = () => {
                   <div className="single-course clearfix" key={val.id}>
                     <div className="image-box float-left">
                       <img
-                        src={`http://localhost:8000/uploads/${val.image}`}
+                        src={`http://65.1.94.113:8000/uploads/${val.image}`}
                         alt=""
                       />
                     </div>

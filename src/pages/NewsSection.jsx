@@ -6,7 +6,7 @@ const NewsSection = () => {
     const [activeTab, setActiveTab] = useState("recent");
     const [monthDate, setMonth] = useState({ startDate: "", endDate: "" });
     const { data, isLoading, error, refetch } = getAllNews(
-        `http://localhost:8000/api/mainNews/getNews?startDate=${monthDate.startDate}&endDate=${monthDate.endDate}`
+        `http://65.1.94.113:8000/api/mainNews/getNews?startDate=${monthDate.startDate}&endDate=${monthDate.endDate}`
     );
 
     const { isLoading: likeLoading, handleLikeDislike } = useLikeDislike();
@@ -29,7 +29,7 @@ const NewsSection = () => {
     const handleLike = (id) => {
         // Call the function with the desired URL and method
         handleLikeDislike(
-            `http://localhost:8000/api/mainNews/like/${id}`,
+            `http://65.1.94.113:8000/api/mainNews/like/${id}`,
             "POST"
         );
         // Update the state for the specific news item

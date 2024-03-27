@@ -7,7 +7,7 @@ const ResultSection = () => {
   const [result, setResult] = useState([]);
 
   const { isLoading, error, data, refetch } = getAllResult(
-    "http://localhost:8000/api/course/result"
+    "http://65.1.94.113:8000/api/course/result"
   );
 
   useEffect(() => {
@@ -33,7 +33,7 @@ const ResultSection = () => {
                   <div className="single-event">
                     <div className="image-box">
                       <img
-                        src={`http://localhost:8000/uploads/${val?.programImg}`}
+                        src={`http://65.1.94.113:8000/uploads/${val?.programImg}`}
                         alt=""
                       />
                     </div>

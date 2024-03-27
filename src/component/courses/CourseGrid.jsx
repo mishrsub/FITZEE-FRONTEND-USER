@@ -49,7 +49,7 @@ console.log(convertRomanNumeral('XIe SIe WEe')); // Output: "X Ie   S Ie   W Ee"
                     <div className="single-course" key={programData._id}>
                       <div className="image-box">
                         <img
-                          src={`http://localhost:8000/uploads/${programData.programImg}`}
+                          src={`http://65.1.94.113:8000/uploads/${programData.programImg}`}
                           alt=""
                         />
                       </div>

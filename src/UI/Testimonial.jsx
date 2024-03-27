@@ -57,7 +57,7 @@ const Testimonial = () => {
                   title="fitjee"
                 >
                   <img
-                    src={`http://localhost:8000/uploads/${val.image}`}
+                    src={`http://65.1.94.113:8000/uploads/${val.image}`}
                     alt=""
                   />
                 </li>
@@ -71,7 +71,7 @@ const Testimonial = () => {
               {apiData.map((val, i) => (
                 <div className={i === 0 ? "item active" : "item"} key={val._id}>
                   <img
-                    src={`http://localhost:8000/uploads/${val.image}`}
+                    src={`http://65.1.94.113:8000/uploads/${val.image}`}
                     alt=""
                   />
                   <h6>{val.name}</h6>
