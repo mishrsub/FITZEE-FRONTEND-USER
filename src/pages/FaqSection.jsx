@@ -6,7 +6,7 @@ import Loading from "../UI/Loading";
 
 const FaqSection = () => {
   const { isLoading, error, newData, refetch } = getAllData(
-    "http://65.1.94.113:8000/api/faq",
+    "http://35.154.95.255:8000/api/faq",
     "faq"
   );
   const midpoint = Math.ceil(newData?.length / 2);
