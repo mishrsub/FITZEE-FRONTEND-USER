@@ -29,7 +29,7 @@ const NewsSection = () => {
     const handleLike = (id) => {
         // Call the function with the desired URL and method
         handleLikeDislike(
-            `http://65.1.94.113:8000/api/mainNews/like/${id}`,
+            `http://35.154.95.255:8000/api/mainNews/like/${id}`,
             "POST"
         );
         // Update the state for the specific news item
