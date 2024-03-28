@@ -6,7 +6,7 @@ const NewsSection = () => {
     const [activeTab, setActiveTab] = useState("recent");
     const [monthDate, setMonth] = useState({ startDate: "", endDate: "" });
     const { data, isLoading, error, refetch } = getAllNews(
-        `http://65.1.94.113:8000/api/mainNews/getNews?startDate=${monthDate.startDate}&endDate=${monthDate.endDate}`
+        `http://35.154.95.255:8000/api/mainNews/getNews?startDate=${monthDate.startDate}&endDate=${monthDate.endDate}`
     );
 
     const { isLoading: likeLoading, handleLikeDislike } = useLikeDislike();
