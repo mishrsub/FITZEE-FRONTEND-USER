@@ -38,7 +38,7 @@ const Testimonial = () => {
         <div className="theme-title text-center">
           <h2>Our Testimonials</h2>
         </div>{" "}
-        {/* /.theme-title */}
+        {/* /.theme-titlee */}
         <div
           id="testimonial-carousel-one"
           className="carousel slide"
