@@ -32,9 +32,9 @@ const Home = () => {
     // Define an array of scripts to load
     const scriptsToLoad = [
       "https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.1/js/bootstrap-select.min.js",
-      'src/assets/vendor/particles.js-master/particles.min.js',
-      'src/assets/vendor/particles.js-master/demo/js/lib/stats.js',
-      'src/assets/vendor/particles.js-master/demo/js/app.js',
+      '/vendor/particles.js-master/particles.min.js',
+      '/vendor/particles.js-master/demo/js/lib/stats.js',
+      '/vendor/particles.js-master/demo/js/app.js',
       'https://cdn.jsdelivr.net/npm/react-particles-js@3.6.0/umd/particles.min.js'
     ];
 
