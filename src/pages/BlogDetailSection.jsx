@@ -20,14 +20,14 @@ const BlogDetailSection = () => {
     description: "",
   });
   const { isLoading, error, data, refetch } = getAllBlog(
-    `http://65.1.94.113:8000/api/news/getBlog/${blogId}`
+    `http://35.154.95.255:8000/api/news/getBlog/${blogId}`
   );
   const {
     isLoading: blogCommentLoader,
     error: blogErr,
     data: blogComment,
     refetch: commentRefetch,
-  } = getBlogComments(`http://65.1.94.113:8000/api/news/comment/${blogId}`);
+  } = getBlogComments(`http://35.154.95.255:8000/api/news/comment/${blogId}`);
 
 console.log('====================================');
 console.log("ALL BLOG COMMENTS: ",blogComment);
@@ -55,7 +55,7 @@ console.log('====================================');
       console.log("Submitted: ", comment);
       const commentData = {
         comment,
-        url: `http://65.1.94.113:8000/api/news/comment/${blogId}`,
+        url: `http://35.154.95.255:8000/api/news/comment/${blogId}`,
       };
 
       const data = await createBlogCommentMutation(commentData);
