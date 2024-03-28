@@ -45,7 +45,7 @@ const Testimonial = () => {
           data-ride="carousel"
           data-interval={5000}
         >
-          {/* Indicators */}
+          {/* carasoul Indicators */}
           <ol className="carousel-indicators">
             {apiData.map((val, i) => {
               return (
