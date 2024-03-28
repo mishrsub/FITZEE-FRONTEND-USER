@@ -7,7 +7,7 @@ const ResultSection = () => {
   const [result, setResult] = useState([]);
 
   const { isLoading, error, data, refetch } = getAllResult(
-    "http://65.1.94.113:8000/api/course/result"
+    "http://35.154.95.255:8000/api/course/result"
   );
 
   useEffect(() => {
