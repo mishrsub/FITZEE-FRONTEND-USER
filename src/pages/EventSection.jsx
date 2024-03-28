@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 const EventSection = () => {
   const [filter, setFilter] = useState("");
   const { data, error, refetch, isLoading } = getAllWorkshop(
-    `http://65.1.94.113:8000/api/workshop/getWorkshop?catalog=${filter}`
+    `http://35.154.95.255:8000/api/workshop/getWorkshop?catalog=${filter}`
   );
 
   console.log("====================================");
