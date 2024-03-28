@@ -13,7 +13,7 @@ const EventDetailSection = () => {
   const { workshopId } = useParams();
   const navigate = useNavigate();
   const { data, isLoading, error, refetch } = getWorkshopDetail(
-    `http://65.1.94.113:8000/api/workshop/detail/${workshopId}`
+    `http://35.154.95.255:8000/api/workshop/detail/${workshopId}`
   );
   const words = data?.description.split(" ");
 
