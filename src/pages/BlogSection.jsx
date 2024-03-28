@@ -12,7 +12,7 @@ import { Link } from "react-router-dom";
 
 const BlogSection = () => {
     const { data, isLoading, error, refetch } = getAllBlog(
-        "http://65.1.94.113:8000/api/news/getNews"
+        "http://35.154.95.255:8000/api/news/getNews"
     );
 
     console.log("DATA LOADER: ", data);
