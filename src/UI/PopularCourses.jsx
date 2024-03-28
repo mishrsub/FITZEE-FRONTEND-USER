@@ -5,7 +5,7 @@ import Loading from "./Loading";
 const PopularCourses = () => {
   const [testData, setTestData] = useState([]);
   const { isLoading, error, newData:test } = getAllData(
-    "http://65.1.94.113:8000/api/upcomingTest/getUpcomingTest",
+    "http://35.154.95.255:8000/api/upcomingTest/getUpcomingTest",
     "test"
   );
 
