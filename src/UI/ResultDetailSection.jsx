@@ -27,7 +27,7 @@ const ResultDetailSection = () => {
 
   const { resultId } = useParams();
   const { data, isLoading, error, refetch } = getAllResult(
-    `http://65.1.94.113:8000/api/course/result/${resultId}`
+    `http://35.154.95.255:8000/api/course/result/${resultId}`
   );
 
   useEffect(() => {
