@@ -31,32 +31,6 @@ const BlogSection = () => {
                 <div className="row">
                     <div className="col-md-8 col-xs-12">
                         <div className="row">
-<<<<<<< HEAD
-                            {data?.length>0 && data?.map((val) => (
-                                <div className="col-sm-6">
-                                    <div className="single-blog">
-                                        <div className="image">
-                                            <img
-                                                src={`http://35.154.95.255:8000/uploads/${val.image}`}
-                                                alt=""
-                                            />
-                                        </div>
-                                        <ul>
-                                            <li>
-                                                <i className="flaticon-comments" />
-                                                <a href="#" className="tran3s">
-                                                    13
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <i className="flaticon-heart" />
-                                                <a href="#" className="tran3s">
-                                                    3
-                                                </a>
-                                            </li>
-                                        </ul>
-                                        <h4>
-=======
                             {data?.length > 0 &&
                                 data?.map((val) => (
                                     <div className="col-sm-6">
@@ -101,36 +75,16 @@ const BlogSection = () => {
                                                     15
                                                 )}
                                             </p>
->>>>>>> 7e55cb0 (url changed)
                                             <Link
                                                 to={`/fiitjee_mumbai-v11/blog/detail/${val._id}`}
                                                 className="tran3s"
                                             >
-<<<<<<< HEAD
-                                                {val.title}
-                                            </Link>
-                                        </h4>
-                                        <p>
-                                            {truncateText(val.description, 15)}
-                                        </p>
-                                        <Link
-                                            to={`/fiitjee_mumbai-v11/blog/detail/${val._id}`}
-                                            className="tran3s"
-                                        >
-                                            Read More
-                                        </Link>
-                                    </div>{" "}
-                                    {/* /.single-blog */}
-                                </div>
-                            ))}
-=======
                                                 Read More
                                             </Link>
                                         </div>{" "}
                                         {/* /.single-blog */}
                                     </div>
                                 ))}
->>>>>>> 7e55cb0 (url changed)
 
                             {/* /.col- */}
                         </div>{" "}
