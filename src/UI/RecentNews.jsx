@@ -46,7 +46,11 @@ const RecentNews = () => {
                                 <div className="single-blog">
                                     <div className="image">
                                         <img
-                                            src={`http://65.1.94.113:8000/uploads/${val.image}`}
+<<<<<<< HEAD
+                                            src={`http://35.154.95.255:8000/uploads/${val.image}`}
+=======
+                                            src={`http://35.154.95.255:8000/uploads/${val.image}`}
+>>>>>>> 7e55cb0 (url changed)
                                             alt=""
                                         />
                                     </div>
