@@ -691,7 +691,6 @@ const CompetitiveExamDetailSection = () => {
                                     </div>{" "}
                                     {/* /panel 5 */}
                                 </div>{" "}
-                                {/* end #accordion */}
                             </div>{" "}
                         </div>{" "}
                     </div>{" "}
