@@ -690,7 +690,7 @@ const CompetitiveExamDetailSection = () => {
                                         </div>
                                     </div>{" "}
                                     {/* /panel 5 */}
-                                </div>{" "}
+                                </div>
                             </div>{" "}
                         </div>{" "}
                     </div>{" "}
