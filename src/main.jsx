@@ -10,7 +10,7 @@ import './index.css'
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
-// Create a client
+// Create a clientss
 const queryClient = new QueryClient()
 
 
