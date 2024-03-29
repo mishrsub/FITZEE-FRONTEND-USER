@@ -65,7 +65,7 @@ function App() {
         <>
             <Router>
                 <Routes>
-                    <Route path="/fiitjee_mumbai-v11" element={<Home />} />
+                    <Route path="/" element={<Home />} />
                     <Route
                         path="/fiitjee_mumbai-v11/courses/*"
                         element={<CourseRoute />}
