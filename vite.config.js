@@ -5,7 +5,10 @@ import react from '@vitejs/plugin-react'
 export default defineConfig({
   plugins: [react()],
   chunkSizeWarningLimit: 1600,
-  server: {
-    port: 80 // Set the desired port number here
-  }
+  // server:{
+  //   port:80
+  // }
 })
+
+
+
