@@ -48,7 +48,7 @@ const CompetitiveExamDetailSection = () => {
                                         CLASS:
                                         {data?.eligibleClass?.length > 0 &&
                                             data?.eligibleClass.map((val) => (
-                                                <b>{` ${val} |`}</b>
+                                                <b key={val._id}>{` ${val} |`}</b>
                                             ))}
                                     </div>
                                 </div>
@@ -80,6 +80,7 @@ const CompetitiveExamDetailSection = () => {
                                                 data?.programDetailImg.map(
                                                     (val, i) => (
                                                         <div
+                                                            key={val._id}
                                                             className={
                                                                 i === 0
                                                                     ? "item active"
@@ -690,12 +691,9 @@ const CompetitiveExamDetailSection = () => {
                                         </div>
                                     </div>{" "}
                                     {/* /panel 5 */}
-                                </div>{" "}
-                                {/* end #accordion */}
+                                </div>
                             </div>{" "}
-                            {/* /.sidebar-categories */}
                         </div>{" "}
-                        {/* /.course-sidebar */}
                     </div>{" "}
                     {/* /.col- */}
                 </div>{" "}
