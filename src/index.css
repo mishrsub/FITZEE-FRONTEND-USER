@@ -1305,6 +1305,17 @@ header.menu-style-two.fixed .logo {
   line-height: 60px;
   border-radius: 3px;
 }
+.registration-banner .registration-form form a {
+    width: 100%;
+    color: #fff;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 700;
+    text-transform: uppercase;
+    background: #303030;
+    line-height: 60px;
+    text-align: center;
+    border-radius: 3px;
+}
 .registration-banner .text-wrapper {
   padding: 200px 0 90px 0;
 }
@@ -1314,6 +1325,19 @@ header.menu-style-two.fixed .logo {
   font-weight: 700;
   line-height: 65px;
   font-size: 46px;
+}
+.registration-banner .registration-form h4 {
+  font-family: "Lato", sans-serif;
+  font-weight: 700;
+  text-align: center;
+}
+.registration-banner .registration-form span {
+  font-family: "Lato", sans-serif;
+  font-weight: 700;
+  text-align: center;
+  color: #000;
+  font-size: 16px;
+  line-height: 3;
 }
 .registration-banner .text-wrapper ul {
   margin: 0 -12px;
@@ -1341,6 +1365,86 @@ header.menu-style-two.fixed .logo {
   color: rgba(255, 255, 255, 0.6);
   font-weight: 300;
 }
+
+
+
+/*otp css*/
+.otp-field {
+  flex-direction: row;
+  column-gap: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.otp-field input {
+  height: 45px;
+  width: 42px;
+  border-radius: 6px;
+  outline: none;
+  font-size: 1.125rem;
+  text-align: center;
+  border: 1px solid #ddd;
+}
+.otp-field input:focus {
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.1);
+}
+.otp-field input::-webkit-inner-spin-button,
+.otp-field input::-webkit-outer-spin-button {
+  display: none;
+}
+
+/* custom Checkbox */
+.remember-pass {
+  display: block;
+  margin-bottom: 15px;
+}
+
+.remember-pass input {
+  padding: 0;
+  height: initial;
+  width: initial;
+  margin-bottom: 0;
+  display: none;
+  cursor: pointer;
+}
+
+.remember-pass label {
+  position: relative;
+  cursor: pointer;
+}
+
+.remember-pass label:before {
+  content: "";
+  background-color: transparent;
+  border: 2px solid #0e74bd;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05),
+    inset 0px -15px 10px -12px rgba(0, 0, 0, 0.05);
+  padding: 10px;
+  display: inline-block;
+  position: relative;
+  vertical-align: middle;
+  cursor: pointer;
+  margin-right: 10px;
+}
+
+.remember-pass label {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.remember-pass input:checked + label:after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 1px;
+  left: 8px;
+  width: 6px;
+  height: 12px;
+  border: solid #0e74bd;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+
 /*----------------------- Popular Course -----------------------*/
 .popular-course .theme-title {
   margin-top: 150px;

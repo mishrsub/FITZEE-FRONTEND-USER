@@ -1,58 +1,64 @@
 import React, { useState } from "react";
-import Modal from "react-modal";
 
-const MultiStepForm = ({style}) => {
-  let subtitle;
-  const [modalIsOpen, setIsOpen] = React.useState(false);
+const MultiStepForm = ({ onClose }) => {
+  const [step, setStep] = useState(1); // Current step of the form
+  const [formData, setFormData] = useState({
+    mobileNumber: "",
+    otp: "",
+    firstName: "",
+    lastName: "",
+    email: "",
+    currentClass: "",
+    studyCenter: "",
+    agreeTerms: false,
+  });
 
-  function openModal() {
-    setIsOpen(true);
-  }
-
-  function afterOpenModal() {
-    // references are now sync'd and can be accessed.
-    subtitle.style.color = '#f00';
-  }
-
-  function closeModal() {
-    setIsOpen(false);
-  }
-
-  const customStyles = {
-    overlay: {
-      backgroundColor: "rgba(0, 0, 0, 0.5)", // semi-transparent black overlay
-      zIndex: 9999, // Set the z-index for the overlay
-    },
-    content: {
-      top: "50%",
-      left: "50%",
-      right: "auto",
-      bottom: "auto",
-      marginRight: "-50%",
-      transform: "translate(-50%, -50%)",
-      zIndex: 9999, // Set the z-index for the modal content
-    },
+  const handleChange = (e) => {
+    const { name, value, type, checked } = e.target;
+    setFormData((prevFormData) => ({
+      ...prevFormData,
+      [name]: type === "checkbox" ? checked : value,
+    }));
   };
-  
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log("Form submitted:", formData);
+    if (step < 4) {
+      setStep(step + 1); // Move to the next step
+    } else {
+      onClose(); // Close the modal after form submission
+    }
+  };
+
   return (
-    <Modal
-      isOpen={modalIsOpen}
-      onAfterOpen={afterOpenModal}
-      onRequestClose={closeModal}
-      style={style}
-      contentLabel="Example Modal"
-    >
-      <h2 ref={(_subtitle) => (subtitle = _subtitle)}>Hello</h2>
-      <button onClick={closeModal}>close</button>
-      <div>I am a modal</div>
-      <form>
-        <input />
-        <button>tab navigation</button>
-        <button>stays</button>
-        <button>inside</button>
-        <button>the modal</button>
-      </form>
-    </Modal>
+    <div className="modal fade signInModal theme-modal-box" role="dialog">
+      <div className="modal-dialog">
+        <div className="modal-content">
+          <div className="modal-body">
+            <button type="button" className="close" data-dismiss="modal" aria-hidden="true" onClick={onClose}>&times;</button>
+            <form onSubmit={handleSubmit}>
+              <div id="Menu1" style={{ display: step === 1 ? "block" : "none" }}>
+                <h3>Get Started</h3>
+                <center><p>Enter your 10 digit mobile number below</p></center>
+                <div className="wrapper">
+                  <h6>Mobile Number<sup style={{ color: "red" }}>*</sup></h6>
+                  <input
+                    type="text"
+                    placeholder="Enter Mobile Number"
+                    name="mobileNumber"
+                    value={formData.mobileNumber}
+                    onChange={handleChange}
+                  />
+                  <button type="submit" className="p-bg-color hvr-trim">Send OTP</button>
+                </div>
+              </div>
+              {/* Include other steps similarly */}
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
   );
 };
 

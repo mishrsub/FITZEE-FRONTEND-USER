@@ -5,9 +5,9 @@ import react from "@vitejs/plugin-react";
 export default defineConfig({
     plugins: [react()],
     chunkSizeWarningLimit: 1600,
-    // server: {
-    //     port: 80,
-    //     host: "myfiitjee.com", // Listen on all network interfaces
-    //     strictPort: true,
-    // },
+    server: {
+        port: 80,
+        host: "myfiitjee.com", // Listen on all network interfaces
+        strictPort: true,
+    },
 });

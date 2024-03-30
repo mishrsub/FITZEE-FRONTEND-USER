@@ -22,7 +22,8 @@ const CourseCard = ({ studentClass, program, subPrograms, classId }) => {
             </div>
             <div className="text">
                 <div className="image">
-                    <img src={Course4} alt="" />
+                    {/* <img src={Course4} alt="" /> */}
+                    <img  width="60" height="60" avatar="V I"/>
                 </div>
                 <div className="name free clearfix">
                     <h6 className="float-left">{studentClass}</h6>
@@ -110,9 +111,9 @@ const CourseSection = () => {
     };
 
     const items = newData.flatMap((classData) =>
-        classData.programs.flatMap((program) =>
+        classData.programs.slice(0, 1).flatMap((program) =>
             program.subprograms
-                .slice(0, 3)
+                .slice(0, 1)
                 .map((programData, i) => (
                     <CourseCard
                         key={programData._id}

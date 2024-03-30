@@ -1,26 +1,13 @@
 import React, { useState } from "react";
-import Modal from "react-modal";
 import MultiStepForm from "../component/footer/MultistepForm";
 
-
-const customStyles = {
-  overlay: {
-    backgroundColor: "rgba(0, 0, 0, 0.5)", // semi-transparent black overlay
-  },
-  content: {
-    top: "50%",
-    left: "50%",
-    right: "auto",
-    bottom: "auto",
-    marginRight: "-50%",
-    transform: "translate(-50%, -50%)",
-  },
-};
 const InstructorBanner = () => {
   const [showForm, setShowForm] = useState(false);
-
+  console.log(showForm);
   const handleGetStartedClick = () => {
-    console.log("Handling click");
+    console.log('====================================');
+    console.log(showForm);
+    console.log('====================================');
     setShowForm(true);
   };
 
@@ -32,24 +19,16 @@ const InstructorBanner = () => {
             Every FIITJEE student is a Story!!
           </h4>
           <h2>So, Begin your Journey</h2>
-          <a
-            className="tran3s hvr-trim"
-            onClick={handleGetStartedClick}
-          >
+          {/* <a className="tran3s hvr-trim" onClick={handleGetStartedClick}>
             Get Started Now
-          </a>
+          </a> */}
+          <a href="#" className="tran3s hvr-trim" data-toggle="modal" data-target=".signInModal">Get Started Now</a>
         </div>{" "}
         {/* /.container */}
       </div>{" "}
       {/* /.opacity */}
-      <Modal
-        isOpen={showForm}
-        onRequestClose={() => setShowForm(false)}
-        // style={customStyles}
-        contentLabel="Example Modal"
-      >
-        <MultiStepForm style={customStyles}/>
-      </Modal>
+      {showForm && <MultiStepForm onClose={() => setShowForm(false)} />}
+      
     </div>
   );
 };
