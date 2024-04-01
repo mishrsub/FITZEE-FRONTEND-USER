@@ -66,7 +66,7 @@ const CourseGrid = ({ course }) => {
                                                         size={60}
                                                     />
                                                 </div>
-                                                <div className="name free clearfix">
+                                                {/* <div className="name free clearfix">
                                                     <h6 className="float-left">
                                                         Class {data.name}
                                                     </h6>
@@ -75,7 +75,7 @@ const CourseGrid = ({ course }) => {
                                                             ? "Paid"
                                                             : "Free"}
                                                     </span>
-                                                </div>
+                                                </div> */}
                                                 <h5>
                                                     <Link
                                                         to={`/fiitjee_mumbai-v11/courses/class/${data._id}/program/${program._id}/subprogram/${programData._id}`}
