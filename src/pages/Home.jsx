@@ -67,7 +67,7 @@ const Home = () => {
             {/* <Header/> */}
             {/* <Courosel/>
             <FindCourse/> */}
-            <FindCourseBlock/>
+            {/* <FindCourseBlock/>
             <RegistrationBanner/>
             <PopularCourses/>
             <ThemeCounter/>
@@ -75,7 +75,7 @@ const Home = () => {
             <Testimonial/>
             <RecentNews/>
             <InstructorBanner/>
-            <PartnerLogo/>
+            <PartnerLogo/> */}
             <Footer/>
         </div>
     </>
