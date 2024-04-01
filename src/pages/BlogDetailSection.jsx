@@ -112,6 +112,8 @@ const BlogDetailSection = () => {
                                     <img
                                         src={`http://35.154.95.255:8000/uploads/${data.image}`}
                                         alt=""
+                                        width="100%"
+                                        height={374}
                                     />
                                 </div>
                                 <ul>
@@ -161,7 +163,7 @@ const BlogDetailSection = () => {
                                         <span className="s-bg-color">4</span>
                                     </h4>
                                     <ul className="float-right">
-                                        <li>
+                                        {/* <li>
                                             <a href="#" className="tran3s">
                                                 <i
                                                     className="fa fa-facebook"
@@ -178,7 +180,7 @@ const BlogDetailSection = () => {
                                                 />{" "}
                                                 Tweet
                                             </a>
-                                        </li>
+                                        </li> */}
                                         <li>
                                             <a href="#" className="tran3s">
                                                 <i

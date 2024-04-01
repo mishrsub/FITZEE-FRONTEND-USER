@@ -82,12 +82,12 @@ const Header = () => {
         <div className="container">
           <div className="header-wrapper clearfix">
             <div className="logo float-left tran4s hidden-sm hidden-xs">
-              <Link className="tran3s" to={`/fiitjee_mumbai-v11`}>
+              <Link className="tran3s" to={`/`}>
                 <img src={Logo5} alt="Logo" style={{ width: 130 }} />
               </Link>
             </div>
             <div className="logo float-left tran4s hidden-md hidden-lg">
-              <Link className="tran3s" to={`/fiitjee_mumbai-v11`}>
+              <Link className="tran3s" to={`/`}>
                 <img src={Logo5} alt="Logo" style={{ width: 130 }} />
               </Link>
             </div>
@@ -116,7 +116,7 @@ const Header = () => {
               <div className="collapse navbar-collapse" id="navbar-collapse-1">
                 <ul className="nav">
                   <li>
-                    <Link className="tran3s" to={`/fiitjee_mumbai-v11`}>
+                    <Link className="tran3s" to={`/`}>
                       Home
                     </Link>
                   </li>
