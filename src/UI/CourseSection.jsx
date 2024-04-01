@@ -12,6 +12,83 @@ import Loading from "./Loading";
 import { Link } from "react-router-dom";
 
 const CourseCard = ({ studentClass, program, subPrograms, classId }) => {
+    function LetterAvatar(name, size) {
+        name = name || "";
+        size = size || 60;
+
+        var colours = [
+            "#1abc9c",
+            "#2ecc71",
+            "#3498db",
+            "#9b59b6",
+            "#34495e",
+            "#16a085",
+            "#27ae60",
+            "#2980b9",
+            "#8e44ad",
+            "#2c3e50",
+            "#f1c40f",
+            "#e67e22",
+            "#e74c3c",
+            "#ecf0f1",
+            "#95a5a6",
+            "#f39c12",
+            "#d35400",
+            "#c0392b",
+            "#bdc3c7",
+            "#7f8c8d",
+        ];
+
+        var nameSplit = String(name).toUpperCase().split(" ");
+        var initials = "";
+        var charIndex, colourIndex, canvas, context, dataURI;
+
+        nameSplit.forEach((word) => {
+            initials += word.charAt(0);
+        });
+
+        if (window.devicePixelRatio) {
+            size = size * window.devicePixelRatio;
+        }
+
+        charIndex = (initials == "" ? 72 : initials.charCodeAt(0)) - 64;
+        colourIndex = charIndex % 20;
+        canvas = document.createElement("canvas");
+        canvas.width = size;
+        canvas.height = size;
+        context = canvas.getContext("2d");
+
+        context.fillStyle = colours[colourIndex - 1];
+        context.fillRect(0, 0, canvas.width, canvas.height);
+        context.font = Math.round(canvas.width / 2) + "px Arial";
+        context.textAlign = "center";
+        context.fillStyle = "#FFF";
+        context.fillText(initials, size / 2, size / 1.5);
+
+        dataURI = canvas.toDataURL();
+        canvas = null;
+
+        return dataURI;
+    }
+
+    // Convert Roman numeral to spaced format
+    function convertRomanToSpaced(roman) {
+        const romanNumerals = {
+            I: "I",
+            V: "V",
+            X: "X",
+            L: "L",
+            C: "C",
+            D: "D",
+            M: "M",
+        };
+        let result = "";
+        for (let i = 0; i < roman.length; i++) {
+            result += romanNumerals[roman[i]] + " ";
+        }
+        return result.trim();
+    }
+
     console.log("====================================");
     // console.log("CLASS----------------->",studentClass);
     console.log("====================================");
@@ -23,16 +100,22 @@ const CourseCard = ({ studentClass, program, subPrograms, classId }) => {
             <div className="text">
                 <div className="image">
                     {/* <img src={Course4} alt="" /> */}
-                    <img  width="60" height="60" avatar="V I"/>
+                    <img
+                        src={LetterAvatar(
+                            convertRomanToSpaced(studentClass),
+                            60
+                        )}
+                        alt=""
+                    />
                 </div>
-                <div className="name free clearfix">
+                {/* <div className="name free clearfix">
                     <h6 className="float-left">{studentClass}</h6>
                     <span className="p-bg-color float-right">
                         <div key={subPrograms._id}>
                             <p>{subPrograms.isPaid ? "Free" : "Paid"}</p>
                         </div>
                     </span>
-                </div>
+                </div> */}
                 <h5>
                     <Link
                         to={`/fiitjee_mumbai-v11/courses/class/${classId}/program/${program._id}/subprogram/${subPrograms._id}`}
@@ -111,19 +194,21 @@ const CourseSection = () => {
     };
 
     const items = newData.flatMap((classData) =>
-        classData.programs.slice(0, 1).flatMap((program) =>
-            program.subprograms
-                .slice(0, 1)
-                .map((programData, i) => (
-                    <CourseCard
-                        key={programData._id}
-                        program={program}
-                        studentClass={classData.name}
-                        subPrograms={programData}
-                        classId={classData._id}
-                    />
-                ))
-        )
+        classData.programs
+            .slice(0, 1)
+            .flatMap((program) =>
+                program.subprograms
+                    .slice(0, 1)
+                    .map((programData, i) => (
+                        <CourseCard
+                            key={programData._id}
+                            program={program}
+                            studentClass={classData.name}
+                            subPrograms={programData}
+                            classId={classData._id}
+                        />
+                    ))
+            )
     );
 
     // console.log('====================================');

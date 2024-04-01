@@ -16,17 +16,95 @@ const CourseGrid = ({ course }) => {
     console.log("DATATATATATATTATATATATATTA: ===> ", data);
     console.log("====================================");
 
-    const convertRomanNumeral = (romanNumeral) =>
-        romanNumeral.replace(/(I|V|X|L|C|D|M)(?![IVXLCDM]|$)/g, "$1 ");
+    // Define the LetterAvatar function
+    function LetterAvatar(name, size) {
+        name = name || "";
+        size = size || 60;
+
+        var colours = [
+            "#1abc9c",
+            "#2ecc71",
+            "#3498db",
+            "#9b59b6",
+            "#34495e",
+            "#16a085",
+            "#27ae60",
+            "#2980b9",
+            "#8e44ad",
+            "#2c3e50",
+            "#f1c40f",
+            "#e67e22",
+            "#e74c3c",
+            "#ecf0f1",
+            "#95a5a6",
+            "#f39c12",
+            "#d35400",
+            "#c0392b",
+            "#bdc3c7",
+            "#7f8c8d",
+        ];
+
+        var nameSplit = String(name).toUpperCase().split(" ");
+        var initials = "";
+        var charIndex, colourIndex, canvas, context, dataURI;
+
+        nameSplit.forEach((word) => {
+            initials += word.charAt(0);
+        });
+
+        if (window.devicePixelRatio) {
+            size = size * window.devicePixelRatio;
+        }
+
+        charIndex = (initials == "" ? 72 : initials.charCodeAt(0)) - 64;
+        colourIndex = charIndex % 20;
+        canvas = document.createElement("canvas");
+        canvas.width = size;
+        canvas.height = size;
+        context = canvas.getContext("2d");
+
+        context.fillStyle = colours[colourIndex - 1];
+        context.fillRect(0, 0, canvas.width, canvas.height);
+        context.font = Math.round(canvas.width / 2) + "px Arial";
+        context.textAlign = "center";
+        context.fillStyle = "#FFF";
+        context.fillText(initials, size / 2, size / 1.5);
+
+        dataURI = canvas.toDataURL();
+        canvas = null;
+
+        return dataURI;
+    }
+
+    // Convert Roman numeral to spaced format
+    function convertRomanToSpaced(roman) {
+        const romanNumerals = {
+            I: "I",
+            V: "V",
+            X: "X",
+            L: "L",
+            C: "C",
+            D: "D",
+            M: "M",
+        };
+        let result = "";
+        for (let i = 0; i < roman.length; i++) {
+            result += romanNumerals[roman[i]] + " ";
+        }
+        return result.trim();
+    }
+
+    // Example usage:
+    console.log(convertRomanToSpaced("VIII")); // Output: "V I I I"
 
     // Test cases
-    console.log(convertRomanNumeral("XI")); // Output: "X I"
-    console.log(convertRomanNumeral("VIII")); // Output: "V I I I"
-    console.log(convertRomanNumeral("XIe SIe WEe")); // Output: "X Ie   S Ie   W Ee"
+    console.log(LetterAvatar("XI", 60)); // Output: "X I"
+    console.log(LetterAvatar("VIII", 60)); // Output: "V I I I"
+    console.log(LetterAvatar("XIe SIe WEe", 60)); // Output: "X Ie   S Ie   W Ee"
 
-    useEffect(() => {
-        LetterAvatar.transform();
-    }, []);
+    // useEffect(() => {
+    //     LetterAvatar.transform();
+    // }, []);
 
     if (isLoading) {
         return <Loading />;
@@ -59,11 +137,20 @@ const CourseGrid = ({ course }) => {
                                                 <div className="image">
                                                     {/* <img src={Course4} alt="" /> */}
                                                     {/* <img  width="60" height="60" avatar="V I"/> */}
-                                                    <LetterAvatar
+                                                    {/* <LetterAvatar
                                                         name={convertRomanNumeral(
                                                             data.name
                                                         )}
                                                         size={60}
+                                                    /> */}
+                                                    <img
+                                                        src={LetterAvatar(
+                                                            convertRomanToSpaced(
+                                                                data.name
+                                                            ),
+                                                            60
+                                                        )}
+                                                        alt=""
                                                     />
                                                 </div>
                                                 {/* <div className="name free clearfix">
