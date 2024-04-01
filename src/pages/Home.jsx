@@ -64,7 +64,7 @@ const Home = () => {
   return (
     <>  
         <div className="main-page-wrapper">
-            <Header/>
+            {/* <Header/> */}
             <Courosel/>
             <FindCourse/>
             <FindCourseBlock/>
