@@ -65,8 +65,8 @@ const Home = () => {
     <>  
         <div className="main-page-wrapper">
             {/* <Header/> */}
-            <Courosel/>
-            <FindCourse/>
+            {/* <Courosel/>
+            <FindCourse/> */}
             <FindCourseBlock/>
             <RegistrationBanner/>
             <PopularCourses/>
