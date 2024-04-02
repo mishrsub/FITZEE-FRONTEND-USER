@@ -35,9 +35,10 @@ const Testimonial = () => {
     return (
         <div className="testimonial-styleOne">
             <div className="container">
-                <div className="theme-title text-center">
-                    <h2>Our Testimonials</h2>
-                </div>{" "}
+                <div class="theme-title text-center">
+                    <h2>Testimonials</h2>
+                    <p>Checkout, what do our students have to say about us.</p>
+                </div>
                 {/* /.theme-titlee */}
                 <div
                     id="testimonial-carousel-one"

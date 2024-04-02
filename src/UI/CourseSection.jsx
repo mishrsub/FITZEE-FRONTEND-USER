@@ -172,7 +172,7 @@ const CourseSection = () => {
         items: 3,
         loop: true,
         margin: 10,
-        nav: true,
+        // nav: true,
         autoplay: true,
         autoplayTimeout: 3000,
         animateOut: "fadeOut", // Add fadeOut animation

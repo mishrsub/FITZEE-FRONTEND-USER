@@ -48,7 +48,9 @@ const CompetitiveExamDetailSection = () => {
                                         CLASS:
                                         {data?.eligibleClass?.length > 0 &&
                                             data?.eligibleClass.map((val) => (
-                                                <b key={val._id}>{` ${val} |`}</b>
+                                                <b
+                                                    key={val._id}
+                                                >{` ${val} |`}</b>
                                             ))}
                                     </div>
                                 </div>
@@ -90,6 +92,8 @@ const CompetitiveExamDetailSection = () => {
                                                             <img
                                                                 src={`http://35.154.95.255:8000/uploads/${val}`}
                                                                 alt=""
+                                                                width={"100%"}
+                                                                height={393}
                                                             />
                                                         </div>
                                                     )
@@ -108,6 +112,10 @@ const CompetitiveExamDetailSection = () => {
                                             className="left carousel-control"
                                             href="#testimonial-carousel-one"
                                             data-slide="prev"
+                                            style={{
+                                                top: 0,
+                                                bottom: "auto",
+                                            }} // Adjusted style
                                         >
                                             <i
                                                 className="fa fa-chevron-left"
@@ -121,6 +129,10 @@ const CompetitiveExamDetailSection = () => {
                                             className="right carousel-control"
                                             href="#testimonial-carousel-one"
                                             data-slide="next"
+                                            style={{
+                                                top: 0,
+                                                bottom: "auto",
+                                            }} // Adjusted style
                                         >
                                             <i
                                                 className="fa fa-chevron-right"

@@ -221,89 +221,62 @@ const CourseGrid = ({ course }) => {
                                     className="panel-group theme-accordion"
                                     id="accordion"
                                 >
-                                    <div className="panel">
-                                        <div className="panel-heading active-panel">
-                                            <h6 className="panel-title">
-                                                <a
-                                                    data-toggle="collapse"
-                                                    data-parent="#accordion"
-                                                    href="#collapse1"
+                                    {data?.programs.length > 0 &&
+                                        data.programs.map((val, i) => (
+                                            <div className="panel" key={i}>
+                                                <div
+                                                    className={
+                                                        i === 0
+                                                            ? `panel-heading active-panel`
+                                                            : `panel-heading`
+                                                    }
                                                 >
-                                                    Offline Classroom Programs
-                                                </a>
-                                            </h6>
-                                        </div>
-                                        <div
-                                            id="collapse1"
-                                            className="panel-collapse collapse in"
-                                        >
-                                            <div className="panel-body">
-                                                <ul>
-                                                    <li>
+                                                    <h6 className="panel-title">
                                                         <a
-                                                            href="#"
-                                                            className="tran3s"
+                                                            data-toggle="collapse"
+                                                            data-parent="#accordion"
+                                                            href={`#collapse${
+                                                                i + 1
+                                                            }`} // Unique href for each panel
                                                         >
-                                                            Math Genie
+                                                            {val?.name}
                                                         </a>
-                                                    </li>
-                                                    <li>
-                                                        <a
-                                                            href="#"
-                                                            className="tran3s"
-                                                        >
-                                                            Little Genie One
-                                                            Year Foundation
-                                                            Program (N)
-                                                        </a>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>{" "}
-                                    {/* /panel 1 */}
-                                    <div className="panel">
-                                        <div className="panel-heading">
-                                            <h6 className="panel-title">
-                                                <a
-                                                    data-toggle="collapse"
-                                                    data-parent="#accordion"
-                                                    href="#collapse2"
+                                                    </h6>
+                                                </div>
+                                                <div
+                                                    id={`collapse${i + 1}`} // Unique id for each collapse panel
+                                                    className={
+                                                        i === 0
+                                                            ? "panel-collapse collapse in"
+                                                            : "panel-collapse collapse"
+                                                    }
                                                 >
-                                                    Digital Classroom Programs
-                                                </a>
-                                            </h6>
-                                        </div>
-                                        <div
-                                            id="collapse2"
-                                            className="panel-collapse collapse"
-                                        >
-                                            <div className="panel-body">
-                                                <ul>
-                                                    <li>
-                                                        <a
-                                                            href="#"
-                                                            className="tran3s"
-                                                        >
-                                                            e-LITTLE GENIE
-                                                            little Genie-One
-                                                            Year Live Online
-                                                            Foundation Program
-                                                        </a>
-                                                    </li>
-                                                    <li>
-                                                        <a
-                                                            href="#"
-                                                            className="tran3s"
-                                                        >
-                                                            e-Maths Genie
-                                                        </a>
-                                                    </li>
-                                                </ul>
+                                                    {val.subprograms.length >
+                                                        0 &&
+                                                        val.subprograms.map(
+                                                            (subVal, j) => (
+                                                                <div
+                                                                    className="panel-body"
+                                                                    key={j}
+                                                                >
+                                                                    <ul>
+                                                                        <li>
+                                                                            <Link
+                                                                                to={`/fiitjee_mumbai-v11/courses/class/${data._id}/program/${val._id}/subprogram/${subVal._id}`}
+                                                                                className="tran3s"
+                                                                            >
+                                                                                {
+                                                                                    subVal.name
+                                                                                }
+                                                                            </Link>
+                                                                        </li>
+                                                                    </ul>
+                                                                </div>
+                                                            )
+                                                        )}
+                                                </div>
                                             </div>
-                                        </div>
-                                    </div>{" "}
-                                    {/* /panel 2 */}
+                                        ))}
                                 </div>{" "}
                                 {/* end #accordion */}
                             </div>{" "}
@@ -321,7 +294,7 @@ const CourseGrid = ({ course }) => {
                                                     defaultChecked=""
                                                 />
                                                 <label htmlFor="book">
-                                                    IIT
+                                                    ANMC
                                                 </label>
                                             </li>
                                             <li>
@@ -330,7 +303,7 @@ const CourseGrid = ({ course }) => {
                                                     id="linux"
                                                 />
                                                 <label htmlFor="linux">
-                                                    JEE
+                                                    VVM
                                                 </label>
                                             </li>
                                             <li>
@@ -340,7 +313,7 @@ const CourseGrid = ({ course }) => {
                                                     defaultChecked=""
                                                 />
                                                 <label htmlFor="design">
-                                                    JEE Mains
+                                                    NMTC
                                                 </label>
                                             </li>
                                             <li>
@@ -350,47 +323,54 @@ const CourseGrid = ({ course }) => {
                                                     defaultChecked=""
                                                 />
                                                 <label htmlFor="development">
-                                                    JEE Advance
+                                                    Homi Bhabha
+                                                </label>
+                                            </li>
+                                            <li>
+                                                <input
+                                                    type="checkbox"
+                                                    id="development"
+                                                />
+                                                <label htmlFor="development">
+                                                    IPM
+                                                </label>
+                                            </li>
+                                            <li>
+                                                <input
+                                                    type="checkbox"
+                                                    id="development"
+                                                />
+                                                <label htmlFor="development">
+                                                    JMO
                                                 </label>
                                             </li>
                                         </ul>
                                     </div>{" "}
                                     {/* /.tag-option */}
-                                    <div className="course-price-filter">
-                                        <h5>Price</h5>
-                                        <div className="pricetag">
-                                            <div className="float-left">
-                                                <input
-                                                    type="checkbox"
-                                                    id="remember"
-                                                />
-                                                <label htmlFor="remember">
-                                                    Free
-                                                </label>
-                                            </div>
-                                            <div
-                                                className="float-left"
-                                                style={{ marginLeft: 20 }}
-                                            >
-                                                <input
-                                                    type="checkbox"
-                                                    id="remember"
-                                                />
-                                                <label htmlFor="remember">
-                                                    Paid
-                                                </label>
-                                            </div>
-                                        </div>
-                                    </div>{" "}
+                                    {/* <div class="course-price-filter">
+											<h5>Price</h5>
+											<div class="pricetag">
+												<div class="float-left">
+											<input type="checkbox" id="remember">
+											<label for="remember">Free</label>
+											</div>
+											<div class="float-left" style="margin-left: 20px;">
+											<input type="checkbox" id="remember">
+											<label for="remember">Paid</label>
+											</div>
+											</div>
+										</div> */}
                                     {/* /.course-price-filter */}
                                     <div className="course-location">
                                         <h5>Location</h5>
                                         <div className="form-group">
                                             <div>
                                                 <select
+                                                    multiple=""
                                                     id="loaction"
                                                     className="selectpicker show-tick form-control"
                                                     data-live-search="true"
+                                                    data-placeholder="Choose your location..."
                                                 >
                                                     <option>Andheri</option>
                                                     <option>Kandivali</option>
@@ -408,10 +388,10 @@ const CourseGrid = ({ course }) => {
                                             defaultValue="Apply filters"
                                             className="p-bg-color tran3s"
                                         />
-                                    </div>
+                                    </div>{" "}
                                 </form>{" "}
                                 {/* /.main-wrapper */}
-                            </div>{" "}
+                            </div>
                             {/* /.course-filter */}
                         </div>{" "}
                         {/* /.course-sidebar */}

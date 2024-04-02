@@ -1,5 +1,10 @@
 import "./App.css";
-import { BrowserRouter as Router, Routes, Route,useLocation } from "react-router-dom";
+import {
+    BrowserRouter as Router,
+    Routes,
+    Route,
+    useLocation,
+} from "react-router-dom";
 import Home from "./pages/Home";
 import Course from "./component/courses/Course";
 import CourseDetail from "./component/CourseDetail/CourseDetail";
@@ -114,23 +119,20 @@ function App() {
                         path="/fiitjee_mumbai-v11/about"
                         element={<About />}
                     />
-                      <Route
+                    <Route
                         path="/fiitjee_mumbai-v11/contact"
                         element={<Contact />}
                     />
-                     <Route
-                        path="/fiitjee_mumbai-v11/faq"
-                        element={<Faq />}
-                    />
+                    <Route path="/fiitjee_mumbai-v11/faq" element={<Faq />} />
 
                     {/* Competitive course list route */}
                     <Route
                         path="/fiitjee_mumbai-v11/competitive/course/:classId"
-                        element={<CompetitiveExam/>}
+                        element={<CompetitiveExam />}
                     />
                     <Route
                         path="/fiitjee_mumbai-v11/competitive/course/program/:programId"
-                        element={<CompetitiveExamDetail/>}
+                        element={<CompetitiveExamDetail />}
                     />
                 </Routes>
             </Router>
