@@ -177,6 +177,7 @@ const CourseSection = () => {
         autoplayTimeout: 3000,
         animateOut: "fadeOut", // Add fadeOut animation
         animateIn: "fadeIn", // Add fadeIn animation
+        dots: true,
         responsive: {
             0: {
                 items: 1,
