@@ -5,6 +5,7 @@ import Footer from '../footer/Footer'
 import CourseDetailSection from '../../pages/CourseDetailSection'
 import { useParams } from 'react-router-dom'
 import { getCourseByClassId, getCourseDetail } from '../../react-query/api/Course'
+import InnerDetailBanner from '../../pages/InnerDetailBanner'
 
 const CourseDetail = () => {
 
@@ -27,7 +28,7 @@ const CourseDetail = () => {
     <>
     <div className="main-page-wrapper">
         <Header/>
-            <InnerBanner title={`CLASS ${classData?.name}`}/>
+            <InnerDetailBanner title={`CLASS ${classData?.name}`}/>
             <CourseDetailSection  getData={courseDetail}/>
         <Footer/>
     </div>

@@ -25,7 +25,7 @@ const ThemeCounter = () => {
                                         {counterOn && (
                                             <CountUp
                                                 start={0}
-                                                end={85873}
+                                                end={60}
                                                 duration={2}
                                                 delay={0}
                                             />
@@ -33,7 +33,7 @@ const ThemeCounter = () => {
                                     </span>
                                     +
                                 </h3>
-                                <p>Students</p>
+                                <p>Locations</p>
                             </div>
                             <div className="col-sm-3 col-xs-6">
                                 <h3>
@@ -41,7 +41,7 @@ const ThemeCounter = () => {
                                         {counterOn && (
                                             <CountUp
                                                 start={0}
-                                                end={468}
+                                                end={50}
                                                 duration={2}
                                                 delay={0}
                                             />
@@ -49,7 +49,7 @@ const ThemeCounter = () => {
                                     </span>
                                     +
                                 </h3>
-                                <p>Courses</p>
+                                <p>Programs</p>
                             </div>
                             <div className="col-sm-3 col-xs-6">
                                 <h3>
@@ -57,7 +57,7 @@ const ThemeCounter = () => {
                                         {counterOn && (
                                             <CountUp
                                                 start={0}
-                                                end={1729}
+                                                end={400}
                                                 duration={2}
                                                 delay={0}
                                             />
@@ -65,7 +65,7 @@ const ThemeCounter = () => {
                                     </span>
                                     +
                                 </h3>
-                                <p>Projects</p>
+                                <p>Faculties</p>
                             </div>
                             <div className="col-sm-3 col-xs-6">
                                 <h3>
@@ -73,7 +73,7 @@ const ThemeCounter = () => {
                                         {counterOn && (
                                             <CountUp
                                                 start={0}
-                                                end={2560}
+                                                end={50000}
                                                 duration={2}
                                                 delay={0}
                                             />
@@ -81,7 +81,7 @@ const ThemeCounter = () => {
                                     </span>
                                     +
                                 </h3>
-                                <p>Ratings</p>
+                                <p>IITian's Trained</p>
                             </div>
                         </div>
                     </div>{" "}
