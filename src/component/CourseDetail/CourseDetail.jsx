@@ -15,7 +15,7 @@ const CourseDetail = () => {
     const { data:courseDetail,refetch:detailFetch } = getCourseDetail(programId,subprogramId);
     
     // console.log('====================================');
-    console.log("My Course Detail: ",courseDetail);
+    console.log("My Course Detail------------------->>>>: ",courseDetail);
     // console.log('====================================');
 
     useEffect(() =>{
@@ -28,7 +28,7 @@ const CourseDetail = () => {
     <>
     <div className="main-page-wrapper">
         <Header/>
-            <InnerDetailBanner title={`CLASS ${classData?.name}`}/>
+            <InnerDetailBanner title={`CLASS ${classData?.name}`} keywordData={courseDetail?.keyword}/>
             <CourseDetailSection  getData={courseDetail}/>
         <Footer/>
     </div>
