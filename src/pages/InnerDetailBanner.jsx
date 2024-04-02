@@ -12,7 +12,7 @@ const InnerDetailBanner = ({ title,keywordData }) => {
           <h4 style={{ color: "#fff", marginBottom: 12 }}>
             {
               keywordData?.length > 0 && (
-                keywordData.map((val) => (
+                keywordData.slice(0,3).map((val) => (
                   <>
                 <button
                 key={val._id}
