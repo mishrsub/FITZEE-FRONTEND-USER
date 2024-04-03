@@ -3,11 +3,9 @@ import MultiStepForm from "../component/footer/MultistepForm";
 
 const InstructorBanner = () => {
     const [showForm, setShowForm] = useState(false);
-    console.log(showForm);
-    const handleGetStartedClick = () => {
-        console.log("====================================");
-        console.log(showForm);
-        console.log("====================================");
+
+    const handleGetStartedClick = (e) => {
+        e.preventDefault(); // Prevent default anchor tag behavior
         setShowForm(true);
     };
 
@@ -19,14 +17,10 @@ const InstructorBanner = () => {
                         Every FIITJEE student is a Story!!
                     </h4>
                     <h2>So, Begin your Journey</h2>
-                    {/* <a className="tran3s hvr-trim" onClick={handleGetStartedClick}>
-            Get Started Now
-          </a> */}
                     <a
                         href="#"
-                        className="tran3s hvr-trim"
-                        data-toggle="modal"
-                        data-target=".signInModal"
+                         className="tran3s hvr-trim" data-toggle="modal" data-target=".signInModal"
+                        onClick={handleGetStartedClick} // Call handleGetStartedClick function
                     >
                         Get Started Now
                     </a>
@@ -34,7 +28,7 @@ const InstructorBanner = () => {
                 {/* /.container */}
             </div>{" "}
             {/* /.opacity */}
-            {showForm && <MultiStepForm onClose={() => setShowForm(false)} />}
+            {showForm && <MultiStepForm isOpen={showForm} onClose={() => setShowForm(false)} />}
         </div>
     );
 };

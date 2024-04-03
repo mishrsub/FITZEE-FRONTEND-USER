@@ -3599,6 +3599,13 @@ footer .bottom-footer {
   padding-bottom: 25px;
   margin-bottom: 30px;
 }
+.theme-sidebar h4 {
+  font-size: 24px;
+  font-weight: 700;
+  border-bottom: 1px solid #eaeaea;
+  padding-bottom: 25px;
+  margin-bottom: 30px;
+}
 .theme-sidebar .sidebar-categories ul li a {
   font-family: "Lato", sans-serif;
   font-weight: 700;
@@ -4185,7 +4192,7 @@ footer .bottom-footer {
   border-top: 1px solid #e9e9e9;
   border-bottom: 1px solid #e9e9e9;
   padding: 20px 0;
-  margin-bottom: 105px;
+  margin-bottom:50px;
 }
 .our-blog.blog-details .comment-area .comment-title h4 {
   font-weight: 700;

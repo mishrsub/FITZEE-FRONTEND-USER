@@ -118,7 +118,7 @@ const CourseCard = ({ studentClass, program, subPrograms, classId }) => {
                 </div> */}
                 <h5>
                     <Link
-                        to={`/fiitjee_mumbai-v11/courses/class/${classId}/program/${program._id}/subprogram/${subPrograms._id}`}
+                        to={`/fiitjee_mumbai-v22/courses/class/${classId}/program/${program._id}/subprogram/${subPrograms._id}`}
                         className="tran3s"
                     >
                         <div key={subPrograms._id}>
@@ -168,31 +168,30 @@ const CourseSection = () => {
         return <h3>Error: {error.message}</h3>;
     }
 
-    const options = {
+const options = {
+    dots: true,
+    items: 3,
+    loop: true,
+    margin: 10,
+    autoplay: true,
+    autoplayTimeout: 3000,
+    animateOut: "fadeOut",
+    animateIn: "fadeIn",
+    responsive: {
+      0: {
+        items: 1,
+      },
+      450: {
+        items: 2,
+      },
+      600: {
         items: 3,
-        loop: true,
-        margin: 10,
-        // nav: true,
-        autoplay: true,
-        autoplayTimeout: 3000,
-        animateOut: "fadeOut", // Add fadeOut animation
-        animateIn: "fadeIn", // Add fadeIn animation
-        dots: true,
-        responsive: {
-            0: {
-                items: 1,
-            },
-            450: {
-                items: 2,
-            },
-            600: {
-                items: 3,
-            },
-            992: {
-                items: 3,
-            },
-        },
-    };
+      },
+      992: {
+        items: 3,
+      },
+    },
+  };
 
     const items = newData.flatMap((classData) =>
         classData.programs

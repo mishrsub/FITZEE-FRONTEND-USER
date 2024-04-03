@@ -43,7 +43,7 @@ const Footer = () => {
               <h6>Important Links</h6>
               <ul>
                 <li>
-                  <Link to="/fiitjee_mumbai-v11/faq" className="tran3s">
+                  <Link to="/fiitjee_mumbai-v22/faq" className="tran3s">
                     FAQ &amp; Support
                   </Link>
                 </li>
@@ -53,12 +53,12 @@ const Footer = () => {
                   </a>
                 </li>
                 <li>
-                  <Link to="/fiitjee_mumbai-v11/blog" className="tran3s">
+                  <Link to="/fiitjee_mumbai-v22/blog" className="tran3s">
                     Blogs
                   </Link>
                 </li>
                 <li>
-                  <Link to="/fiitjee_mumbai-v11/news" className="tran3s">
+                  <Link to="/fiitjee_mumbai-v22/news" className="tran3s">
                     News
                   </Link>
                 </li>
@@ -68,7 +68,7 @@ const Footer = () => {
               <h6>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h6>
               <ul>
                 <li>
-                  <Link to="/fiitjee_mumbai-v11/about" className="tran3s">
+                  <Link to="/fiitjee_mumbai-v22/about" className="tran3s">
                     About us
                   </Link>
                 </li>
@@ -80,7 +80,7 @@ const Footer = () => {
               </ul>
             </div>
             <div className="col-md-5 col-sm-6 col-xs-12 footer-list">
-              <Link to="/fiitjee_mumbai-v11/contact" className="tran3s">
+              <Link to="/fiitjee_mumbai-v22/contact" className="tran3s">
                 <h6>Contact us</h6>
               </Link>
               <ul>

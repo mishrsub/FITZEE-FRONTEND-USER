@@ -72,66 +72,66 @@ function App() {
                 <Routes>
                     <Route path="/" element={<Home />} />
                     <Route
-                        path="/fiitjee_mumbai-v11/courses/*"
+                        path="/fiitjee_mumbai-v22/courses/*"
                         element={<CourseRoute />}
                     />
                     <Route
-                        path="/fiitjee_mumbai-v11/contentNotFound"
+                        path="/fiitjee_mumbai-v22/contentNotFound"
                         element={<ErrorPage />}
                     />
 
                     <Route
-                        path="/fiitjee_mumbai-v11/courses/competitive/*"
+                        path="/fiitjee_mumbai-v22/courses/competitive/*"
                         element={<CompetitiveCourseRoute />}
                     />
 
                     <Route
-                        path="/fiitjee_mumbai-v11/result"
+                        path="/fiitjee_mumbai-v22/result"
                         element={<Result />}
                     />
                     <Route
-                        path="/fiitjee_mumbai-v11/result/:resultId"
+                        path="/fiitjee_mumbai-v22/result/:resultId"
                         element={<ResultDetail />}
                     />
 
                     {/* Workshop route */}
                     <Route
-                        path="/fiitjee_mumbai-v11/workshop"
+                        path="/fiitjee_mumbai-v22/workshop"
                         element={<Event />}
                     />
                     <Route
-                        path="/fiitjee_mumbai-v11/workshop/eventDetail/:workshopId"
+                        path="/fiitjee_mumbai-v22/workshop/eventDetail/:workshopId"
                         element={<EventDetail />}
                     />
 
                     {/* news */}
-                    <Route path="/fiitjee_mumbai-v11/news" element={<News />} />
+                    <Route path="/fiitjee_mumbai-v22/news" element={<News />} />
 
                     {/* Blog */}
-                    <Route path="/fiitjee_mumbai-v11/blog" element={<Blog />} />
+                    <Route path="/fiitjee_mumbai-v22/blog" element={<Blog />} />
                     <Route
-                        path="/fiitjee_mumbai-v11/blog/detail/:blogId"
+                        path="/fiitjee_mumbai-v22/blog/detail/:blogId"
                         element={<BlogDetail />}
                     />
 
                     {/* About Contact Faq*/}
                     <Route
-                        path="/fiitjee_mumbai-v11/about"
+                        path="/fiitjee_mumbai-v22/about"
                         element={<About />}
                     />
                     <Route
-                        path="/fiitjee_mumbai-v11/contact"
+                        path="/fiitjee_mumbai-v22/contact"
                         element={<Contact />}
                     />
-                    <Route path="/fiitjee_mumbai-v11/faq" element={<Faq />} />
+                    <Route path="/fiitjee_mumbai-v22/faq" element={<Faq />} />
 
                     {/* Competitive course list route */}
                     <Route
-                        path="/fiitjee_mumbai-v11/competitive/course/:classId"
+                        path="/fiitjee_mumbai-v22/competitive/course/:classId"
                         element={<CompetitiveExam />}
                     />
                     <Route
-                        path="/fiitjee_mumbai-v11/competitive/course/program/:programId"
+                        path="/fiitjee_mumbai-v22/competitive/course/program/:programId"
                         element={<CompetitiveExamDetail />}
                     />
                 </Routes>

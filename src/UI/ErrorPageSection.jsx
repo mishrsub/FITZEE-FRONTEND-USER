@@ -30,7 +30,7 @@ const ErrorPageSection = () => {
           never existed.
         </p>
         <div>
-          <Link to="/fiitjee_mumbai-v11" className="tran3s s-bg-color hvr-trim">
+          <Link to="/fiitjee_mumbai-v22" className="tran3s s-bg-color hvr-trim">
             Go Home
           </Link>
           <span className="or">Or</span>

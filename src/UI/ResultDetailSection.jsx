@@ -87,8 +87,8 @@ const ResultDetailSection = () => {
                                             src={`http://35.154.95.255:8000/uploads/${val}`}
                                             alt={`Image ${index + 1}`}
                                             style={{
-                                                width: "200px", // Set your desired width
-                                                height: "140px", // Set your desired height
+                                                width: "370px", // Set your desired width
+                                                height: "320px", // Set your desired height
                                                 objectFit: "cover", // Maintain aspect ratio and cover the container
                                                 margin: "1%", // Add margin between images
                                                 boxSizing: "border-box",

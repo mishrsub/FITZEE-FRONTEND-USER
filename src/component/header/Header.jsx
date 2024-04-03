@@ -180,8 +180,8 @@ const Header = () => {
                                                         to={
                                                             classItem.programs
                                                                 .length > 0
-                                                                ? `/fiitjee_mumbai-v11/courses/class/${classItem._id}`
-                                                                : `/fiitjee_mumbai-v11/contentNotFound`
+                                                                ? `/fiitjee_mumbai-v22/courses/class/${classItem._id}`
+                                                                : `/fiitjee_mumbai-v22/contentNotFound`
                                                         }
                                                     >
                                                         Class {classItem.name}
@@ -201,7 +201,7 @@ const Header = () => {
                                                                             className="dropdown-holder"
                                                                         >
                                                                             <Link
-                                                                                to={`/fiitjee_mumbai-v11/courses/class/${classItem._id}/program/${program._id}`}
+                                                                                to={`/fiitjee_mumbai-v22/courses/class/${classItem._id}/program/${program._id}`}
                                                                             >
                                                                                 {
                                                                                     program.name
@@ -223,7 +223,7 @@ const Header = () => {
                                                                                                     }
                                                                                                 >
                                                                                                     <Link
-                                                                                                        to={`/fiitjee_mumbai-v11/courses/class/${classItem._id}/program/${program._id}/subprogram/${subprogram._id}`}
+                                                                                                        to={`/fiitjee_mumbai-v22/courses/class/${classItem._id}/program/${program._id}/subprogram/${subprogram._id}`}
                                                                                                     >
                                                                                                         {
                                                                                                             subprogram.name
@@ -257,8 +257,8 @@ const Header = () => {
                                                         to={
                                                             val.programs
                                                                 .length > 0
-                                                                ? `/fiitjee_mumbai-v11/competitive/course/${val._id}`
-                                                                : `/fiitjee_mumbai-v11/contentNotFound`
+                                                                ? `/fiitjee_mumbai-v22/competitive/course/${val._id}`
+                                                                : `/fiitjee_mumbai-v22/contentNotFound`
                                                         }
                                                     >
                                                         Class {val.name}
@@ -283,7 +283,7 @@ const Header = () => {
                                                                             }
                                                                         >
                                                                             <Link
-                                                                                to={`/fiitjee_mumbai-v11/competitive/course/program/${program._id}`}
+                                                                                to={`/fiitjee_mumbai-v22/competitive/course/program/${program._id}`}
                                                                             >
                                                                                 {
                                                                                     program.heading
@@ -324,7 +324,7 @@ const Header = () => {
                                         </a>
                                         <ul className="sub-menu">
                                             <li className="dropdown-holder">
-                                                <Link to="/fiitjee_mumbai-v11/workshop">
+                                                <Link to="/fiitjee_mumbai-v22/workshop">
                                                     Workshops
                                                 </Link>
                                                 {/* <ul className="second-sub-menu">
@@ -399,7 +399,7 @@ const Header = () => {
                                     </li>
                                     <li className="dropdown-holder menu-list">
                                         <Link
-                                            to={`/fiitjee_mumbai-v11/result`}
+                                            to={`/fiitjee_mumbai-v22/result`}
                                             className="tran3s"
                                         >
                                             Results

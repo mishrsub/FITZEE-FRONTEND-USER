@@ -17,8 +17,8 @@ const FindCourse = () => {
               <div className="single-input">
                 <select
                   className="selectpicker form-control"
-                  id="filter1"
-                  onchange=""
+                  // id="filter1"
+                  // onchange=""
                 >
                   <option value="">All Groups</option>
                   <option value={1}>
@@ -37,8 +37,8 @@ const FindCourse = () => {
               <div className="single-input">
                 <select
                   className="selectpicker form-control"
-                  id="filter2"
-                  onChange={""}
+                  // id="filter2"
+                  // onChange={""}
                 >
                   <option>Categories</option>
                 </select>

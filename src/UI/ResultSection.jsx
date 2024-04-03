@@ -62,7 +62,7 @@ const ResultSection = () => {
                                             <ul className="clearfix">
                                                 <li className="float-left">
                                                     <Link
-                                                        to={`/fiitjee_mumbai-v11/result/${val._id}`}
+                                                        to={`/fiitjee_mumbai-v22/result/${val._id}`}
                                                         className="default_btn"
                                                     >
                                                         Read More

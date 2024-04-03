@@ -42,7 +42,7 @@ const CompetitiveExamSection = () => {
                                         >
                                             <h5>
                                                 <Link
-                                                    to={`/fiitjee_mumbai-v11/competitive/course/program/${val._id}`}
+                                                    to={`/fiitjee_mumbai-v22/competitive/course/program/${val._id}`}
                                                     className="tran3s"
                                                 >
                                                     {val?.heading}

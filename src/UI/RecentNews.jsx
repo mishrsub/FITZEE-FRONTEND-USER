@@ -8,82 +8,82 @@ import { truncateText } from "../utils/wordTruncate";
 import { Link } from "react-router-dom";
 
 const RecentNews = () => {
-    const [apiData, setApiData] = useState([]);
-    const {
-        isLoading,
-        error,
-        newData: news,
-    } = getAllData("http://35.154.95.255:8000/api/news/getNews", "news");
+  const [apiData, setApiData] = useState([]);
+  const {
+    isLoading,
+    error,
+    newData: news,
+  } = getAllData("http://35.154.95.255:8000/api/news/getNews", "news");
 
-    useEffect(() => {
-        if (!isLoading && !error && news) {
-            setApiData(news);
-        }
-    }, [isLoading, error, news]);
-
-    if (isLoading) {
-        return <Loading />;
+  useEffect(() => {
+    if (!isLoading && !error && news) {
+      setApiData(news);
     }
+  }, [isLoading, error, news]);
 
-    if (error) {
-        return <h3>Error: {error.message}</h3>;
-    }
+  if (isLoading) {
+    return <Loading />;
+  }
 
-    return (
-        <div className="our-blog">
-            <div className="container">
-                <div className="theme-title">
-                    <h2>Recommended Blogs</h2>
-                    <Link to="/fiitjee_mumbai-v11/blog" className="tran3s">
-                        Go to Blogs
+  if (error) {
+    return <h3>Error: {error.message}</h3>;
+  }
+
+  return (
+    <div className="our-blog">
+      <div className="container">
+        <div className="theme-title">
+          <h2>Recommended Blogs</h2>
+          <Link to="/fiitjee_mumbai-v22/blog" className="tran3s">
+            Go to Blogs
+          </Link>
+        </div>{" "}
+        {/* /.theme-title */}
+        <div className="row">
+          {apiData.slice(0, 3).map((val, i) => {
+            return (
+              <div className="col-md-4 col-sm-6" key={val._id}>
+                <div className="single-blog">
+                  <div className="image">
+                    <img
+                      src={`http://35.154.95.255:8000/uploads/${val.image}`}
+                      alt=""
+                    />
+                  </div>
+                  <ul>
+                    <li>
+                      <i className="flaticon-comments" />
+                      <a href="#" className="tran3s">
+                        13
+                      </a>
+                    </li>
+                    <li>
+                      <i className="flaticon-heart" />
+                      <a href="#" className="tran3s">
+                        3
+                      </a>
+                    </li>
+                  </ul>
+                  <h4>
+                    <Link to={`/fiitjee_mumbai-v22/blog/detail/${val._id}`} className="tran3s">
+                      {val.title}
                     </Link>
-                </div>{" "}
-                {/* /.theme-title */}
-                <div className="row">
-                    {apiData.splice(0, 3).map((val, i) => {
-                        return (
-                            <div className="col-md-4 col-sm-6" key={val._id}>
-                                <div className="single-blog">
-                                    <div className="image">
-                                        <img
-                                            src={`http://35.154.95.255:8000/uploads/${val.image}`}
-                                            alt=""
-                                        />
-                                    </div>
-                                    <ul>
-                                        <li>
-                                            <i className="flaticon-comments" />
-                                            <a href="#" className="tran3s">
-                                                13
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <i className="flaticon-heart" />
-                                            <a href="#" className="tran3s">
-                                                3
-                                            </a>
-                                        </li>
-                                    </ul>
-                                    <h4>
-                                        <a href="#" className="tran3s">
-                                            {val.title}
-                                        </a>
-                                    </h4>
-                                    <p>{truncateText(val.description, 10)}</p>
-                                    <a href="#" className="tran3s">
-                                        Read More
-                                    </a>
-                                </div>
-                            </div>
-                        );
-                    })}
-                    {/* /.single-blog */}
-                </div>{" "}
-                {/* /.row */}
-            </div>{" "}
-            {/* /.container */}
-        </div>
-    );
+                  </h4>
+                  <p>{truncateText(val.description, 10)}</p>
+                  <Link to={`/fiitjee_mumbai-v22/blog/detail/${val._id}`} className="tran3s">
+                    Read More
+                  </Link>
+                </div>
+              </div>
+            );
+          })}
+          {/* /.single-blog */}
+        </div>{" "}
+        {/* /.row */}
+      </div>{" "}
+      {/* /.container */}
+    </div>
+  );
 };
 
 export default RecentNews;

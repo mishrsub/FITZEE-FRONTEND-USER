@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import SuccessImg from "../assets/images/switch-profile-success.gif";
+import { Link } from "react-router-dom";
 
 const RegistrationBanner = () => {
     const [step, setStep] = useState(1);
@@ -151,9 +152,9 @@ const RegistrationBanner = () => {
                             </h6>
                         </center>
                         <br />
-                        <a href="index.php" className="tran3s hvr-trim">
+                        <Link to="/" className="tran3s hvr-trim">
                             Ok
-                        </a>
+                        </Link>
                     </div>
                 );
             default:

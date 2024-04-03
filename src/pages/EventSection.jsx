@@ -149,7 +149,7 @@ const EventSection = () => {
                                         </div>
                                         <div className="event-btn">
                                             <Link
-                                                to={`/fiitjee_mumbai-v11/workshop/eventDetail/${val._id}`}
+                                                to={`/fiitjee_mumbai-v22/workshop/eventDetail/${val._id}`}
                                             >
                                                 Know More
                                             </Link>

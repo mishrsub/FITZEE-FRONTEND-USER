@@ -26,7 +26,7 @@ const EventDetailSection = () => {
     }
 
     if (error) {
-        navigate("/fiitjee_mumbai-v11/contentNotFound");
+        navigate("/fiitjee_mumbai-v22/contentNotFound");
         return <ErrorPage />;
     }
 
