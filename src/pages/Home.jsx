@@ -1,48 +1,66 @@
-// import React from 'react'
-import Header from '../component/header/Header'
-import Footer from '../component/footer/Footer'
-import Courosel from '../UI/Courosel'
-import FindCourse from '../UI/FindCourse'
-import FindCourseBlock from '../UI/FindCourseBlock'
-import RegistrationBanner from '../UI/RegistrationBanner'
-import PopularCourses from '../UI/PopularCourses'
-import ThemeCounter from '../UI/ThemeCounter'
-import CourseSection from '../UI/CourseSection'
-import Testimonial from '../UI/Testimonial'
-import RecentNews from '../UI/RecentNews'
-import InstructorBanner from '../UI/InstructorBanner'
-import PartnerLogo from '../UI/PartnerLogo'
-import { useEffect } from 'react'
+import React, { useEffect } from 'react';
+import Header from '../component/header/Header';
+import Footer from '../component/footer/Footer';
+import Courosel from '../UI/Courosel';
+import FindCourse from '../UI/FindCourse';
+import FindCourseBlock from '../UI/FindCourseBlock';
+import RegistrationBanner from '../UI/RegistrationBanner';
+import PopularCourses from '../UI/PopularCourses';
+import ThemeCounter from '../UI/ThemeCounter';
+import CourseSection from '../UI/CourseSection';
+import Testimonial from '../UI/Testimonial';
+import RecentNews from '../UI/RecentNews';
+import InstructorBanner from '../UI/InstructorBanner';
+import PartnerLogo from '../UI/PartnerLogo';
 
 const Home = () => {
   useEffect(() => {
-    // Function to load a script dynamically
-    const loadScript = (src, id) => {
+    const loadScript = (src) => {
       return new Promise((resolve, reject) => {
-        const script = document.createElement('script');
-        script.src = src;
-        script.id = id;
-        script.async = true;
-        script.onload = resolve;
-        script.onerror = reject;
-        document.body.appendChild(script);
+        const existingScript = document.getElementById(src);
+        if (!existingScript) {
+          const script = document.createElement('script');
+          script.src = src;
+          script.id = src;
+          script.async = true;
+          script.onload = resolve;
+          script.onerror = reject;
+          document.body.appendChild(script);
+        } else {
+          resolve();
+        }
       });
     };
 
-    // Define an array of scripts to load
     const scriptsToLoad = [
       "https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.1/js/bootstrap-select.min.js",
-      '/vendor/particles.js-master/particles.min.js',
-      '/vendor/particles.js-master/demo/js/lib/stats.js',
-      '/vendor/particles.js-master/demo/js/app.js',
-      'https://cdn.jsdelivr.net/npm/react-particles-js@3.6.0/umd/particles.min.js'
+      "/vendor/particles.js-master/particles.min.js",
+      "/vendor/particles.js-master/demo/js/lib/stats.js",
+      "/vendor/particles.js-master/demo/js/app.js",
+      "/vendor/WOW-master/dist/wow.min.js",
+      "/vendor/Camera-master/scripts/camera.min.js",
+      "/vendor/Camera-master/scripts/jquery.mobile.customized.min.js",
+      "/vendor/bootstrap-mega-menu/js/menu.js",
+      "/vendor/owl-carousel/owl.carousel.min.js",
+      "/vendor/Counter/jquery.counterup.min.js",
+      "/vendor/Counter/jquery.waypoints.min.js",
+      "/js/theme.js",
+
+
+      // "/vendor/bootstrap.min.js",
+      // "/vendor/bootstrap-select/js/bootstrap-select.js",
+      // "/vendor/jquery.2.2.3.min.js",
+      // "/vendor/jquery-ui/jquery-ui.min.js"
+      // "/vendor/Camera-master/scripts/jquery.easing.1.3.js",
+      // "/vendor/bootstrap/bootstrap.min.js",
+      // "/vendor/bootstrap-select/dist/js/bootstrap-select.js",
+      // "/vendor/jquery.2.2.3.min.js"
     ];
 
-    // Load all the scripts
     const loadAllScripts = async () => {
       for (const script of scriptsToLoad) {
         try {
-          await loadScript(script, script.split('/').pop().split('.')[0]);
+          await loadScript(script);
           console.log(`${script} loaded successfully`);
         } catch (error) {
           console.error(`Error loading ${script}:`, error);
@@ -50,36 +68,37 @@ const Home = () => {
       }
     };
 
-    // Call the function to load all scripts
     loadAllScripts();
 
-    // Cleanup function to remove the dynamically added scripts when the component unmounts
     return () => {
       scriptsToLoad.forEach((script) => {
-        document.getElementById(script.split('/').pop().split('.')[0])?.remove();
+        const existingScript = document.getElementById(script);
+        if (existingScript) {
+          existingScript.remove();
+        }
       });
     };
-  }, []); // The empty dependency array ensures this useEffect runs once on mount
+  }, []);
 
   return (
-    <>  
-        <div className="main-page-wrapper">
-            <Header/>
-            <Courosel/>
-            <FindCourse/>
-            <FindCourseBlock/>
-            <RegistrationBanner/>
-            <PopularCourses/>
-            <ThemeCounter/>
-            <CourseSection/>
-            <Testimonial/>
-            <RecentNews/>
-            <InstructorBanner/>
-            <PartnerLogo/>
-            <Footer/>
-        </div>
+    <>
+      <div className="main-page-wrapper">
+        <Header />
+        <Courosel />
+        <FindCourse />
+        <FindCourseBlock />
+        <RegistrationBanner />
+        <PopularCourses />
+        <ThemeCounter />
+        <CourseSection />
+        <Testimonial />
+        <RecentNews />
+        <InstructorBanner />
+        <PartnerLogo />
+        <Footer />
+      </div>
     </>
-  )
-}
+  );
+};
 
-export default Home
+export default Home;

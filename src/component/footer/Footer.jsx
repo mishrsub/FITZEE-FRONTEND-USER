@@ -48,7 +48,7 @@ const Footer = () => {
                   </Link>
                 </li>
                 <li>
-                  <a href="javascript:void(0);" className="tran3s">
+                  <a href="" className="tran3s">
                     Careers
                   </a>
                 </li>
@@ -73,7 +73,7 @@ const Footer = () => {
                   </Link>
                 </li>
                 <li>
-                  <a href="javascript:void(0);" className="tran3s">
+                  <a href="" className="tran3s">
                     Student corner
                   </a>
                 </li>

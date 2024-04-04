@@ -4,7 +4,11 @@ import Loading from "./Loading";
 
 const PopularCourses = () => {
   const [testData, setTestData] = useState([]);
-  const { isLoading, error, newData:test } = getAllData(
+  const {
+    isLoading,
+    error,
+    newData: test,
+  } = getAllData(
     "http://35.154.95.255:8000/api/upcomingTest/getUpcomingTest",
     "test"
   );
@@ -16,24 +20,31 @@ const PopularCourses = () => {
   }, [isLoading, error, test]);
 
   if (isLoading) {
-    return <Loading/>;
+    return <Loading />;
   }
 
   if (error) {
     return <h3>Error: {error.message}</h3>;
   }
 
+  const calculateDuration = (index) => {
+    return `${index + 1}s`;
+  };
+
+  const calculateDelay = (index) => {
+    return `${index * 2}s`; // Adjust delay as needed
+  };
 
   return (
     <div className="popular-course">
       <div className="container">
-        <div className="theme-title">
+        <div className="theme-title text-center">
           <h2>Our Upcoming Admission Test</h2>
-        </div>{" "}
+        </div>
         {/* /.theme-title */}
         <div className="row">
           <div className="col-md-12">
-            <div className="table">
+            <div className="table animated-table">
               <div className="table__head">
                 <div className="table__row">
                   <div className="table__cell">Name of Exam</div>
@@ -44,19 +55,37 @@ const PopularCourses = () => {
               </div>
               <div className="table__body">
                 {testData.map((val, i) => (
-                  <div key={i} className="table__row fade-in-down">
-                    <div className="table__cell" data-title="Name of Exam">
+                  <div
+                    className="table__row animate fadeInRight animated"
+                    data-animate="fadeInRight"
+                    data-duration={calculateDuration(i)}
+                    data-delay={calculateDelay(i)}
+                    style={{
+                      animationDuration: calculateDuration(i),
+                      animationDelay: calculateDelay(i),
+                      visibility: "visible",
+                    }}
+                  >
+                    <div
+                      className="table__cell animated-cell"
+                      data-title="Name of Exam"
+                    >
                       {val.examName}
                     </div>
-                    <div className="table__cell" data-title="Date of Exam">
-                      {/* Assuming examDate is a valid Date object */}
+                    <div
+                      className="table__cell animated-cell"
+                      data-title="Date of Exam"
+                    >
                       {new Date(val.examDate).toLocaleDateString("en-US", {
                         day: "numeric",
                         month: "long",
                         year: "numeric",
                       })}
                     </div>
-                    <div className="table__cell" data-title="Eligible class">
+                    <div
+                      className="table__cell animated-cell"
+                      data-title="Eligible class"
+                    >
                       {val.eligibleClass.map((val) => `${val.className}, `)}
                     </div>
                     <div className="table__cell">

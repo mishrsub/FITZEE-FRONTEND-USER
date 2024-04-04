@@ -79,7 +79,7 @@
 
 /*--------- animate ---------*/
 @import url("./assets/vendor/animate/animate.css");
-@import url("./assets/vendor/animate/animate.min.css");
+@import url("./assets/vendor/animate/animate.min.css"); */
 
 /*** 
 
@@ -7043,4 +7043,22 @@ h1.line:after {
     transform: translateX(-50%);
   }
 }
+
+/*animated letter*/
+
+.animated-cell span {
+  animation: appear 1s forwards;
+  opacity: 0;
+}
+
+@keyframes appear {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+
 /*end*/

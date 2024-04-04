@@ -702,6 +702,20 @@ jQuery(window).on('scroll', function () {
 
 
 
+// animated letter
 
+document.addEventListener('DOMContentLoaded', function() {
+  const cells = document.querySelectorAll('.animated-cell');
+  cells.forEach(cell => {
+    const text = cell.textContent.trim();
+    cell.innerHTML = '';
+    for (let i = 0; i < text.length; i++) {
+      const span = document.createElement('span');
+      span.textContent = text[i];
+      span.style.animationDelay = `${i * 0.2}s`;
+      cell.appendChild(span);
+    }
+  });
+});
 
 

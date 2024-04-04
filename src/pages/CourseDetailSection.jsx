@@ -292,19 +292,15 @@ const CourseDetailSection = ({ getData }) => {
                               <a
                                 data-toggle="collapse"
                                 data-parent="#accordionTwo"
-                                href="#collapse11"
+                                href={`#collapse${i + 1}`} // Ensure each href has a unique ID
                                 className="clearfix"
                               >
-                                <h6 className="float-left">
-                                  {/* <span>Lecture 1. 1</span> */}
-                                  {val.title}
-                                </h6>
-                                {/* <p class="float-right">15:12min</p> */}
+                                <h6 className="float-left">{val.title}</h6>
                               </a>
                             </h5>
                           </div>
                           <div
-                            id="collapse11"
+                            id={`collapse${i + 1}`} // Ensure each id is unique
                             className={
                               i === 0
                                 ? "panel-collapse collapse in"
@@ -313,12 +309,25 @@ const CourseDetailSection = ({ getData }) => {
                           >
                             <div className="panel-body">
                               <p>{val.description}</p>
+                              {val.details && (
+                                <div className="learn-list">
+                                  <ul className="row">
+                                    {val.details.map((detail, index) => (
+                                      <li
+                                        className="col-sm-12 col-xs-12"
+                                        key={index}
+                                      >
+                                        <span>{detail}</span>
+                                      </li>
+                                    ))}
+                                  </ul>
+                                </div>
+                              )}
                             </div>
                           </div>
                         </div>
                       ))}
-                  </div>{" "}
-                  {/* end #accordionTwo */}
+                  </div>
                 </div>{" "}
                 {/* End of .curriculum-panel */}
                 <div className="course-feedback">
