@@ -6,6 +6,7 @@ import "bootstrap3/dist/css/bootstrap.min.css";
 import "./index.css";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import "./responsive.css"
 
 // Create a clientss
 const queryClient = new QueryClient();
