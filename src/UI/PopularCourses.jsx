@@ -56,6 +56,7 @@ const PopularCourses = () => {
               <div className="table__body">
                 {testData.map((val, i) => (
                   <div
+                  key={val._id}
                     className="table__row animate fadeInRight animated"
                     data-animate="fadeInRight"
                     data-duration={calculateDuration(i)}

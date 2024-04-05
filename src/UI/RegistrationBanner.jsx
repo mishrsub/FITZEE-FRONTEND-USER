@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import SuccessImg from "../assets/images/switch-profile-success.gif";
 import { Link } from "react-router-dom";
+import ReactWOW from 'react-wow';
+// import 'animate.css';
 
 const RegistrationBanner = () => {
   const [step, setStep] = useState(1);
@@ -175,32 +177,32 @@ const RegistrationBanner = () => {
                   <span className="p-color">FIITJEE, Mumbai?</span>
                 </h2>
                 <div>
-                  <ol className="step">
-                    <li className="wow delay1 fadeInUp">
-                      <div className="title">Registration</div>
-                      <div className="descr">
-                        Register for a FIITJEE Admission test
-                      </div>
-                    </li>
-                    <li className="wow delay2 fadeInUp">
-                      <div className="title">Appearance</div>
-                      <div className="descr">
-                        Give the test with the best of your abilities
-                      </div>
-                    </li>
-                    <li className="wow delay3 fadeInUp">
-                      <div className="title">Selection</div>
-                      <div className="descr">
-                        Get your test analysed by our experts
-                      </div>
-                    </li>
-                    <li className="wow delay4 fadeInUp">
-                      <div className="title">Enrolment</div>
-                      <div className="descr">
-                        Complete your admission formalities
-                      </div>
-                    </li>
-                  </ol>
+                <ol className="step">   
+               <ReactWOW animation='fadeInUp' delay='0.2s'>
+                 <li className="wow delay1 fadeInUp">
+                   <div className="title">Registration</div>
+                   <div className="descr">Register for a FIITJEE Admission test</div>
+                 </li>
+               </ReactWOW>
+               <ReactWOW animation='fadeInUp' delay='0.4s'>
+                 <li className="wow delay2 fadeInUp">
+                   <div className="title">Appearance</div>
+                   <div className="descr">Give the test with the best of your abilities</div>
+                 </li>
+               </ReactWOW>
+               <ReactWOW animation='fadeInUp' delay='0.6s'>
+                 <li className="wow delay3 fadeInUp">
+                   <div className="title">Selection</div>
+                   <div className="descr">Get your test analyzed by our experts</div>
+                 </li>
+               </ReactWOW>
+               <ReactWOW animation='fadeInUp' delay='0.8s'>
+                 <li className="wow delay4 fadeInUp">
+                   <div className="title">Enrolment</div>
+                   <div className="descr">Complete your admission formalities</div>
+                 </li>
+               </ReactWOW>
+             </ol>
                 </div>
               </div>
             </div>

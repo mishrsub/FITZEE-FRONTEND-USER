@@ -641,9 +641,6 @@ const CourseDetailSection = ({ getData }) => {
                   <div className="wrapper sidebar-course-information">
                     <h4>Upcoming Batch Start Date-</h4>
 
-                    {/* <h4>
-                                            1<sup>st</sup> April, 2024
-                                        </h4> */}
                     <ul class="info-list row">
                       <li class="col-xs-6">
                         <b>Date :</b>{" "}

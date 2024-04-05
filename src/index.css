@@ -7062,3 +7062,14 @@ h1.line:after {
 
 
 /*end*/
+
+/* styles.css
+
+.step {
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.step.fadeInUp {
+  transform: translateY(20px);
+} */

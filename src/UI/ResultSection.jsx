@@ -65,7 +65,7 @@ const ResultSection = () => {
                                                         to={`/fiitjee_mumbai-v22/result/${val._id}`}
                                                         className="default_btn"
                                                     >
-                                                        Read More
+                                                        View Result
                                                     </Link>
                                                 </li>
                                                 <li className="float-right">

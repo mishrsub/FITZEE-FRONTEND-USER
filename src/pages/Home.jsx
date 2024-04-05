@@ -45,16 +45,14 @@ const Home = () => {
       "/vendor/Counter/jquery.counterup.min.js",
       "/vendor/Counter/jquery.waypoints.min.js",
       "/js/theme.js",
-
-
+  
       // "/vendor/bootstrap.min.js",
       // "/vendor/bootstrap-select/js/bootstrap-select.js",
-      // "/vendor/jquery.2.2.3.min.js",
-      // "/vendor/jquery-ui/jquery-ui.min.js"
-      // "/vendor/Camera-master/scripts/jquery.easing.1.3.js",
+      // "/vendor/jquery-ui/jquery-ui.min.js",
+      "/vendor/jquery.2.2.3.min.js",
+      "/vendor/Camera-master/scripts/jquery.easing.1.3.js",
       // "/vendor/bootstrap/bootstrap.min.js",
       // "/vendor/bootstrap-select/dist/js/bootstrap-select.js",
-      // "/vendor/jquery.2.2.3.min.js"
     ];
 
     const loadAllScripts = async () => {
