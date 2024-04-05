@@ -11,3 +11,5 @@ export default defineConfig({
         strictPort: true,
     },
 });
+
+// npm config set strict-ssl false
