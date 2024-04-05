@@ -7,7 +7,7 @@ export default defineConfig({
     chunkSizeWarningLimit: 1600,
     server: {
         port: 80,
-        host: "myfiitjee.com", // Listen on all network interfaces.
+        host: "myfiitjee.com", // Listen on all network interfaces..
         strictPort: true,
     },
 });
