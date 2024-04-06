@@ -149,7 +149,7 @@ const BlogDetailSection = () => {
                 {/* /.single-blog */}
                 <div className="comment-area">
                   <div className="comment-title clearfix author_bio_toggle_wrapper">
-                    <a href="#0" onClick={toggleComments}>
+                    <a onClick={toggleComments}>
                       <h4 className="float-left">
                         {showComments ? "Hide Comments" : "Comments"}
                         <span className="s-bg-color">4</span>
