@@ -7073,3 +7073,21 @@ h1.line:after {
 .step.fadeInUp {
   transform: translateY(20px);
 } */
+
+/* home banner css */
+.home_banner .btn:before{
+  font-family: "font-awesome";
+  position: absolute;
+  line-height: 40px;
+  width: 100%;
+  font-size: 35px;
+  text-align: center; 
+}
+
+.home_banner .prev_btn:before {
+  content: "\25C0"
+}
+
+.home_banner .next_btn:before {
+  content: "\25BA";
+}

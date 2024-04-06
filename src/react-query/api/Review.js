@@ -7,7 +7,7 @@ export const GiveReview = () => {
   const mutation = useMutation({
     mutationFn: (newReview) => {
       return axios.post(
-        "http://35.154.95.255:8000/api/course/program/review",
+        "http://localhost:8000/api/course/program/review",
         newReview,
         {
           headers: {

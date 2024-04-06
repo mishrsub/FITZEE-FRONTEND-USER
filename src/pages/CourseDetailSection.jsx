@@ -227,7 +227,7 @@ const CourseDetailSection = ({ getData }) => {
                     <div className="main-wrapper">
                       {/* Wrapper for slides */}
                       <div className="carousel-inner">
-                        {getData?.programDetailImg?.length > 0 &&
+                        {getData?.programDetailImg?.length > 0 ? (
                           getData?.programDetailImg.map((val, index) => (
                             <div
                               key={val}
@@ -236,11 +236,24 @@ const CourseDetailSection = ({ getData }) => {
                               <img
                                 src={`http://35.154.95.255:8000/uploads/${val}`}
                                 alt=""
-                                width={"100%"}
+                                width="100%"
                                 height={393}
                               />
                             </div>
-                          ))}
+                          ))
+                        ) : (
+                          <>
+                            <img
+                              src={`https://img.freepik.com/free-vector/internet-network-warning-404-error-page-file-found-web-page-internet-error-page-issue-found-network-404-error-present-by-man-sleep-display_1150-55450.jpg?w=740&t=st=1712398282~exp=1712398882~hmac=d07d5e78635e403915061396145ad94e42a9fbe86a7bdbaea348b18400266e1e`}
+                              alt=""
+                              width="100%"
+                              height={393}
+                            />
+                            <h4 style={{ color: "red", marginBottom: "5%" }}>
+                              Please add program details
+                            </h4>
+                          </>
+                        )}
                       </div>
                       {/* Left and right controls */}
                       <a
@@ -338,7 +351,7 @@ const CourseDetailSection = ({ getData }) => {
                         <h2>
                           {getData?.matchedSubprogram?.averageRating?.toFixed(
                             1
-                          ) || 0.0}
+                          ) || 0}
                         </h2>
                         <p>
                           Number of reviews (

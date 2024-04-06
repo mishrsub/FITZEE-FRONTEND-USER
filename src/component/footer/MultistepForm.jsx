@@ -260,6 +260,7 @@ const MultiStepForm = ({ isOpen, onClose }) => {
           borderRadius: "8px",
           padding: "20px",
           boxShadow: "0px 0px 20px rgba(0, 0, 0, 0.2)", // Optional: Add shadow
+          overflow: "hidden", // Prevent scrolling
         },
       }}
     >

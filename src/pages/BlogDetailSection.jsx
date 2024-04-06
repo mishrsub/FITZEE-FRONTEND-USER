@@ -12,6 +12,7 @@ import Loading from "../UI/Loading";
 import { Bounce, toast } from "react-toastify";
 
 const BlogDetailSection = () => {
+  const [showComments, setShowComments] = useState(false);
   const { blogId } = useParams();
   const [comment, setComment] = useState({
     name: "",
@@ -32,6 +33,10 @@ const BlogDetailSection = () => {
   console.log("====================================");
   console.log("ALL BLOG COMMENTS: ", blogComment);
   console.log("====================================");
+
+  const toggleComments = () => {
+    setShowComments(!showComments);
+  };
 
   const {
     mutateAsync: createBlogCommentMutation,
@@ -61,6 +66,12 @@ const BlogDetailSection = () => {
       const data = await createBlogCommentMutation(commentData);
 
       if (data.status === 201) {
+        setComment({
+          name: "",
+          email: "",
+          phone: "",
+          description: "",
+        })
         return toast.success(`✔ ${data.message}!`, {
           position: "top-right",
           autoClose: 5000,
@@ -72,6 +83,7 @@ const BlogDetailSection = () => {
           theme: "light",
           transition: Bounce,
         });
+      
       }
       if (data.status === 400) {
         return toast.error(`✔ ${data.error}!`, {
@@ -103,230 +115,155 @@ const BlogDetailSection = () => {
 
   return (
     <>
-      <div className="our-blog blog-innner-page blog-list blog-details">
+      <div className="our-blog blog-innner-page blog-list blog-details course-details">
         <div className="container">
           <div className="row">
             <div className="col-md-8 col-xs-12">
-              <div className="single-blog">
-                <div className="image">
-                  <img
-                    src={`http://35.154.95.255:8000/uploads/${data.image}`}
-                    alt=""
-                    width="100%"
-                    height={374}
-                  />
-                </div>
-                <ul>
-                  <li>
-                    <i className="flaticon-comments" />
-                    <a href="#" className="tran3s">
-                      13
-                    </a>
-                  </li>
-                  <li>
-                    <i className="flaticon-heart" />
-                    <a href="#" className="tran3s">
-                      3
-                    </a>
-                  </li>
-                </ul>
-                <h4>{data.title}</h4>
-                <p>{data.description}</p> <br />
-                <p>
-                  For those aspiring to excel in exams such as JEE Main and
-                  Advanced, the dream of securing a spot in prestigious
-                  institutions like IIT, DTU, BITS Pilani, IIITs, and NITs is
-                  shared by many. Despite the intense competition, only a
-                  handful of students manage to secure admission to their
-                  desired colleges.
-                </p>{" "}
-                <br />
-                <p>
-                  Coaching institutes play a crucial role in exam preparation,
-                  and in recent years, one institute has stood out for producing
-                  some of the highest scorers in JEE exams across India –
-                  FIITJEE. Recognized as India's premier institute for
-                  competitive exams like JEE and NEET, FIITJEE has become
-                  synonymous with excellence in coaching and has played a
-                  pivotal role in shaping the academic journeys of numerous
-                  successful candidates.
-                </p>
-              </div>{" "}
-              {/* /.single-blog */}
-              <div className="comment-area">
-                <div className="comment-title clearfix">
-                  <h4 className="float-left">
-                    Comments <span className="s-bg-color">4</span>
-                  </h4>
-                  <ul className="float-right">
-                    {/* <li>
-                                            <a href="#" className="tran3s">
-                                                <i
-                                                    className="fa fa-facebook"
-                                                    aria-hidden="true"
-                                                />{" "}
-                                                Like
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="#" className="tran3s">
-                                                <i
-                                                    className="fa fa-twitter"
-                                                    aria-hidden="true"
-                                                />{" "}
-                                                Tweet
-                                            </a>
-                                        </li> */}
+              <div className="details-wrapper">
+                <div className="single-blog">
+                  <div className="image">
+                    <img
+                      src={`http://35.154.95.255:8000/uploads/${data.image}`}
+                      alt=""
+                      width="100%"
+                      height={374}
+                    />
+                  </div>
+                  <ul>
                     <li>
+                      <i className="flaticon-comments" />
                       <a href="#" className="tran3s">
-                        <i className="fa fa-google-plus" aria-hidden="true" />{" "}
-                        Share
+                        13
+                      </a>
+                    </li>
+                    <li>
+                      <i className="flaticon-heart" />
+                      <a href="#" className="tran3s">
+                        3
                       </a>
                     </li>
                   </ul>
+                  <h4>{data.title}</h4>
+                  <p>{data.description}</p> <br />
                 </div>{" "}
-                {/* /.comment-title */}
-                <div className="single-commnet clearfix">
-                  {blogComment?.length > 0 &&
-                    blogComment.map((val) => (
-                      <>
-                        <img src={Blog16} alt="" className="float-left" />
-                        <div className="comment float-left border">
-                          <div className="clearfix">
-                            <h6 className="float-left">{val?.name}</h6>
-                            <span className="float-right">3 day ago</span>
-                          </div>
-                          <p>{val.description}</p>
-                          <ul>
-                            <li>
-                              <a href="#">
-                                <i className="flaticon-heart" /> 32
-                              </a>{" "}
-                            </li>
-                          </ul>
-                        </div>
-                      </>
-                    ))}
-                </div>{" "}
-                {/* /.single-commnet */}
-                {/* <div className="single-commnet clearfix">
-                  <img src={Blog18} alt="" className="float-left" />
-                  <div className="comment float-left border">
-                    <div className="clearfix">
-                      <h6 className="float-left">Josef Doe</h6>
-                      <span className="float-right">5 day ago</span>
-                    </div>
-                    <p>
-                      Optimistic assumptions are made by proponents of
-                      ideologies such as transhumanism and singularitarianism,
-                      which view technological development as generally having
-                      beneficial effects for the society and the human
-                      condition. In these ideologies, technological development
-                      is morally good. Some critics see these ideologies as
-                      examples of scientism and techno-utopianism and fear the
-                      notion.
-                    </p>
-                    <ul>
+                {/* /.single-blog */}
+                <div className="comment-area">
+                  <div className="comment-title clearfix author_bio_toggle_wrapper">
+                    <a href="#0" onClick={toggleComments}>
+                      <h4 className="float-left">
+                        {showComments ? "Hide Comments" : "Comments"}
+                        <span className="s-bg-color">4</span>
+                      </h4>
+                    </a>
+                    <ul className="float-right">
                       <li>
-                        <a href="#">
-                          <i className="flaticon-heart" /> 12
-                        </a>{" "}
+                        <a href="#" className="tran3s">
+                          <i className="fa fa-share" aria-hidden="true" /> Share
+                        </a>
                       </li>
                     </ul>
-                  </div>{" "}
-                </div> */}
-                {/* /.single-commnet */}
-              </div>{" "}
-              {/* /.comment-area */}
-              <div className="reply-comment-form">
-                <h4>Reply A Comment</h4>
-                <form action="#">
-                  <div className="row">
-                    <div className="col-sm-6">
-                      <input
-                        type="text"
-                        placeholder="Your Name"
-                        value={comment.name}
-                        onChange={(e) =>
-                          setComment({
-                            ...comment,
-                            name: e.target.value,
-                          })
-                        }
-                      />
-                      <input
-                        type="email"
-                        placeholder="Your Email"
-                        value={comment.email}
-                        onChange={(e) =>
-                          setComment({
-                            ...comment,
-                            email: e.target.value,
-                          })
-                        }
-                      />
-                      <input
-                        type="text"
-                        placeholder="Phone Number"
-                        value={comment.phone}
-                        onChange={(e) =>
-                          setComment({
-                            ...comment,
-                            phone: e.target.value,
-                          })
-                        }
-                      />
-                    </div>
-                    <div className="col-sm-6">
-                      <textarea
-                        placeholder="Your Comment"
-                        value={comment.description}
-                        onChange={(e) =>
-                          setComment({
-                            ...comment,
-                            description: e.target.value,
-                          })
-                        }
-                      />
-                    </div>
                   </div>
-                  <div className="clearfix">
-                    <input
-                      type="submit"
-                      defaultValue="Submit"
-                      className="float-right s-bg-color"
-                      onClick={submitForm}
-                    />
-                  </div>
-                </form>
+                  {/* /.comment-title */}
+                  {showComments && (
+                    <div className="author_bio_wrap">
+                      <div className="single-commnet clearfix">
+                        {blogComment?.length > 0 &&
+                          blogComment.map((val) => (
+                            <>
+                              <img src={Blog16} alt="" className="float-left" />
+                              <div className="comment float-left border">
+                                <div className="clearfix">
+                                  <h6 className="float-left">{val?.name}</h6>
+                                  <span className="float-right">3 day ago</span>
+                                </div>
+                                <p>{val.description}</p>
+                                <ul>
+                                  <li>
+                                    <a href="#">
+                                      <i className="flaticon-heart" /> 32
+                                    </a>{" "}
+                                  </li>
+                                </ul>
+                              </div>
+                            </>
+                          ))}
+                      </div>
+
+                      {/* /.single-commnet */}
+                      {/* Form can go here */}
+                      <div className="submit-review-form">
+                        <h3>Write A Comment</h3>
+                        <form action="#">
+                          <div className="row">
+                            <div className="col-sm-4">
+                              <label>Your Full Name</label>
+                              <input
+                                type="text"
+                                placeholder="Your Name"
+                                value={comment.name}
+                                onChange={(e) =>
+                                  setComment({
+                                    ...comment,
+                                    name: e.target.value,
+                                  })
+                                }
+                              />
+                            </div>
+                            <div className="col-sm-4">
+                              <label>E-mail</label>
+                              <input
+                                type="email"
+                                placeholder="Your Email"
+                                value={comment.email}
+                                onChange={(e) =>
+                                  setComment({
+                                    ...comment,
+                                    email: e.target.value,
+                                  })
+                                }
+                              />
+                            </div>
+                            <div className="col-sm-4">
+                              <label>Phone</label>
+                              <input
+                                type="text"
+                                placeholder="Phone Number"
+                                value={comment.phone}
+                                onChange={(e) =>
+                                  setComment({
+                                    ...comment,
+                                    phone: e.target.value,
+                                  })
+                                }
+                              />
+                            </div>
+                          </div>
+                          <label>Your Comment</label>
+                          <textarea
+                            placeholder="Your Comment"
+                            value={comment.description}
+                            onChange={(e) =>
+                              setComment({
+                                ...comment,
+                                description: e.target.value,
+                              })
+                            }
+                          />
+                          <input
+                            type="submit"
+                            defaultValue="Submit"
+                            className="float-right s-bg-color"
+                            onClick={submitForm}
+                          />
+                        </form>
+                      </div>
+                      {/* /.submit-review-form */}
+                    </div>
+                  )}
+                </div>{" "}
+                {/* /.comment-area */}
               </div>
-              {/* <div className="reply-comment-form">
-                <h3>Write A Comment</h3>
-                <form action="#">
-                  <div className="row">
-                    <div className="col-sm-4">
-                      <label>Your Full Name</label>
-                      <input type="text" placeholder="Your Name" />
-                    </div>
-                    <div className="col-sm-4">
-                      <label>E-mail</label>
-                      <input type="email" placeholder="sample@email.com" />
-                    </div>
-                    <div className="col-sm-4">
-                      <label>Phone</label>
-                      <input type="text" placeholder="+91-8080220888" />
-                    </div>
-                  </div>
-                  <label>Your Comment</label>
-                  <textarea placeholder="Write Comment..." defaultValue={""} />
-                  <input
-                    type="submit"
-                    defaultValue="Submit Review"
-                    className="s-bg-color"
-                  />
-                </form>
-              </div> */}
-            </div>
+            </div>{" "}
             {/* /.col- */}
             <div className="col-md-4 col-sm-6 col-xs-12 theme-sidebar">
               <form action="#" className="sidebar-search">
