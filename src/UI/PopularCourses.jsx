@@ -32,7 +32,7 @@ const PopularCourses = () => {
   };
 
   const calculateDelay = (index) => {
-    return `${index * 0}s`; // Adjust delay as needed
+    return `${index * 2}s`; // Adjust delay as needed
   };
 
   return (

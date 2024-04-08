@@ -8,6 +8,7 @@ import { useNavigate, useParams } from "react-router-dom";
 import { getAllWorkshop, getWorkshopDetail } from "../react-query/api/workshop";
 import Loading from "../UI/Loading";
 import ErrorPage from "../component/Error/ErrorPage";
+import MultiStepForm from "../component/footer/MultistepForm";
 
 const EventDetailSection = () => {
     const { workshopId } = useParams();
@@ -16,6 +17,12 @@ const EventDetailSection = () => {
         `http://35.154.95.255:8000/api/workshop/detail/${workshopId}`
     );
     const words = data?.description.split(" ");
+    const [showForm, setShowForm] = useState(false);
+
+    const handleGetStartedClick = (e) => {
+        e.preventDefault(); // Prevent default anchor tag behavior
+        setShowForm(true);
+    };
 
     useEffect(() => {
         refetch();
@@ -79,6 +86,7 @@ const EventDetailSection = () => {
                                 src={`http://35.154.95.255:8000/uploads/${data.image}`}
                                 alt=""
                                 style={{ width: "100%" }}
+                                height={430}
                             />
                             <br />
                             <br />
@@ -150,9 +158,11 @@ const EventDetailSection = () => {
                                 <a
                                     href="#"
                                     className="tran3s s-bg-color take-course hvr-trim"
+                                    onClick={handleGetStartedClick}
                                 >
                                     Register for Event
                                 </a>
+                                {showForm && <MultiStepForm isOpen={showForm} onClose={() => setShowForm(false)} />}
                             </div>{" "}
                             {/* /.sidebar-course-information */}
                             <div className="sidebar-categories">

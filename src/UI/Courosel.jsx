@@ -44,7 +44,7 @@ const Banner = () => {
   }, [index, content]); // Add 'content' to dependencies
 
   return (
-    <div className='home_banner' style={{ position: 'relative', width: '100%', height: '100vh', overflow: 'hidden' }}>
+    <div className='home_banner' style={{ position: 'relative', width: '100%', height: '85vh', overflow: 'hidden' }}>
       {/* Carousel */}
       <div style={{ position: 'relative', width: '100%', height: '100%' }}>
         {images.map((image, i) => (
@@ -68,25 +68,14 @@ const Banner = () => {
       
       {/* Text Overlay */}
       <motion.div
-        style={{
-          position: 'absolute',
-          top: '50%',
-          left: '10%', // Align to the left
-          transform: 'translate(-50%, -50%)',
-          backgroundColor: '#ff3a4685', // Background color
-          padding: '40px', // Increased padding for more height
-          borderRadius: '10px', // Rounded corners
-          zIndex: 2,
-          textAlign: 'left', // Align text to the left
-          color: 'white', // Text color
-        }}
+        className='slider-div'
         initial={{ opacity: 0, y: -50 }} // Initial position outside the viewport
         animate={{ opacity: 1, y: 0 }} // Animation to move into the viewport
         transition={{ delay: 0.5, duration: 1.5 }}
       >
         <div style={{ width: '100%', height: '100%' }}>
-          <h1 style={{ color: 'white', marginBottom: '10px' }}>FIITJEE <span style={{ color: '#1b1d3d' }}>Mumbai</span></h1>
-          <p style={{ color: 'white', fontSize: '28px',textTransform:"uppercase", fontWeight: 'bold',letterSpacing:1.5 }}>{currentContent.subtitle}</p>
+          <h1>FIITJEE <span>Mumbai</span></h1>
+          <p>{currentContent.subtitle}</p>
         </div>
       </motion.div>
 

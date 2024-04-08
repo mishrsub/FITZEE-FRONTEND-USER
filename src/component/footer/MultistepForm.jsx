@@ -45,7 +45,7 @@ const MultiStepForm = ({ isOpen, onClose }) => {
       title: "Step 1",
       content: (
         <>
-          <h3>Step 1</h3>
+          <h3>Get Started</h3>
           <center>
             <p>Enter your 10 digit mobile number below</p>
           </center>
@@ -60,12 +60,27 @@ const MultiStepForm = ({ isOpen, onClose }) => {
               value={formData.mobileNumber}
               onChange={handleChange}
             />
+            <div className="remember-pass" style={{ marginTop: 0 }}>
+              <input
+                type="checkbox"
+                id="htm2"
+                name="agreeTerms"
+                checked={formData.agreeTerms}
+                onChange={handleChange}
+              />
+              <label htmlFor="htm2">
+                I authorise FIITJEE to Connect, send information time to time
+                via SMS, Call/ Robocall (Automated Call), WhatsApp or E-mail and
+                I agree to FIITJEE’S Privacy Policy (Click link on Privacy
+                Policy to Read).
+              </label>
+            </div>
             <button
               type="button"
               className="p-bg-color hvr-trim"
               onClick={handleNext}
             >
-              Next
+              Send OTP
             </button>
           </div>
         </>
@@ -75,7 +90,7 @@ const MultiStepForm = ({ isOpen, onClose }) => {
       title: "Step 2",
       content: (
         <>
-          <h3>Step 2</h3>
+          <h3>Verify your Mobile Number</h3>
           <center>
             <p>Enter your OTP below</p>
           </center>
@@ -95,7 +110,7 @@ const MultiStepForm = ({ isOpen, onClose }) => {
               className="p-bg-color hvr-trim"
               onClick={handleNext}
             >
-              Next
+              Verify
             </button>
           </div>
         </>
@@ -163,7 +178,7 @@ const MultiStepForm = ({ isOpen, onClose }) => {
                   <option>12</option>
                 </select>
               </div>
-              <div className="col-md-12">
+              <div className="col-md-12" style={{ marginTop: "15px" }}>
                 <h6>
                   Preferred Study Center<sup style={{ color: "red" }}>*</sup>
                 </h6>
@@ -215,19 +230,16 @@ const MultiStepForm = ({ isOpen, onClose }) => {
         <>
           <div className="wrapper">
             <center>
-              <img
-                src={SuccessImg}
-                style={{ width: 200 }}
-              />
+              <img src={SuccessImg} style={{ width: 200 }} />
               <h6>your message have been successfully submitted</h6>
             </center>
             <br />
             <button
               type="button"
-              classname="p-bg-color hvr-trim"
+              className="p-bg-color hvr-trim"
               data-dismiss="modal"
               aria-hidden="true"
-              isOpen={isOpen}
+              onClick={handleNext}
             >
               Ok
             </button>
@@ -251,21 +263,21 @@ const MultiStepForm = ({ isOpen, onClose }) => {
           backgroundColor: "rgba(0, 0, 0, 0.5)", // Semi-transparent black overlay
         },
         content: {
-          position: 'fixed',
-          height: '500px',
-          inset: '50% 40px 40px 50%',
-          border: '1px solid rgb(204, 204, 204)',
-          background: 'rgb(255, 255, 255)',
-          overflow: 'hidden',
-          borderRadius: '8px',
-          outline: 'none',
-          padding: '20px',
-          transform: 'translate(-50%, -50%)',
-          zIndex: '12000',
-          top: '50%',
-          boxShadow: 'rgba(0, 0, 0, 0.2) 0px 0px 20px',
-          /* width: '70%', */
-          /* height: '7.5%', */
+          position: "fixed",
+          height: "600px",
+          maxHeight: "100%",
+          overflowY: "auto",
+          inset: "50% 40px 40px 50%",
+          border: "1px solid rgb(204, 204, 204)",
+          background: "rgb(255, 255, 255)",
+          overflow: "hidden",
+          borderRadius: "8px",
+          outline: "none",
+          padding: "20px",
+          transform: "translate(-50%, -50%)",
+          zIndex: "12000",
+          top: "50%",
+          boxShadow: "rgba(0, 0, 0, 0.2) 0px 0px 20px",
         },
       }}
     >
@@ -281,7 +293,7 @@ const MultiStepForm = ({ isOpen, onClose }) => {
       >
         &times;
       </button>
-      <form>{steps[step].content}</form>
+      <form className="popup_modal">{steps[step].content}</form>
       {/* </div>
         </div>
       </div> */}

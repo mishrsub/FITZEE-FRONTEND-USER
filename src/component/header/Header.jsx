@@ -115,7 +115,15 @@ const Header = () => {
                             <li
                               className={i === 0 ? `ruby-active-menu-item` : ``}
                             >
-                              <a href="course.php">Class {classItem?.name}</a>
+                              <Link
+                                to={
+                                  classItem.programs.length > 0
+                                    ? `/fiitjee_mumbai-v22/courses/class/${classItem._id}`
+                                    : `/fiitjee_mumbai-v22/contentNotFound`
+                                }
+                              >
+                                Class {classItem?.name}
+                              </Link>
                               <div className="ruby-grid ruby-grid-lined">
                                 <div className="ruby-row">
                                   {classItem.programs.length > 0 &&

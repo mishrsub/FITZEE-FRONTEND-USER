@@ -15,11 +15,19 @@ import Blog6 from "../assets/images/blog/6.jpg";
 import "../assets/external-css/coursedetail.css";
 import { GiveReview } from "../react-query/api/Review";
 import { Bounce, toast } from "react-toastify";
+import MultiStepForm from "../component/footer/MultistepForm";
 
 const CourseDetailSection = ({ getData }) => {
   console.log("====================================");
   console.log("GETTING DATA ----> ", getData);
   console.log("====================================");
+
+  const [showForm, setShowForm] = useState(false);
+
+  const handleGetStartedClick = (e) => {
+      e.preventDefault(); // Prevent default anchor tag behavior
+      setShowForm(true);
+  };
 
   // 65ba25db3ce7570cd4f51584/65ba2b591bd7713abd353413
   const [review, setReview] = useState({
@@ -617,7 +625,7 @@ const CourseDetailSection = ({ getData }) => {
                     </li>
                   </ul>
                   <div>
-                    <ul class="clearfix student-image">
+                    <ul className="clearfix student-image">
                       <li>
                         <img src={LetterAvatar("SAARTH AGARWAL", 60)} alt="" />
                       </li>
@@ -631,9 +639,9 @@ const CourseDetailSection = ({ getData }) => {
                         <img src={LetterAvatar("Dhiraj", 60)} alt="" />
                       </li>
                       <li>
-                        <div class="image">
+                        <div className="image">
                           <img src={LetterAvatar("PALASH PRABHU", 60)} alt="" />
-                          <div class="opacity">20+</div>
+                          <div className="opacity">20+</div>
                         </div>
                       </li>
                     </ul>
@@ -645,9 +653,11 @@ const CourseDetailSection = ({ getData }) => {
                   <a
                     href="#"
                     className="tran3s s-bg-color take-course hvr-trim"
+                    onClick={handleGetStartedClick}
                   >
                     Book An Appointment
                   </a>
+                  {showForm && <MultiStepForm isOpen={showForm} onClose={() => setShowForm(false)} />}
                 </div>{" "}
                 {/* /.sidebar-course-information */}
                 <div className="sidebar-instructor-info">

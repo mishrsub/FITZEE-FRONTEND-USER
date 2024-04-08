@@ -702,9 +702,17 @@ jQuery(window).on('scroll', function () {
 
 
 
-//  expand js
 
+//blur effect menu bar
+ document.addEventListener('DOMContentLoaded', function () {
+  const megaMenu = document.getElementById('bg_blur');
+  const content = document.querySelector('.wholebody');
 
+  megaMenu.addEventListener('mouseenter', function () {
+      content.style.filter = 'blur(10px)'; // Adjust the blur intensity
+  });
 
-
-
+  megaMenu.addEventListener('mouseleave', function () {
+      content.style.filter = 'none';
+  });
+});

@@ -145,7 +145,7 @@ const RegistrationBanner = () => {
               <h6>your message have been successfully submitted</h6>
             </center>
             <br />
-            <Link to="/" className="tran3s hvr-trim">
+            <Link to="/" className="tran3s hvr-trim" onClick={() => setStep(1)}>
               Ok
             </Link>
           </div>
