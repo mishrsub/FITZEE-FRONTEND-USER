@@ -679,7 +679,7 @@ const CourseDetailSection = ({ getData }) => {
                         <b>Batch :</b> {getData?.batchStartDate?.batch}{" "}
                       </li>
                     </ul>
-                    <a href="#" className="tran3s p-bg-color follow hvr-trim">
+                    <a href="#" className="tran3s p-bg-color follow hvr-trim"  onClick={handleGetStartedClick}>
                       Take this Course
                     </a>
                   </div>{" "}
@@ -694,7 +694,7 @@ const CourseDetailSection = ({ getData }) => {
                         <h6 className="panel-title">
                           <a
                             data-toggle="collapse"
-                            data-parent="#accordion"
+                            data-parent="#accordion11"
                             href="#collapse1"
                           >
                             Class VI
@@ -732,7 +732,7 @@ const CourseDetailSection = ({ getData }) => {
                         <h6 className="panel-title">
                           <a
                             data-toggle="collapse"
-                            data-parent="#accordion"
+                            data-parent="#accordion12"
                             href="#collapse2"
                           >
                             Class VII
@@ -767,7 +767,7 @@ const CourseDetailSection = ({ getData }) => {
                         <h6 className="panel-title">
                           <a
                             data-toggle="collapse"
-                            data-parent="#accordion"
+                            data-parent="#accordion3"
                             href="#collapse3"
                           >
                             Class VIII
@@ -802,7 +802,7 @@ const CourseDetailSection = ({ getData }) => {
                         <h6 className="panel-title">
                           <a
                             data-toggle="collapse"
-                            data-parent="#accordion"
+                            data-parent="#accordion4"
                             href="#collapse4"
                           >
                             Class IX
@@ -837,7 +837,7 @@ const CourseDetailSection = ({ getData }) => {
                         <h6 className="panel-title">
                           <a
                             data-toggle="collapse"
-                            data-parent="#accordion"
+                            data-parent="#accordion5"
                             href="#collapse5"
                           >
                             Class X
@@ -872,7 +872,7 @@ const CourseDetailSection = ({ getData }) => {
                         <h6 className="panel-title">
                           <a
                             data-toggle="collapse"
-                            data-parent="#accordion"
+                            data-parent="#accordion6"
                             href="#collapse6"
                           >
                             Class XI
@@ -907,7 +907,7 @@ const CourseDetailSection = ({ getData }) => {
                         <h6 className="panel-title">
                           <a
                             data-toggle="collapse"
-                            data-parent="#accordion"
+                            data-parent="#accordion7"
                             href="#collapse7"
                           >
                             Class XII
@@ -942,7 +942,7 @@ const CourseDetailSection = ({ getData }) => {
                         <h6 className="panel-title">
                           <a
                             data-toggle="collapse"
-                            data-parent="#accordion"
+                            data-parent="#accordion8"
                             href="#collapse8"
                           >
                             Class XII Pass

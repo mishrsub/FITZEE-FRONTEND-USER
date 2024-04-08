@@ -251,26 +251,29 @@ const MultiStepForm = ({ isOpen, onClose }) => {
 
   return (
     <Modal
+      className="query-modal"
       isOpen={isOpen} // Pass isOpen prop to control modal visibility
       onRequestClose={onClose} // Close modal on outside click or Esc key
       overlayClassName="modal-overlay" // Custom class for overlay styling
       style={{
         overlay: {
+
           zIndex: 1000,
           display: "flex",
           alignItems: "center", // Center align the modal vertically
           justifyContent: "center",
-          backgroundColor: "rgba(0, 0, 0, 0.5)", // Semi-transparent black overlay
+          backgroundColor: "orange", // Semi-transparent black overlay
         },
         content: {
           position: "fixed",
+          maxWidth:"100%",
+          width:"500px",
           height: "600px",
           maxHeight: "100%",
           overflowY: "auto",
           inset: "50% 40px 40px 50%",
           border: "1px solid rgb(204, 204, 204)",
           background: "rgb(255, 255, 255)",
-          overflow: "hidden",
           borderRadius: "8px",
           outline: "none",
           padding: "20px",

@@ -7115,6 +7115,9 @@ div.activity.active {
 }
 
 @media (max-width: 420px) and (max-height: 570px) {
+  /* .query-modal{
+    width: 1;
+  } */
   .slider-div {
     width: 250px;
     top:20%;
