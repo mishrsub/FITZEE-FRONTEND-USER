@@ -695,11 +695,12 @@ header.menu-style-two .top-header button.login i {
 }
 header.menu-style-two .header-wrapper {
   position: relative;
+  height: 70px;
 }
 header.menu-style-two .logo {
   position: absolute;
   left: 0;
-  top: 25px;
+  top: 5px;
   z-index: 99;
 }
 header.menu-style-two #mega-menu-wrapper .nav > li > a,
@@ -855,7 +856,7 @@ header.menu-style-two .search-option form button {
 }
 header.menu-style-two.fixed .logo {
   width: 10%;
-/*  top: 25px;*/
+
 }
 /*---------------------------------- Theme Banner --------------------------*/
 .camera_wrap {

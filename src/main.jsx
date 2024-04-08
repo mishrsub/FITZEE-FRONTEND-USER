@@ -7,6 +7,14 @@ import "./index.css";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import "./responsive.css"
+import "./assets/external-css/font-awesome.min.css"
+import "./assets/external-css/ie10-viewport-bug-workaround.css"
+import "./assets/external-css/normalize.css"
+import "./assets/external-css/ruby-demo.css"
+import "./assets/external-css/ruby-main.css"
+import "./assets/external-css/ruby-responsive.css"
+import "./assets/external-css/ruby-transitions.css"
+
 
 // Create a clientss
 const queryClient = new QueryClient();

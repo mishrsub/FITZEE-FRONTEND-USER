@@ -147,7 +147,7 @@ const BlogDetailSection = () => {
                   <p>{data.description}</p> <br />
                 </div>{" "}
                 {/* /.single-blog */}
-                <div className="comment-area">
+                <div className="comment-area" style={{cursor:"pointer"}}>
                   <div className="comment-title clearfix author_bio_toggle_wrapper">
                     <a onClick={toggleComments}>
                       <h4 className="float-left">

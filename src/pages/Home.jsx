@@ -45,6 +45,9 @@ const Home = () => {
       "/vendor/Counter/jquery.counterup.min.js",
       "/vendor/Counter/jquery.waypoints.min.js",
       "/js/theme.js",
+      "/js/ruby-demo.js",
+      "/js/ruby-main.js",
+      
   
       // "/vendor/bootstrap.min.js",
       // "/vendor/bootstrap-select/js/bootstrap-select.js",

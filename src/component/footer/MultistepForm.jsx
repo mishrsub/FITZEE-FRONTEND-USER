@@ -251,16 +251,21 @@ const MultiStepForm = ({ isOpen, onClose }) => {
           backgroundColor: "rgba(0, 0, 0, 0.5)", // Semi-transparent black overlay
         },
         content: {
-          position: "absolute",
-          top: "87%", // Center vertically
-          left: "50%", // Center horizontally
-          transform: "translate(-50%, -50%)", // Center both vertically and horizontally
-          width: "70%", // Adjust the width as needed
-          height: "7.5%", // Adjust the height as needed
-          borderRadius: "8px",
-          padding: "20px",
-          boxShadow: "0px 0px 20px rgba(0, 0, 0, 0.2)", // Optional: Add shadow
-          overflow: "hidden", // Prevent scrolling
+          position: 'fixed',
+          height: '500px',
+          inset: '50% 40px 40px 50%',
+          border: '1px solid rgb(204, 204, 204)',
+          background: 'rgb(255, 255, 255)',
+          overflow: 'hidden',
+          borderRadius: '8px',
+          outline: 'none',
+          padding: '20px',
+          transform: 'translate(-50%, -50%)',
+          zIndex: '12000',
+          top: '50%',
+          boxShadow: 'rgba(0, 0, 0, 0.2) 0px 0px 20px',
+          /* width: '70%', */
+          /* height: '7.5%', */
         },
       }}
     >

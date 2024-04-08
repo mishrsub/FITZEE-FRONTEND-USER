@@ -7,465 +7,385 @@ import CourseDetail from "../CourseDetail/CourseDetail";
 import { getAllCompetitiveCourse } from "../../react-query/api/Course";
 
 const Header = () => {
-    const navigate = useNavigate();
-    const { isLoading, error, newData } = getAllData(
-        "http://35.154.95.255:8000/api/course",
-        "class"
-    );
+  const navigate = useNavigate();
+  const { isLoading, error, newData } = getAllData(
+    "http://35.154.95.255:8000/api/course",
+    "class"
+  );
 
-    //get competitive course data
-    const {
-        isLoading: compLoader,
-        error: compError,
-        data: compNewData,
-    } = getAllCompetitiveCourse();
+  //get competitive course data
+  const {
+    isLoading: compLoader,
+    error: compError,
+    data: compNewData,
+  } = getAllCompetitiveCourse();
 
-    console.log("====================================");
-    console.log("COmpetitive exam loader: ", compNewData);
-    console.log("====================================");
+  console.log("====================================");
+  console.log("Competitive exam loader: ", compNewData);
+  console.log("====================================");
 
-    if (isLoading || compLoader) {
-        return <Loading />;
-    }
+  if (isLoading || compLoader) {
+    return <Loading />;
+  }
 
-    if (error) {
-        return <h3>Error: {error.message}</h3>;
-    }
+  if (error) {
+    return <h3>Error: {error.message}</h3>;
+  }
 
-    return (
-        <>
-            <header className="theme-menu-wrapper menu-style-two">
-                <div className="top-header">
-                    <div className="container">
-                        <ul className="float-left left-content">
-                            <li>
-                                <i className="flaticon-phone-call" />{" "}
-                                <a href="#">08080220888</a>
-                            </li>
-                            <li>
-                                <i className="flaticon-envelope" />{" "}
-                                <a href="#">helpdesk@myfiitjee.com</a>
-                            </li>
-                            <li>
-                                <div
-                                    className="bfh-selectbox bfh-languages"
-                                    data-language="en_US"
-                                    data-available="en_US,fr_CA,es_MX"
-                                    data-flags="true"
-                                />
-                            </li>
-                        </ul>
-                        <ul className="float-right right-content">
-                            <li>
-                                <a href="#" className="tran3s social">
-                                    <i
-                                        className="fa fa-facebook"
-                                        aria-hidden="true"
-                                    />
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#" className="tran3s social">
-                                    <i
-                                        className="fa fa-twitter"
-                                        aria-hidden="true"
-                                    />
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#" className="tran3s social">
-                                    <i
-                                        className="fa fa-google-plus"
-                                        aria-hidden="true"
-                                    />
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#" className="tran3s social">
-                                    <i
-                                        className="fa fa-dribbble"
-                                        aria-hidden="true"
-                                    />
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-                <div className="container">
-                    <div className="header-wrapper clearfix">
-                        <div className="logo float-left tran4s hidden-sm hidden-xs">
-                            <Link className="tran3s" to={`/`}>
-                                <img
-                                    src={Logo5}
-                                    alt="Logo"
-                                    style={{ width: 130 }}
-                                />
-                            </Link>
-                        </div>
-                        <div className="logo float-left tran4s hidden-md hidden-lg">
-                            <Link className="tran3s" to={`/`}>
-                                <img
-                                    src={Logo5}
-                                    alt="Logo"
-                                    style={{ width: 130 }}
-                                />
-                            </Link>
-                        </div>
-                        <div className="float-right header-widget"></div>
-                        {/* ============================ Theme Menu ========================= */}
-                        <nav
-                            className="theme-main-menu float-right navbar"
-                            id="mega-menu-wrapper"
-                        >
-                            {/* Brand and toggle get grouped for better mobile display */}
-                            <div className="navbar-header">
-                                <button
-                                    type="button"
-                                    className="navbar-toggle collapsed"
-                                    data-toggle="collapse"
-                                    data-target="#navbar-collapse-1"
-                                    aria-expanded="false"
-                                >
-                                    <span className="sr-only">
-                                        Toggle navigation
-                                    </span>
-                                    <span className="icon-bar" />
-                                    <span className="icon-bar" />
-                                    <span className="icon-bar" />
-                                </button>
-                            </div>
-                            {/* Collect the nav links, forms, and other content for toggling */}
-                            <div
-                                className="collapse navbar-collapse"
-                                id="navbar-collapse-1"
+  return (
+    <>
+      <header className="theme-menu-wrapper menu-style-two">
+        <div className="top-header">
+          <div className="container">
+            <ul className="float-left left-content">
+              <li>
+                <i className="flaticon-phone-call" />{" "}
+                <a href="#">08080220888</a>
+              </li>
+              <li>
+                <i className="flaticon-envelope" />{" "}
+                <a href="#">helpdesk@myfiitjee.com</a>
+              </li>
+              <li>
+                <div
+                  className="bfh-selectbox bfh-languages"
+                  data-language="en_US"
+                  data-available="en_US,fr_CA,es_MX"
+                  data-flags="true"
+                />
+              </li>
+            </ul>
+            <ul className="float-right right-content">
+              <li>
+                <a href="#" className="tran3s social">
+                  <i className="fa fa-facebook" aria-hidden="true" />
+                </a>
+              </li>
+              <li>
+                <a href="#" className="tran3s social">
+                  <i className="fa fa-twitter" aria-hidden="true" />
+                </a>
+              </li>
+              <li>
+                <a href="#" className="tran3s social">
+                  <i className="fa fa-instagram" aria-hidden="true" />
+                </a>
+              </li>
+            </ul>
+          </div>{" "}
+          {/* /.container */}
+        </div>{" "}
+        {/* /.top-header */}
+        <div className="container">
+          <div className="header-wrapper clearfix">
+            {/* Logo */}
+            <div className="logo float-left tran4s hidden-sm hidden-xs">
+              <Link className="tran3s" to={`/`}>
+                <img src={Logo5} alt="Logo" style={{ width: 130 }} />
+              </Link>
+            </div>
+            {/* Logo */}
+            <div className="logo float-left tran4s hidden-md hidden-lg">
+              <a href="index.php">
+                <img src={Logo5} alt="Logo" style={{ width: 130 }} />
+              </a>
+            </div>
+            {/* ============================ Theme Menu ========================= */}
+            {/* ####################### */}
+            {/* START: RUBY DEMO HEADER */}
+            <div className="ruby-menu-demo-header">
+              {/* ########################### */}
+              {/* START: RUBY HORIZONTAL MENU */}
+              <div className="ruby-wrapper">
+                <button className="c-hamburger c-hamburger--htx visible-xs">
+                  <span>toggle menu</span>
+                </button>
+                <ul className="ruby-menu" id="bg_blur">
+                  <li className="ruby-active-menu-item">
+                    <Link className="tran3s" to={`/`}>
+                      Home
+                    </Link>
+                  </li>
+                  <li className="ruby-menu-mega-blog">
+                    <Link href="">Programs</Link>
+                    <div>
+                      <ul className="ruby-menu-mega-blog-nav">
+                        {newData.map((classItem, i) => (
+                          <>
+                            <li
+                              className={i === 0 ? `ruby-active-menu-item` : ``}
                             >
-                                <ul className="nav">
-                                    <li>
-                                        <Link className="tran3s" to={`/`}>
-                                            Home
-                                        </Link>
-                                    </li>
-                                    <li className="dropdown-holder menu-list">
-                                        <a href="#" className="tran3s">
-                                            About
-                                        </a>
-                                        <ul className="sub-menu">
-                                            {/* <li>
-                        <a href="#">About us</a>
-                      </li> */}
-                                            <li>
-                                                <a href="#">
-                                                    Mission and Vision
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="#">
-                                                    Chairman's Message
-                                                </a>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                    <li className="dropdown-holder menu-list">
-                                        <a href="" className="tran3s">
-                                            Programs
-                                        </a>
-                                        {/* <Router> */}
-                                        <ul className="sub-menu">
-                                            {newData.map((classItem) => (
-                                                <li
-                                                    key={classItem._id}
-                                                    className="dropdown-holder"
-                                                >
+                              <a href="course.php">Class {classItem?.name}</a>
+                              <div className="ruby-grid ruby-grid-lined">
+                                <div className="ruby-row">
+                                  {classItem.programs.length > 0 &&
+                                    classItem.programs.map((val, i) => (
+                                      <>
+                                        <div className="ruby-col-6">
+                                          <span
+                                            className="ruby-c-title"
+                                            style={{ marginBottom: 15 }}
+                                          >
+                                            {val.name}
+                                          </span>
+                                          {val.subprograms.length > 0 &&
+                                            val.subprograms.map((subPro, i) => (
+                                              <div className="ruby-row">
+                                                <div className="ruby-col-12">
+                                                  <span className="ruby-c-title">
                                                     <Link
-                                                        to={
-                                                            classItem.programs
-                                                                .length > 0
-                                                                ? `/fiitjee_mumbai-v22/courses/class/${classItem._id}`
-                                                                : `/fiitjee_mumbai-v22/contentNotFound`
-                                                        }
+                                                      to={`/fiitjee_mumbai-v22/courses/class/${classItem._id}/program/${val._id}/subprogram/${subPro._id}`}
                                                     >
-                                                        Class {classItem.name}
+                                                      {subPro.name}{" "}
                                                     </Link>
-                                                    {classItem.programs &&
-                                                        classItem.programs
-                                                            .length > 0 && (
-                                                            <ul className="second-sub-menu">
-                                                                {classItem.programs.map(
-                                                                    (
-                                                                        program
-                                                                    ) => (
-                                                                        <li
-                                                                            key={
-                                                                                program._id
-                                                                            }
-                                                                            className="dropdown-holder"
-                                                                        >
-                                                                            <Link
-                                                                                to={`/fiitjee_mumbai-v22/courses/class/${classItem._id}/program/${program._id}`}
-                                                                            >
-                                                                                {
-                                                                                    program.name
-                                                                                }
-                                                                            </Link>
-                                                                            {program.subprograms &&
-                                                                                program
-                                                                                    .subprograms
-                                                                                    .length >
-                                                                                    0 && (
-                                                                                    <ul className="third-sub-menu">
-                                                                                        {program.subprograms.map(
-                                                                                            (
-                                                                                                subprogram
-                                                                                            ) => (
-                                                                                                <li
-                                                                                                    key={
-                                                                                                        subprogram._id
-                                                                                                    }
-                                                                                                >
-                                                                                                    <Link
-                                                                                                        to={`/fiitjee_mumbai-v22/courses/class/${classItem._id}/program/${program._id}/subprogram/${subprogram._id}`}
-                                                                                                    >
-                                                                                                        {
-                                                                                                            subprogram.name
-                                                                                                        }
-                                                                                                    </Link>
-                                                                                                </li>
-                                                                                            )
-                                                                                        )}
-                                                                                    </ul>
-                                                                                )}
-                                                                        </li>
-                                                                    )
-                                                                )}
-                                                            </ul>
-                                                        )}
-                                                </li>
+                                                  </span>
+                                                </div>
+                                              </div>
                                             ))}
-                                        </ul>
-                                    </li>
-                                    <li className="dropdown-holder menu-list">
-                                        <a href="#" className="tran3s">
-                                            Competitive exams
-                                        </a>
-                                        <ul className="sub-menu">
-                                            {compNewData?.map((val) => (
-                                                <li
-                                                    className="dropdown-holder"
-                                                    key={val._id}
-                                                >
-                                                    <Link
-                                                        to={
-                                                            val.programs
-                                                                .length > 0
-                                                                ? `/fiitjee_mumbai-v22/competitive/course/${val._id}`
-                                                                : `/fiitjee_mumbai-v22/contentNotFound`
-                                                        }
-                                                    >
-                                                        Class {val.name}
-                                                    </Link>
-                                                    {val.programs &&
-                                                        val.programs.length >
-                                                            0 && (
-                                                            <ul
-                                                                className="second-sub-menu"
-                                                                key={
-                                                                    val._id.toString() +
-                                                                    Math.random().toString()
-                                                                }
-                                                            >
-                                                                {val.programs.map(
-                                                                    (
-                                                                        program
-                                                                    ) => (
-                                                                        <li
-                                                                            key={
-                                                                                program._id
-                                                                            }
-                                                                        >
-                                                                            <Link
-                                                                                to={`/fiitjee_mumbai-v22/competitive/course/program/${program._id}`}
-                                                                            >
-                                                                                {
-                                                                                    program.heading
-                                                                                }
-                                                                            </Link>
-                                                                        </li>
-                                                                    )
-                                                                )}
-                                                            </ul>
-                                                        )}
-                                                </li>
-                                            ))}
-                                        </ul>
-                                    </li>
-                                    <li className="dropdown-holder menu-list">
-                                        <a href="#" className="tran3s">
-                                            Admission test
-                                        </a>
-                                        <ul className="sub-menu">
-                                            <li>
-                                                <a href="#">
-                                                    Pattern Proof Teaching
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="#">
-                                                    Personalized Coaching
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="#">Study Resources</a>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                    <li className="dropdown-holder menu-list">
-                                        <a href="#" className="tran3s">
-                                            Events
-                                        </a>
-                                        <ul className="sub-menu">
-                                            <li className="dropdown-holder">
-                                                <Link to="/fiitjee_mumbai-v22/workshop">
-                                                    Workshops
-                                                </Link>
-                                                {/* <ul className="second-sub-menu">
-                          <li>
-                            <a href="#">Item 1</a>
-                          </li>
-                          <li>
-                            <a href="#">Item 2</a>
-                          </li>
-                          <li>
-                            <a href="#">Item 3</a>
-                          </li>
-                          <li>
-                            <a href="#">Item 4</a>
-                          </li>
-                        </ul> */}
-                                            </li>
-                                            <li className="dropdown-holder">
-                                                <a href="#">Camps</a>
-                                                <ul className="second-sub-menu">
-                                                    <li>
-                                                        <a href="#">Item 1</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="#">Item 2</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="#">Item 3</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="#">Item 4</a>
-                                                    </li>
-                                                </ul>
-                                            </li>
-                                            <li className="dropdown-holder">
-                                                <a href="#">Seminars</a>
-                                                <ul className="second-sub-menu">
-                                                    <li>
-                                                        <a href="#">Item 1</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="#">Item 2</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="#">Item 3</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="#">Item 4</a>
-                                                    </li>
-                                                </ul>
-                                            </li>
-                                            <li className="dropdown-holder">
-                                                <a href="#">
-                                                    Upcomming Admission Tests
-                                                </a>
-                                                <ul className="second-sub-menu">
-                                                    <li>
-                                                        <a href="#">Item 1</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="#">Item 2</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="#">Item 3</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="#">Item 4</a>
-                                                    </li>
-                                                </ul>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                    <li className="dropdown-holder menu-list">
-                                        <Link
-                                            to={`/fiitjee_mumbai-v22/result`}
-                                            className="tran3s"
+                                        </div>
+                                      </>
+                                    ))}
+                                </div>
+                              </div>
+                            </li>
+                          </>
+                        ))}
+                      </ul>
+                    </div>
+                  </li>
+                  <li className="ruby-menu-mega-blog">
+                    <a href="#">Competitive exams</a>
+                    <div>
+                      <ul className="ruby-menu-mega-blog-nav">
+                        {compNewData?.map((val, i) => (
+                          <>
+                            <li
+                              className={i === 0 ? `ruby-active-menu-item` : ``}
+                              key={val._id}
+                            >
+                              <Link
+                                to={
+                                  val.programs.length > 0
+                                    ? `/fiitjee_mumbai-v22/competitive/course/${val._id}`
+                                    : `/fiitjee_mumbai-v22/contentNotFound`
+                                }
+                              >
+                                Class {val.name}
+                              </Link>
+                              <div className="ruby-grid ruby-grid-lined">
+                                <div className="ruby-row">
+                                  <div className="ruby-col-12">
+                                    {val.programs.length > 0 &&
+                                      val.programs.map((program, i) => (
+                                        <div
+                                          className="ruby-row"
+                                          key={
+                                            program._id.toString() +
+                                            Math.random().toString()
+                                          }
                                         >
-                                            Results
-                                        </Link>
-                                        {/* <ul className="sub-menu">
-                      <li>
-                        <a href="#">Notice-Recent Updates</a>
-                      </li>
-                      <li>
-                        <a href="#">Result</a>
-                      </li>
-                      <li>
-                        <a href="#">Previous Year Solution</a>
-                      </li>
-                      <li>
-                        <a href="#">Time Table</a>
-                      </li>
-                      <li>
-                        <a href="#">Past Results</a>
-                      </li>
-                      <li>
-                        <a href="#">FAQ'S</a>
-                      </li>
-                      <li>
-                        <a href="#">Syllabus</a>
-                      </li>
-                      <li>
-                        <a href="#">FIITJEE Centres</a>
-                      </li>
-                      <li>
-                        <a href="#">Hostels</a>
-                      </li>
-                    </ul> */}
-                                    </li>
-                                    <li className="dropdown-holder menu-list">
-                                        <a href="#" className="tran3s">
-                                            Downloads
-                                        </a>
-                                        <ul className="sub-menu">
-                                            <li>
-                                                <a href="#">Image Gallery</a>
-                                            </li>
-                                            <li>
-                                                <a href="#">Video Gallery</a>
-                                            </li>
-                                            <li>
-                                                <a href="#">Media Gallery</a>
-                                            </li>
-                                            <li>
-                                                <a href="#">Toppers Speak</a>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                    {/* <li><a href="#" class="tran3s">Contact Us</a></li> */}
-                                </ul>
+                                          <div className="ruby-col-12">
+                                            <span className="ruby-c-title">
+                                              <Link
+                                                to={`/fiitjee_mumbai-v22/competitive/course/program/${program._id}`}
+                                              >
+                                                {program.heading}
+                                              </Link>
+                                            </span>
+                                          </div>
+                                        </div>
+                                      ))}
+                                  </div>
+                                </div>
+                              </div>
+                            </li>
+                          </>
+                        ))}
+                      </ul>
+                    </div>
+                  </li>
+                  <li className="ruby-menu-mega-blog">
+                    <a href="#">Admission test</a>
+                    <div>
+                      <ul className="ruby-menu-mega-blog-nav">
+                        <li className="ruby-active-menu-item">
+                          <a href="#">
+                            Maharashtra Science Talent Search Examination
+                          </a>
+                          <div className="ruby-grid ruby-grid-lined">
+                            <div className="ruby-row">
+                              <div className="ruby-col-12">
+                                <div className="ruby-row">
+                                  <div className="ruby-col-12">
+                                    <span className="ruby-c-title">
+                                      <a href="#">03-Sep-2023, Sun</a>
+                                    </span>
+                                  </div>
+                                </div>
+                                <div className="ruby-row">
+                                  <div className="ruby-col-12">
+                                    <span className="ruby-c-title">
+                                      <a href="#">10-Sep-2023, Sun</a>
+                                    </span>
+                                  </div>
+                                </div>
+                              </div>
                             </div>
-                            {/* /.navbar-collapse */}
-                        </nav>{" "}
-                        {/* /.theme-main-menu */}
-                    </div>{" "}
-                    {/* /.header-wrapper */}
-                </div>
-            </header>{" "}
-            {/* /.theme-menu-wrapper */}
-        </>
-    );
+                          </div>
+                        </li>
+                        <li>
+                          <a href="#">BigBangEdge Test</a>
+                          <div className="ruby-grid ruby-grid-lined">
+                            <div className="ruby-row">
+                              <div className="ruby-col-12">
+                                <div className="ruby-row">
+                                  <div className="ruby-col-12">
+                                    <span className="ruby-c-title">
+                                      <a href="#">03-Sep-2023, Sun</a>
+                                    </span>
+                                  </div>
+                                </div>
+                                <div className="ruby-row">
+                                  <div className="ruby-col-12">
+                                    <span className="ruby-c-title">
+                                      <a href="#">10-Sep-2023, Sun</a>
+                                    </span>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </li>
+                      </ul>
+                    </div>
+                  </li>
+                  <li className="ruby-menu-mega-blog">
+                    <a href="#">Events</a>
+                    <div>
+                      <ul className="ruby-menu-mega-blog-nav">
+                        <li className="ruby-active-menu-item">
+                          <Link to="/fiitjee_mumbai-v22/workshop">
+                            Workshops
+                          </Link>
+                          <div className="ruby-grid ruby-grid-lined">
+                            <div className="ruby-row">
+                              <div className="ruby-col-12">
+                                <div className="ruby-row">
+                                  <div className="ruby-col-12">
+                                    <span className="ruby-c-title">
+                                      <a href="#">Item 1</a>
+                                    </span>
+                                  </div>
+                                </div>
+                                <div className="ruby-row">
+                                  <div className="ruby-col-12">
+                                    <span className="ruby-c-title">
+                                      <a href="#">Item 2</a>
+                                    </span>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </li>
+                        <li>
+                          <a href="#">Camps</a>
+                          <div className="ruby-grid ruby-grid-lined">
+                            <div className="ruby-row">
+                              <div className="ruby-col-12">
+                                <div className="ruby-row">
+                                  <div className="ruby-col-12">
+                                    <span className="ruby-c-title">
+                                      <a href="#">Item 1</a>
+                                    </span>
+                                  </div>
+                                </div>
+                                <div className="ruby-row">
+                                  <div className="ruby-col-12">
+                                    <span className="ruby-c-title">
+                                      <a href="#">Item 2</a>
+                                    </span>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </li>
+                      </ul>
+                    </div>
+                  </li>
+                  <li className="ruby-menu-mega-blog">
+                    <a href="#">Downloads</a>
+                    <div>
+                      <ul className="ruby-menu-mega-blog-nav">
+                        <li className="ruby-active-menu-item">
+                          <a href="#">Forms</a>
+                          <div className="ruby-grid ruby-grid-lined">
+                            <div className="ruby-row">
+                              <div className="ruby-col-12">
+                                <div className="ruby-row">
+                                  <div className="ruby-col-12">
+                                    <span className="ruby-c-title">
+                                      <a href="#">Registration Form</a>
+                                    </span>
+                                  </div>
+                                </div>
+                                <div className="ruby-row">
+                                  <div className="ruby-col-12">
+                                    <span className="ruby-c-title">
+                                      <a href="#">Enrolment Form</a>
+                                    </span>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </li>
+                        <li>
+                          <a href="#">Brochures</a>
+                          <div className="ruby-grid ruby-grid-lined">
+                            <div className="ruby-row">
+                              <div className="ruby-col-12">
+                                <div className="ruby-row">
+                                  <div className="ruby-col-12">
+                                    <span className="ruby-c-title">
+                                      <a href="#">Program Brochure</a>
+                                    </span>
+                                  </div>
+                                </div>
+                                <div className="ruby-row">
+                                  <div className="ruby-col-12">
+                                    <span className="ruby-c-title">
+                                      <a href="#">Reward Brochure</a>
+                                    </span>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </li>
+                      </ul>
+                    </div>
+                  </li>
+                  <li>
+                    <Link to={`/fiitjee_mumbai-v22/result`} className="tran3s">
+                      Results
+                    </Link>
+                  </li>
+                </ul>
+              </div>
+              {/* END:   RUBY HORIZONTAL MENU */}
+              {/* ########################### */}
+            </div>
+            {/* END:   RUBY DEMO HEADER */}
+            {/* ######################### */}
+          </div>{" "}
+          {/* /.header-wrapper */}
+        </div>
+      </header>{" "}
+      {/* /.theme-menu-wrapper */}
+    </>
+  );
 };
 
 export default Header;
