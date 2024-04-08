@@ -122,8 +122,8 @@ const CourseGrid = ({ course }) => {
             <div className="row">
               {data.programs.flatMap((program) =>
                 program.subprograms.map((programData, i) => (
-                  <div className="col-lg-4 col-md-4 col-sm-6 col-xs-6">
-                    <div className="single-course" key={programData._id}>
+                  <div className="col-lg-4 col-md-4 col-sm-6 col-xs-6" key={programData._id}>
+                    <div className="single-course" >
                       <div className="image-box">
                         <img
                           src={`http://35.154.95.255:8000/uploads/${programData.programImg}`}

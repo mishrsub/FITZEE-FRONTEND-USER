@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import Header from '../component/header/Header';
 import Footer from '../component/footer/Footer';
 import Courosel from '../UI/Courosel';
@@ -14,6 +14,12 @@ import InstructorBanner from '../UI/InstructorBanner';
 import PartnerLogo from '../UI/PartnerLogo';
 
 const Home = () => {
+  const [isHeaderHovered, setIsHeaderHovered] = useState(false);
+
+  const handleHeaderHover = (isHovered) => {
+    setIsHeaderHovered(isHovered);
+  };
+
   useEffect(() => {
     const loadScript = (src) => {
       return new Promise((resolve, reject) => {
@@ -83,8 +89,9 @@ const Home = () => {
 
   return (
     <>
-      <div className="main-page-wrapper">
-        <Header />
+     <div className={`main-page-wrapper`}>
+     <Header onHeaderHover={handleHeaderHover} />
+     <div className={`main-page-wrapper ${isHeaderHovered ? 'blur' : ''}`}>
         <Courosel />
         <FindCourse />
         <FindCourseBlock />
@@ -97,6 +104,7 @@ const Home = () => {
         <InstructorBanner />
         <PartnerLogo />
         <Footer />
+        </div>
       </div>
     </>
   );

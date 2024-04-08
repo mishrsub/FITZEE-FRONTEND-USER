@@ -6,7 +6,7 @@ import Loading from "../../UI/Loading";
 import CourseDetail from "../CourseDetail/CourseDetail";
 import { getAllCompetitiveCourse } from "../../react-query/api/Course";
 
-const Header = () => {
+const Header = ({ onHeaderHover }) => {
   const navigate = useNavigate();
   const { isLoading, error, newData } = getAllData(
     "http://35.154.95.255:8000/api/course",
@@ -32,9 +32,17 @@ const Header = () => {
     return <h3>Error: {error.message}</h3>;
   }
 
+  const handleMouseEnter = () => {
+    onHeaderHover(true);
+  };
+
+  const handleMouseLeave = () => {
+    onHeaderHover(false);
+  };
+
   return (
     <>
-      <header className="theme-menu-wrapper menu-style-two">
+      <header className="theme-menu-wrapper menu-style-two"  >
         <div className="top-header">
           <div className="container">
             <ul className="float-left left-content">
@@ -106,118 +114,121 @@ const Header = () => {
                       Home
                     </Link>
                   </li>
-                  <li className="ruby-menu-mega-blog">
+                  <li className="ruby-menu-mega-blog" key="programs" onMouseEnter={handleMouseEnter}
+        onMouseLeave={handleMouseLeave}>
                     <Link href="">Programs</Link>
                     <div>
                       <ul className="ruby-menu-mega-blog-nav">
                         {newData.map((classItem, i) => (
-                          <>
-                            <li
-                              className={i === 0 ? `ruby-active-menu-item` : ``}
+                          <li
+                            className={i === 0 ? "ruby-active-menu-item" : ""}
+                            key={classItem._id}
+                          >
+                            <Link
+                              to={
+                                classItem.programs.length > 0
+                                  ? `/fiitjee_mumbai-v22/courses/class/${classItem._id}`
+                                  : `/fiitjee_mumbai-v22/contentNotFound`
+                              }
                             >
-                              <Link
-                                to={
-                                  classItem.programs.length > 0
-                                    ? `/fiitjee_mumbai-v22/courses/class/${classItem._id}`
-                                    : `/fiitjee_mumbai-v22/contentNotFound`
-                                }
-                              >
-                                Class {classItem?.name}
-                              </Link>
-                              <div className="ruby-grid ruby-grid-lined">
-                                <div className="ruby-row">
-                                  {classItem.programs.length > 0 &&
-                                    classItem.programs.map((val, i) => (
-                                      <>
-                                        <div className="ruby-col-6">
-                                          <span
-                                            className="ruby-c-title"
-                                            style={{ marginBottom: 15 }}
+                              Class {classItem?.name}
+                            </Link>
+                            <div className="ruby-grid ruby-grid-lined">
+                              <div className="ruby-row">
+                                {classItem.programs.length > 0 &&
+                                  classItem.programs.map((val) => (
+                                    <div className="ruby-col-6" key={val._id}>
+                                      <span
+                                        className="ruby-c-title"
+                                        style={{ marginBottom: 15 }}
+                                      >
+                                        {val.name}
+                                      </span>
+                                      {val.subprograms.length > 0 &&
+                                        val.subprograms.map((subPro) => (
+                                          <div
+                                            className="ruby-row"
+                                            key={subPro._id}
                                           >
-                                            {val.name}
-                                          </span>
-                                          {val.subprograms.length > 0 &&
-                                            val.subprograms.map((subPro, i) => (
-                                              <div className="ruby-row">
-                                                <div className="ruby-col-12">
-                                                  <span className="ruby-c-title">
-                                                    <Link
-                                                      to={`/fiitjee_mumbai-v22/courses/class/${classItem._id}/program/${val._id}/subprogram/${subPro._id}`}
-                                                    >
-                                                      {subPro.name}{" "}
-                                                    </Link>
-                                                  </span>
-                                                </div>
-                                              </div>
-                                            ))}
-                                        </div>
-                                      </>
-                                    ))}
-                                </div>
+                                            <div className="ruby-col-12">
+                                              <span className="ruby-c-title">
+                                                <Link
+                                                  to={`/fiitjee_mumbai-v22/courses/class/${classItem._id}/program/${val._id}/subprogram/${subPro._id}`}
+                                                >
+                                                  {subPro.name}
+                                                </Link>
+                                              </span>
+                                            </div>
+                                          </div>
+                                        ))}
+                                    </div>
+                                  ))}
                               </div>
-                            </li>
-                          </>
+                            </div>
+                          </li>
                         ))}
                       </ul>
                     </div>
                   </li>
-                  <li className="ruby-menu-mega-blog">
+
+                  <li className="ruby-menu-mega-blog" key="competitive-exams" onMouseEnter={handleMouseEnter}
+        onMouseLeave={handleMouseLeave}>
                     <a href="#">Competitive exams</a>
                     <div>
                       <ul className="ruby-menu-mega-blog-nav">
                         {compNewData?.map((val, i) => (
-                          <>
-                            <li
-                              className={i === 0 ? `ruby-active-menu-item` : ``}
-                              key={val._id}
+                          <li
+                            className={i === 0 ? "ruby-active-menu-item" : ""}
+                            key={val._id}
+                          >
+                            <Link
+                              to={
+                                val.programs.length > 0
+                                  ? `/fiitjee_mumbai-v22/competitive/course/${val._id}`
+                                  : `/fiitjee_mumbai-v22/contentNotFound`
+                              }
                             >
-                              <Link
-                                to={
-                                  val.programs.length > 0
-                                    ? `/fiitjee_mumbai-v22/competitive/course/${val._id}`
-                                    : `/fiitjee_mumbai-v22/contentNotFound`
-                                }
-                              >
-                                Class {val.name}
-                              </Link>
-                              <div className="ruby-grid ruby-grid-lined">
-                                <div className="ruby-row">
-                                  <div className="ruby-col-12">
-                                    {val.programs.length > 0 &&
-                                      val.programs.map((program, i) => (
-                                        <div
-                                          className="ruby-row"
-                                          key={
-                                            program._id.toString() +
-                                            Math.random().toString()
-                                          }
-                                        >
-                                          <div className="ruby-col-12">
-                                            <span className="ruby-c-title">
-                                              <Link
-                                                to={`/fiitjee_mumbai-v22/competitive/course/program/${program._id}`}
-                                              >
-                                                {program.heading}
-                                              </Link>
-                                            </span>
-                                          </div>
+                              Class {val.name}
+                            </Link>
+                            <div className="ruby-grid ruby-grid-lined">
+                              <div className="ruby-row">
+                                <div className="ruby-col-12">
+                                  {val.programs.length > 0 &&
+                                    val.programs.map((program) => (
+                                      <div
+                                        className="ruby-row"
+                                        key={
+                                          program._id.toString() +
+                                          Math.random().toString()
+                                        }
+                                      >
+                                        <div className="ruby-col-12">
+                                          <span className="ruby-c-title">
+                                            <Link
+                                              to={`/fiitjee_mumbai-v22/competitive/course/program/${program._id}`}
+                                            >
+                                              {program.heading}
+                                            </Link>
+                                          </span>
                                         </div>
-                                      ))}
-                                  </div>
+                                      </div>
+                                    ))}
                                 </div>
                               </div>
-                            </li>
-                          </>
+                            </div>
+                          </li>
                         ))}
                       </ul>
                     </div>
                   </li>
-                  <li className="ruby-menu-mega-blog">
+
+                  <li className="ruby-menu-mega-blog" onMouseEnter={handleMouseEnter}
+        onMouseLeave={handleMouseLeave}>
                     <a href="#">Admission test</a>
                     <div>
                       <ul className="ruby-menu-mega-blog-nav">
                         <li className="ruby-active-menu-item">
-                          <a href="#">
+                          <a href="">
                             Maharashtra Science Talent Search Examination
                           </a>
                           <div className="ruby-grid ruby-grid-lined">
@@ -267,7 +278,8 @@ const Header = () => {
                       </ul>
                     </div>
                   </li>
-                  <li className="ruby-menu-mega-blog">
+                  <li className="ruby-menu-mega-blog" onMouseEnter={handleMouseEnter}
+        onMouseLeave={handleMouseLeave}>
                     <a href="#">Events</a>
                     <div>
                       <ul className="ruby-menu-mega-blog-nav">
@@ -322,7 +334,8 @@ const Header = () => {
                       </ul>
                     </div>
                   </li>
-                  <li className="ruby-menu-mega-blog">
+                  <li className="ruby-menu-mega-blog" onMouseEnter={handleMouseEnter}
+        onMouseLeave={handleMouseLeave}>
                     <a href="#">Downloads</a>
                     <div>
                       <ul className="ruby-menu-mega-blog-nav">
