@@ -6,7 +6,7 @@
 /* THESE JS FOR DEMO SHOWCASE ONLY. ANY PROBLEM/QUESTION       */
 /* REGARDING DEMO JS WILL NOT BE SUPPORTED.                    */
 
-rubyMenuDemo = function()
+let rubyMenuDemo = function()
 {
   // Strict Mode
   "use strict";

@@ -7144,6 +7144,87 @@ div.activity.active {
   }
 }
 
+@media (max-width:320px)  { 
+  .slider-div {
+    width: 250px;
+    top:20%;
+  }
+  .slider-div h1 {
+    line-height: 47px;
+    font-size: 36px;
+  }
+  .slider-div p{
+    font-size: 18px;
+    letter-spacing: 1px;
+  }
+  .text-overlay {
+    left: 5%; /* Adjust left spacing for smaller screens */
+    padding: 20px; /* Adjust padding for smaller screens */
+  }
+
+  .text-overlay h1 {
+    font-size: 20px; /* Decrease font size for smaller screens */
+  }
+
+  .text-overlay p {
+    font-size: 16px; /* Decrease font size for smaller screens */
+  }
+ }
+@media (max-width:480px)  { 
+  .slider-div {
+    width: 250px;
+    top:30%;
+  }
+  .slider-div h1 {
+    line-height: 47px;
+    font-size: 36px;
+  }
+  .slider-div p{
+    font-size: 18px;
+    letter-spacing: 1px;
+  }
+  .text-overlay {
+    left: 5%; /* Adjust left spacing for smaller screens */
+    padding: 20px; /* Adjust padding for smaller screens */
+  }
+
+  .text-overlay h1 {
+    font-size: 20px; /* Decrease font size for smaller screens */
+  }
+
+  .text-overlay p {
+    font-size: 16px; /* Decrease font size for smaller screens */
+  }
+}
+
+@media (max-width:500px)  { 
+  .slider-div {
+    width: 250px;
+    top:30%;
+  }
+  .slider-div h1 {
+    line-height: 47px;
+    font-size: 36px;
+  }
+  .slider-div p{
+    font-size: 18px;
+    letter-spacing: 1px;
+  }
+  .text-overlay {
+    left: 5%; /* Adjust left spacing for smaller screens */
+    padding: 20px; /* Adjust padding for smaller screens */
+  }
+
+  .text-overlay h1 {
+    font-size: 20px; /* Decrease font size for smaller screens */
+  }
+
+  .text-overlay p {
+    font-size: 16px; /* Decrease font size for smaller screens */
+  }
+ }
+
+
 /* Pop up modal */
 .popup_modal h3{
   text-align: center;

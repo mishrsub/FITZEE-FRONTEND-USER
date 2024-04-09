@@ -4,7 +4,7 @@
 
 /* #################### MAIN JAVASCRIPT ###################### */
 
-rubyMenu = function()
+let rubyMenu = function()
 {
   // Strict Mode
   "use strict";
