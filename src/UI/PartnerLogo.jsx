@@ -34,9 +34,9 @@ const PartnerLogo = () => {
     <div key="4" className="item">
       <img src={LogoP4} alt="logo" />
     </div>,
-    <div key="5" className="item">
-      <img src={LogoP9} alt="logo" />
-    </div>,
+    // <div key="5" className="item">
+    //   <img src={LogoP9} alt="logo" />
+    // </div>,
   ];
 
   return (

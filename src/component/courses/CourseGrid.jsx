@@ -325,33 +325,34 @@ const CourseGrid = ({ course }) => {
 										</div> */}
                   {/* /.course-price-filter */}
                   <div className="course-location">
-                    <h5>Location</h5>
-                    <div className="form-group">
-                      <div>
-                        <select
-                          multiple=""
-                          id="loaction"
-                          className="selectpicker show-tick form-control"
-                          data-live-search="true"
-                          data-placeholder="Choose your location..."
-                        >
-                          <option>Andheri</option>
-                          <option>Kandivali</option>
-                          <option>Thane</option>
-                          <option>Navi Mumbai</option>
-                          <option>Chembur</option>
-                        </select>
-                      </div>
-                    </div>
-                  </div>{" "}
-                  {/* /.course-location */}
-                  <div className="button-wrapper">
-                    <input
-                      type="submit"
-                      defaultValue="Apply filters"
-                      className="p-bg-color tran3s"
-                    />
-                  </div>{" "}
+    <h5>Location</h5>
+    <div className="form-group">
+      <div>
+        <select
+          multiple
+          id="loaction"
+          className="selectpicker show-tick form-control"
+          data-live-search="true"
+          data-placeholder="Choose your location..."
+        >
+          <option>Andheri</option>
+          <option>Kandivali</option>
+          <option>Thane</option>
+          <option>Navi Mumbai</option>
+          <option>Chembur</option>
+        </select>
+      </div>
+    </div>
+  </div>{" "}
+  {/* /.course-location */}
+  <div className="button-wrapper">
+    <input
+      type="submit"
+      defaultValue="Apply filters"
+      className="p-bg-color tran3s"
+    />
+  </div>
+
                 </form>{" "}
                 {/* /.main-wrapper */}
               </div>

@@ -10,7 +10,13 @@ import Loading from '../../UI/Loading'
 const Course = () => {
   const { classId,programId } = useParams();
   let course = {};
-  
+
+  const [isHeaderHovered, setIsHeaderHovered] = useState(false);
+
+  const handleHeaderHover = (isHovered) => {
+    setIsHeaderHovered(isHovered);
+  };
+
   // State to manage loading indicator
   if(classId && programId) {
     course = getCourseAndProgramByClassId(classId,programId);
@@ -35,9 +41,11 @@ const Course = () => {
   return (
     <>
       <div className="main-page-wrapper">
-        <Header />
+        <Header onHeaderHover={handleHeaderHover} />
+        <div className={`main-page-wrapper ${isHeaderHovered ? 'blur' : ''}`}>
           <InnerBanner title={`Class ${course?.data?.name}`} />
           <CourseGrid course={course} />
+          </div>
         <Footer />
       </div>
     </>

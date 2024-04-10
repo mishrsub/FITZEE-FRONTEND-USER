@@ -31,7 +31,7 @@
 .btn-group.open .dropdown-toggle {box-shadow: none;}
 select.bs-select-hidden,
 select.selectpicker {
-  display: none !important;
+  /* display: none !important; */
 }
 .bootstrap-select {
   width: 220px \0;

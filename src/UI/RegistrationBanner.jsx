@@ -178,25 +178,25 @@ const RegistrationBanner = () => {
                 </h2>
                 <div>
                 <ol className="step">   
-               <ReactWOW animation='fadeInUp' delay='0.2s'>
+               <ReactWOW animation='fadeInUp' delay='1s'>
                  <li className="wow delay1 fadeInUp">
                    <div className="title">Registration</div>
                    <div className="descr">Register for a FIITJEE Admission test</div>
                  </li>
                </ReactWOW>
-               <ReactWOW animation='fadeInUp' delay='0.4s'>
+               <ReactWOW animation='fadeInUp' delay='2s'>
                  <li className="wow delay2 fadeInUp">
                    <div className="title">Appearance</div>
                    <div className="descr">Give the test with the best of your abilities</div>
                  </li>
                </ReactWOW>
-               <ReactWOW animation='fadeInUp' delay='0.6s'>
+               <ReactWOW animation='fadeInUp' delay='3s'>
                  <li className="wow delay3 fadeInUp">
                    <div className="title">Selection</div>
                    <div className="descr">Get your test analyzed by our experts</div>
                  </li>
                </ReactWOW>
-               <ReactWOW animation='fadeInUp' delay='0.8s'>
+               <ReactWOW animation='fadeInUp' delay='4s'>
                  <li className="wow delay4 fadeInUp">
                    <div className="title">Enrolment</div>
                    <div className="descr">Complete your admission formalities</div>

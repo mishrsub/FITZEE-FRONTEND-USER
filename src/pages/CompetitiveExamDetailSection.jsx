@@ -211,58 +211,12 @@ const CompetitiveExamDetailSection = () => {
                                     className="panel-group theme-accordion"
                                     id="accordion"
                                 >
-                                    <div className="panel">
-                                        <div className="panel-heading active-panel">
-                                            <h6 className="panel-title">
-                                                <a
-                                                    data-toggle="collapse"
-                                                    data-parent="#accordion"
-                                                    href="#collapse1"
-                                                >
-                                                    Results
-                                                </a>
-                                            </h6>
-                                        </div>
-                                        <div
-                                            id="collapse1"
-                                            className="panel-collapse collapse in"
-                                        >
-                                            <div className="panel-body">
-                                                <ul>
-                                                    <li>
-                                                        <a
-                                                            href="#"
-                                                            className="tran3s"
-                                                        >
-                                                            2022-2023
-                                                        </a>
-                                                    </li>
-                                                    <li>
-                                                        <a
-                                                            href="#"
-                                                            className="tran3s"
-                                                        >
-                                                            2021-2022
-                                                        </a>
-                                                    </li>
-                                                    <li>
-                                                        <a
-                                                            href="#"
-                                                            className="tran3s"
-                                                        >
-                                                            2020-2021
-                                                        </a>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>{" "}
-                                    {/* /panel 1 */}
-                                    <div className="panel">
+                                    
+                                    <div className="panel-heading">
                                         <div className="panel-heading">
                                             <h6 className="panel-title">
                                                 <a
-                                                    data-toggle="collapse"
+                                                    data-toggle="collapsein"
                                                     data-parent="#accordion"
                                                     href="#collapse2"
                                                 >
@@ -272,7 +226,7 @@ const CompetitiveExamDetailSection = () => {
                                         </div>
                                         <div
                                             id="collapse2"
-                                            className="panel-collapse collapse"
+                                            className="panel-collapse collapsein"
                                         >
                                             <div className="panel-body">
                                                 <ul>

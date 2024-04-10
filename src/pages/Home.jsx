@@ -53,7 +53,7 @@ const Home = () => {
       "/js/theme.js",
       "/js/ruby-demo.js",
       "/js/ruby-main.js",
-      
+      "/vendor/bootstrap/bootstrap.min.js",
   
       // "/vendor/bootstrap.min.js",
       // "/vendor/bootstrap-select/js/bootstrap-select.js",

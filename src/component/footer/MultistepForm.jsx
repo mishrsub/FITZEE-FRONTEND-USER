@@ -14,6 +14,15 @@ const MultiStepForm = ({ isOpen, onClose }) => {
     studyCenter: "",
     agreeTerms: false,
   });
+  const [isHovered, setIsHovered] = useState(false);
+
+  const handleMouseEnter = () => {
+    setIsHovered(true);
+  };
+
+  const handleMouseLeave = () => {
+    setIsHovered(false);
+  };
 
   // Define handleChange function
   const handleChange = (e) => {
@@ -92,19 +101,17 @@ const MultiStepForm = ({ isOpen, onClose }) => {
         <>
           <h3>Verify your Mobile Number</h3>
           <center>
-            <p>Enter your OTP below</p>
+            <p>Enter the OTP sent +91-8777263893</p>
           </center>
           <div className="wrapper">
-            <h6>
-              OTP<sup style={{ color: "red" }}>*</sup>
-            </h6>
-            <input
-              type="text"
-              placeholder="Enter OTP"
-              name="otp"
-              value={formData.otp}
-              onChange={handleChange}
-            />
+            <div className="otp-field mb-4">
+              <input type="number" />
+              <input type="number" />
+              <input type="number" />
+              <input type="number" />
+              <input type="number" />
+              <input type="number" />
+            </div>
             <button
               type="button"
               className="p-bg-color hvr-trim"
@@ -120,7 +127,7 @@ const MultiStepForm = ({ isOpen, onClose }) => {
       title: "Step 3",
       content: (
         <>
-          <h3>Please Fill the below details.</h3>
+          <h3 style={{marginTop:"6%",textAlign:"center"}}>Please Fill the below details.</h3>
           <div className="wrapper">
             <div className="row">
               <div className="col-md-6">
@@ -195,7 +202,7 @@ const MultiStepForm = ({ isOpen, onClose }) => {
                   <option>Chembur</option>
                 </select>
               </div>
-              <div className="col-md-12">
+              {/* <div className="col-md-12">
                 <div className="remember-pass">
                   <input
                     type="checkbox"
@@ -211,7 +218,7 @@ const MultiStepForm = ({ isOpen, onClose }) => {
                     on Privacy Policy to Read).
                   </label>
                 </div>
-              </div>
+              </div> */}
             </div>
             <button
               type="button"
@@ -251,13 +258,12 @@ const MultiStepForm = ({ isOpen, onClose }) => {
 
   return (
     <Modal
-      className="query-modal"
+      className="query-modal fade-in-up"
       isOpen={isOpen} // Pass isOpen prop to control modal visibility
       onRequestClose={onClose} // Close modal on outside click or Esc key
       overlayClassName="modal-overlay" // Custom class for overlay styling
       style={{
         overlay: {
-
           zIndex: 1000,
           display: "flex",
           alignItems: "center", // Center align the modal vertically
@@ -266,11 +272,12 @@ const MultiStepForm = ({ isOpen, onClose }) => {
         },
         content: {
           position: "fixed",
-          maxWidth:"100%",
-          width:"500px",
-          height: "600px",
+          maxWidth: "100%",
+          width: "900px",
+          height: `${step === 2 ? "100%" : "90%"}`,
           maxHeight: "100%",
           overflowY: "auto",
+          // overflow:"hidden",
           inset: "50% 40px 40px 50%",
           border: "1px solid rgb(204, 204, 204)",
           background: "rgb(255, 255, 255)",
@@ -282,6 +289,7 @@ const MultiStepForm = ({ isOpen, onClose }) => {
           top: "50%",
           boxShadow: "rgba(0, 0, 0, 0.2) 0px 0px 20px",
         },
+        
       }}
     >
       {/* <div className="modal-dialog">
@@ -293,6 +301,9 @@ const MultiStepForm = ({ isOpen, onClose }) => {
         data-dismiss="modal"
         aria-hidden="true"
         onClick={onClose}
+        onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
+        style={{ marginTop: "3%", marginRight: "6%", fontSize: "40px",color: isHovered ? "red" : "black" }}
       >
         &times;
       </button>
