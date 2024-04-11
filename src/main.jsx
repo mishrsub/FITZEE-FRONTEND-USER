@@ -16,7 +16,7 @@ import "./assets/external-css/ruby-responsive.css"
 import "./assets/external-css/ruby-transitions.css"
 
 
-// Create a clientss
+// Create a clientsssss
 const queryClient = new QueryClient();
 
 ReactDOM.createRoot(document.getElementById("root")).render(
