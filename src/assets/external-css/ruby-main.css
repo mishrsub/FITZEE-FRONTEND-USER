@@ -6,11 +6,11 @@
   box-sizing: border-box;
 }
 body {
-  font-family: "Lato", sans-serif;
+  font-family: "Open Sans", sans-serif;
 }
 div.ruby-wrapper {
   position: relative;
-  width: 980px;
+/*  width: 980px;*/
   height: 50px;
   margin: 0 auto;
   background: transparent;
@@ -37,8 +37,7 @@ ul.ruby-menu > li > a {
   color: #000;
   text-decoration: none;
   font-family: "Lato", sans-serif;
-  font-weight: 700;
-  text-transform: uppercase;
+  font-weight: 600;
 }
 ul.ruby-menu > li > a:only-child {
   padding: 0 15px;
@@ -47,8 +46,8 @@ ul.ruby-menu > li > a:hover,
 ul.ruby-menu > li:hover > a,
 ul.ruby-menu > li.ruby-active-menu-item > a:hover,
 ul.ruby-menu > li.ruby-active-menu-item:hover > a {
-  background: #ff3a46;
-  color: #fff;
+ /* background: #ff3a46;
+  color: #fff;*/
 }
 ul.ruby-menu > li > a:only-child:after,
 ul.ruby-menu > li:hover > a:only-child:after {
@@ -119,7 +118,7 @@ ul.ruby-menu.ruby-menu-dividers
   background: none;
   color: #efefef;
   border: none;
-  font-family:"Lato", sans-serif;
+  font-family: "Open Sans", sans-serif;
   font-size: 14px;
   font-weight: 700;
   text-transform: uppercase;
@@ -232,16 +231,16 @@ ul.ruby-menu > li.ruby-menu-mega > div,
 ul.ruby-menu > li.ruby-menu-mega-blog > div,
 ul.ruby-menu > li.ruby-menu-mega-shop > div {
   position: absolute;
-  width: 100%;
+  width: 100vw;
   height: auto;
   top: 50px;
   left: 0;
   background: #fff;
-  border-top: 4px solid #ff3a46;
   overflow: hidden;
   -webkit-box-shadow: 0 8px 24px -5px #ccc;
   -moz-box-shadow: 0 8px 24px -5px #ccc;
   box-shadow: 0 8px 24px -5px #ccc;
+  z-index: 9999;
 }
 ul.ruby-menu > li.ruby-menu-mega-blog > div > ul.ruby-menu-mega-blog-nav {
   position: relative;
@@ -756,7 +755,7 @@ span.ruby-c-content {
   ul.ruby-menu > li > a:after {
     font-family: "FontAwesome";
     text-decoration: none;
-    content: "\f107";
+/*    content: "\f107";*/
     position: absolute;
     margin-left: 5px;
   }

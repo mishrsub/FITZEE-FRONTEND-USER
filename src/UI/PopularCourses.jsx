@@ -9,7 +9,7 @@ const PopularCourses = () => {
     error,
     newData: test,
   } = getAllData(
-    "http://localhost:8000/api/upcomingTest/getUpcomingTest?enable=true",
+    "http://35.154.95.255:8000/api/upcomingTest/getUpcomingTest?enable=true",
     "test"
   );
 

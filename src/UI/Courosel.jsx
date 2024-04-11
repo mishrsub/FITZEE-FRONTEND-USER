@@ -4,89 +4,44 @@ import 'owl.carousel/dist/assets/owl.theme.default.css';
 import Slide3 from "../assets/images/home/slide-3.jpg";
 import Slide4 from "../assets/images/home/slide-4.jpg";
 
-import { motion } from 'framer-motion';
-
-const images = [
-  Slide3,
-  Slide4,
-];
-
-const content = [
-  { title: 'FIITJEE', subtitle: 'Kandivali Center' },
-  { title: 'FIITJEE', subtitle: 'Andheri Center' },
-  // Add more content items as needed for each image
-];
 
 const Banner = () => {
-  const [index, setIndex] = useState(0);
-  const [currentContent, setCurrentContent] = useState(content[0]);
-
-  const handleNext = () => {
-    const nextIndex = index === images.length - 1 ? 0 : index + 1;
-    setIndex(nextIndex);
-    setCurrentContent(content[nextIndex]);
-  };
-
-  const handlePrev = () => {
-    const prevIndex = index === 0 ? images.length - 1 : index - 1;
-    setIndex(prevIndex);
-    setCurrentContent(content[prevIndex]);
-  };
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      const nextIndex = index === images.length - 1 ? 0 : index + 1;
-      setIndex(nextIndex);
-      setCurrentContent(content[nextIndex]);
-    }, 5000); // Change slide every 5 seconds (5000 milliseconds)
-
-    return () => clearInterval(interval);
-  }, [index, content]); // Add 'content' to dependencies
-
   return (
-    <div className='home_banner' style={{ position: 'relative', width: '100%', height: '85vh', overflow: 'hidden' }}>
-      {/* Carousel */}
-      <div style={{ position: 'relative', width: '100%', height: '100%' }}>
-        {images.map((image, i) => (
-          <motion.img
-            key={i}
-            src={image}
-            alt="carousel"
-            style={{
-              position: 'absolute',
-              width: '100%',
-              height: '100%',
-              objectFit: 'cover',
-              zIndex: index === i ? 1 : 0, // Show only the current image
-            }}
-            initial={{ opacity: 0 }}
-            animate={{ opacity: index === i ? 1 : 0 }} // Only animate opacity of the current image
-            transition={{ duration: 1, ease: 'easeInOut' }} // Smooth transition between slides
-          />
-        ))}
-      </div>
-      
-      {/* Text Overlay */}
-      <motion.div
-        className='slider-div'
-        initial={{ opacity: 0, y: -50 }} // Initial position outside the viewport
-        animate={{ opacity: 1, y: 0 }} // Animation to move into the viewport
-        transition={{ delay: 0.5, duration: 1.5 }}
-      >
-        <div style={{ width: '100%', height: '100%' }}>
-          <h1>FIITJEE <span>Mumbai</span></h1>
-          <p>{currentContent.subtitle}</p>
+    <div id="theme-main-banner" className="banner-one">
+    <div data-src={Slide3}>
+      <div className="camera_caption">
+        <div className="container">
+          <div className="center_bg">
+            <h1 className="wow fadeInUp animated" data-wow-delay="0.2s">
+              {" "}
+              FIITJEE <span className="s-color">Mumbai</span>
+            </h1>
+            <h3 className="wow fadeInUp animated">Andheri Center</h3>
         </div>
-      </motion.div>
-
-      {/* Buttons */}
-      <div className='btn prev_btn' onClick={handlePrev} style={{ position: 'absolute', top: '50%', left: '-1%', zIndex: 3 }}>
-        {/* <span style={{ fontSize: '24px', color: 'white' }}>&#9664;</span> Left arrow icon */}
-      </div>
-      <div className='btn next_btn'  onClick={handleNext} style={{ position: 'absolute', top: '50%', right: '1.5%', zIndex: 3 }}>
-        {/* <span style={{ fontSize: '24px', color: 'white' }}>&#9654;</span> Right arrow icon */}
-      </div>
+        </div>{" "}
+        {/* /.container */}
+      </div>{" "}
+      {/* /.camera_caption */}
     </div>
+    <div data-src={Slide4}>
+      <div className="camera_caption">
+        <div className="container">
+          <div className="center_bg">
+            <h1 className="wow fadeInUp animated" data-wow-delay="0.2s">
+              {" "}
+              FIITJEE <span className="s-color">Mumbai</span>
+            </h1>
+            <h3 className="wow fadeInUp animated">Kandivali Center</h3>
+            {/* <a href="javascript:void(0);" class="tran3s wow fadeInLeft animated banner-button" data-wow-delay="0.3s">Start Now</a>
+                <a href="javascript:void(0);" class="tran3s wow fadeInRight animated button-one banner-button hvr-trim" data-wow-delay="0.3s">Know More</a> */}
+          </div>
+        </div>{" "}
+        {/* /.container */}
+      </div>{" "}
+      {/* /.camera_caption */}
+    </div>
+  </div>
+  
   );
 };
 

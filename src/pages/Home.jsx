@@ -12,6 +12,7 @@ import Testimonial from '../UI/Testimonial';
 import RecentNews from '../UI/RecentNews';
 import InstructorBanner from '../UI/InstructorBanner';
 import PartnerLogo from '../UI/PartnerLogo';
+import  'jquery';
 
 const Home = () => {
   const [isHeaderHovered, setIsHeaderHovered] = useState(false);
@@ -39,6 +40,7 @@ const Home = () => {
     };
 
     const scriptsToLoad = [
+      "https://cdnjs.cloudflare.com/ajax/libs/Camera/1.3.4/scripts/jquery.mobile.customized.min.js",
       "https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.1/js/bootstrap-select.min.js",
       "/vendor/particles.js-master/particles.min.js",
       "/vendor/particles.js-master/demo/js/lib/stats.js",
@@ -55,11 +57,11 @@ const Home = () => {
       "/js/ruby-main.js",
       "/vendor/bootstrap/bootstrap.min.js",
   
+      "/vendor/jquery.2.2.3.min.js",
+      "/vendor/Camera-master/scripts/jquery.easing.1.3.js",
       // "/vendor/bootstrap.min.js",
       // "/vendor/bootstrap-select/js/bootstrap-select.js",
       // "/vendor/jquery-ui/jquery-ui.min.js",
-      "/vendor/jquery.2.2.3.min.js",
-      "/vendor/Camera-master/scripts/jquery.easing.1.3.js",
       // "/vendor/bootstrap/bootstrap.min.js",
       // "/vendor/bootstrap-select/dist/js/bootstrap-select.js",
     ];

@@ -5,6 +5,7 @@ import { getAllData } from "../react-query/api/Home";
 import Loading from "../UI/Loading";
 
 const FaqSection = () => {
+  
   const { isLoading, error, newData, refetch } = getAllData(
     "http://35.154.95.255:8000/api/faq",
     "faq"
@@ -89,95 +90,70 @@ const FaqSection = () => {
           <div className="theme-title text-center">
             <h2>Frequently Asked Questions</h2>
             <p>
-              If you have any concerns, please read this collection of frequently
+              If you have any concerns please read this collection of frequently
               asked questions before contacting us. If <br /> you are still
-              unclear about something, feel free to contact.
+              unclear about something feel free to contact.
             </p>
           </div>{" "}
           {/* /.theme-title */}
-          <div className="row">
-            <div className="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-              {/* ================== FAQ Panel ================ */}
-              <div className="faq-panel">
-                <div className="panel-group theme-accordion" id="accordion">
-                  {newData.slice(0, midpoint).map((val, i) => (
-                    <div className="panel" key={i}>
+          {newData
+            .reduce((rows, val, i) => {
+              if (i % 2 === 0) rows.push([]);
+              rows[rows.length - 1].push(val);
+              return rows;
+            }, [])
+            .map((row, rowIndex) => (
+              <div className="row" key={rowIndex}>
+                {row.map((val, colIndex) => (
+                  <div
+                    className="col-lg-6 col-md-6 col-sm-12 col-xs-12"
+                    key={colIndex}
+                  >
+                    {/* ================== FAQ Panel ================ */}
+                    <div className="faq-panel">
+                      <h2 className="text-center">{val.heading}</h2>
                       <div
-                        className={
-                          i === 0
-                            ? "panel-heading active-panel"
-                            : "panel-heading"
-                        }
+                        className="panel-group theme-accordion"
+                        id={`accordion${rowIndex}-${colIndex}`}
                       >
-                        <h6 className="panel-title">
-                          <a
-                            data-toggle="collapse"
-                            data-parent={`#accordion-${i}`}
-                            href={`#collapse${i}`}
-                          >
-                            {val.title}
-                          </a>
-                        </h6>
-                      </div>
-                      <div
-                        id={`collapse${i}`}
-                        className={
-                          i === 0
-                            ? "panel-collapse collapse in"
-                            : " panel-collapse collapse"
-                        }
-                      >
-                        <div className="panel-body">
-                          <p>{val.description}</p>
-                        </div>
-                      </div>
-                    </div>
-                  ))}
-                </div>
+                        {val?.description?.length > 0 &&
+                          val?.description.map((value, j) => {
+                            const panelId = `panel${rowIndex}-${colIndex}-${j}`;
+                            return (
+                              <div className="panel" key={panelId}>
+                                <div className="panel-heading">
+                                  <h6 className="panel-title">
+                                    <a
+                                      data-toggle="collapse"
+                                      data-parent={`#accordion${rowIndex}-${colIndex}`}
+                                      href={`#${panelId}`}
+                                    >
+                                      {value.title}
+                                    </a>
+                                  </h6>
+                                </div>
+                                <div
+                                  id={panelId}
+                                  className="panel-collapse collapse"
+                                >
+                                  <div className="panel-body">
+                                    <p>{value.text}</p>
+                                  </div>
+                                </div>
+                              </div>
+                            );
+                          })}
+                      </div>{" "}
+                      {/* end #accordion */}
+                    </div>{" "}
+                    {/* End of .faq-panel */}
+                  </div>
+                ))}
               </div>
-            </div>
-            {/* /.col- */}
-            {/* /////////////////////////////////////////////////////////////////////// */}
-            <div className="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-              {/* ================== FAQ Panel ================ */}
-              <div className="faq-panel">
-                <div
-                  className="panel-group theme-accordion"
-                  id="accordion3"
-                >
-                  {newData.slice(midpoint).map((val, i) => (
-                    <div className="panel" key={i + midpoint}>
-                      <div
-                        className="panel-heading"
-                      >
-                        <h6 className="panel-title">
-                          <a
-                            data-toggle="collapse"
-                            data-parent={`#accordion-${i + midpoint}`}
-                            href={`#collapse${i + midpoint}`}
-                          >
-                            {val.title}
-                          </a>
-                        </h6>
-                      </div>
-                      <div
-                        id={`collapse${i + midpoint}`}
-                        className="panel-collapse collapse"
-                      >
-                        <div className="panel-body">
-                          <p>{val.description}</p>
-                        </div>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </div>
-            {/* /.col- */}
-          </div>
-          {/* /.row */}
+            ))}
         </div>
       </div>
+
       <div className="faq-form">
         <div className="container">
           <h2>Didn't find the answer?</h2>

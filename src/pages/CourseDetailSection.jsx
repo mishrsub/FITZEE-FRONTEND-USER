@@ -22,11 +22,17 @@ const CourseDetailSection = ({ getData }) => {
   console.log("GETTING DATA ----> ", getData);
   console.log("====================================");
 
+  const [activePanel, setActivePanel] = useState(0);
+
+  const handlePanelClick = (panelIndex) => {
+    setActivePanel(panelIndex === activePanel ? -1 : panelIndex);
+  };
+
   const [showForm, setShowForm] = useState(false);
 
   const handleGetStartedClick = (e) => {
-      e.preventDefault(); // Prevent default anchor tag behavior
-      setShowForm(true);
+    e.preventDefault(); // Prevent default anchor tag behavior
+    setShowForm(true);
   };
 
   // 65ba25db3ce7570cd4f51584/65ba2b591bd7713abd353413
@@ -295,25 +301,24 @@ const CourseDetailSection = ({ getData }) => {
                 <p className="p1">{getData?.programDescription}</p>
                 <div className="learn-list"></div>
                 <div className="curriculum-panel">
-                  <div
-                    className="panel-group theme-accordion"
-                    id="accordionTwo"
-                  >
-                    {getData?.programPoint?.length > 0 &&
-                      getData?.programPoint.map((val, i) => (
-                        <div className="panel" key={val._id}>
+                  {getData?.programPoint?.length > 0 &&
+                    getData?.programPoint.map((val, i) => (
+                      <div
+                        className="panel-group theme-accordion"
+                        id={`accordion${i + 111}`}
+                        key={val._id}
+                      >
+                        <div
+                           className={`panel ${i === activePanel ? 'active-panel' : ''}`}
+                        >
                           <div
-                            className={
-                              i === 0
-                                ? "panel-heading active-panel"
-                                : "panel-heading"
-                            }
+                            className="panel-heading"
+                            onClick={() => handlePanelClick(i)}
                           >
                             <h5 className="panel-title">
                               <a
                                 data-toggle="collapse"
-                                data-parent="#accordionTwo"
-                                href={`#collapse${i + 1}`} // Ensure each href has a unique ID
+                                href={`#collapse${i + 111}`} // Ensure each href has a unique ID
                                 className="clearfix"
                               >
                                 <h6 className="float-left">{val.title}</h6>
@@ -321,12 +326,10 @@ const CourseDetailSection = ({ getData }) => {
                             </h5>
                           </div>
                           <div
-                            id={`collapse${i + 1}`} // Ensure each id is unique
-                            className={
-                              i === 0
-                                ? "panel-collapse collapse in"
-                                : "panel-collapse collapse"
-                            }
+                            id={`collapse${i + 111}`} // Ensure each id is unique
+                            className={`panel-collapse collapse ${
+                              i === activePanel ? "in" : ""
+                            }`}
                           >
                             <div className="panel-body">
                               <p>{val.description}</p>
@@ -347,8 +350,8 @@ const CourseDetailSection = ({ getData }) => {
                             </div>
                           </div>
                         </div>
-                      ))}
-                  </div>
+                      </div>
+                    ))}
                 </div>{" "}
                 {/* End of .curriculum-panel */}
                 <div className="course-feedback">
@@ -657,7 +660,12 @@ const CourseDetailSection = ({ getData }) => {
                   >
                     Book An Appointment
                   </a>
-                  {showForm && <MultiStepForm isOpen={showForm} onClose={() => setShowForm(false)} />}
+                  {showForm && (
+                    <MultiStepForm
+                      isOpen={showForm}
+                      onClose={() => setShowForm(false)}
+                    />
+                  )}
                 </div>{" "}
                 {/* /.sidebar-course-information */}
                 <div className="sidebar-instructor-info">
@@ -679,7 +687,11 @@ const CourseDetailSection = ({ getData }) => {
                         <b>Batch :</b> {getData?.batchStartDate?.batch}{" "}
                       </li>
                     </ul>
-                    <a href="#" className="tran3s p-bg-color follow hvr-trim"  onClick={handleGetStartedClick}>
+                    <a
+                      href="#"
+                      className="tran3s p-bg-color follow hvr-trim"
+                      onClick={handleGetStartedClick}
+                    >
                       Take this Course
                     </a>
                   </div>{" "}
@@ -694,7 +706,7 @@ const CourseDetailSection = ({ getData }) => {
                         <h6 className="panel-title">
                           <a
                             data-toggle="collapse"
-                            data-parent="#accordion11"
+                            data-parent="#accordion"
                             href="#collapse1"
                           >
                             Class VI
@@ -732,7 +744,7 @@ const CourseDetailSection = ({ getData }) => {
                         <h6 className="panel-title">
                           <a
                             data-toggle="collapse"
-                            data-parent="#accordion12"
+                            data-parent="#accordion"
                             href="#collapse2"
                           >
                             Class VII
@@ -767,7 +779,7 @@ const CourseDetailSection = ({ getData }) => {
                         <h6 className="panel-title">
                           <a
                             data-toggle="collapse"
-                            data-parent="#accordion3"
+                            data-parent="#accordion"
                             href="#collapse3"
                           >
                             Class VIII
@@ -802,7 +814,7 @@ const CourseDetailSection = ({ getData }) => {
                         <h6 className="panel-title">
                           <a
                             data-toggle="collapse"
-                            data-parent="#accordion4"
+                            data-parent="#accordion"
                             href="#collapse4"
                           >
                             Class IX
@@ -837,7 +849,7 @@ const CourseDetailSection = ({ getData }) => {
                         <h6 className="panel-title">
                           <a
                             data-toggle="collapse"
-                            data-parent="#accordion5"
+                            data-parent="#accordion"
                             href="#collapse5"
                           >
                             Class X
@@ -872,7 +884,7 @@ const CourseDetailSection = ({ getData }) => {
                         <h6 className="panel-title">
                           <a
                             data-toggle="collapse"
-                            data-parent="#accordion6"
+                            data-parent="#accordion"
                             href="#collapse6"
                           >
                             Class XI
@@ -907,7 +919,7 @@ const CourseDetailSection = ({ getData }) => {
                         <h6 className="panel-title">
                           <a
                             data-toggle="collapse"
-                            data-parent="#accordion7"
+                            data-parent="#accordion"
                             href="#collapse7"
                           >
                             Class XII
@@ -942,7 +954,7 @@ const CourseDetailSection = ({ getData }) => {
                         <h6 className="panel-title">
                           <a
                             data-toggle="collapse"
-                            data-parent="#accordion8"
+                            data-parent="#accordion"
                             href="#collapse8"
                           >
                             Class XII Pass
@@ -974,7 +986,7 @@ const CourseDetailSection = ({ getData }) => {
                     {/* /panel 5 */}
                   </div>{" "}
                   {/* end #accordion */}
-                </div>{" "}
+                </div>
                 {/* /.sidebar-categories */}
                 <div className="sidebar-keyword">
                   <h4>Keyword</h4>

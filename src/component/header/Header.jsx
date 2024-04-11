@@ -42,7 +42,7 @@ const Header = ({ onHeaderHover }) => {
 
   return (
     <>
-      <header className="theme-menu-wrapper menu-style-two"  >
+      <header className="theme-menu-wrapper menu-style-two">
         <div className="top-header">
           <div className="container">
             <ul className="float-left left-content">
@@ -101,6 +101,7 @@ const Header = ({ onHeaderHover }) => {
             {/* ============================ Theme Menu ========================= */}
             {/* ####################### */}
             {/* START: RUBY DEMO HEADER */}
+            <nav  id="navigation1" class="navigation navigation-landscape">
             <div className="ruby-menu-demo-header">
               {/* ########################### */}
               {/* START: RUBY HORIZONTAL MENU */}
@@ -108,14 +109,18 @@ const Header = ({ onHeaderHover }) => {
                 <button className="c-hamburger c-hamburger--htx visible-xs">
                   <span>toggle menu</span>
                 </button>
-                <ul className="ruby-menu" id="bg_blur">
-                  <li className="ruby-active-menu-item">
+                <ul className="ruby-menu  align-to-right" id="bg_blur">
+                  <li>
                     <Link className="tran3s" to={`/`}>
                       Home
                     </Link>
                   </li>
-                  <li className="ruby-menu-mega-blog" key="programs" onMouseEnter={handleMouseEnter}
-        onMouseLeave={handleMouseLeave}>
+                  <li
+                    className="ruby-menu-mega-blog"
+                    key="programs"
+                    onMouseEnter={handleMouseEnter}
+                    onMouseLeave={handleMouseLeave}
+                  >
                     <Link href="">Programs</Link>
                     <div>
                       <ul className="ruby-menu-mega-blog-nav">
@@ -171,8 +176,12 @@ const Header = ({ onHeaderHover }) => {
                     </div>
                   </li>
 
-                  <li className="ruby-menu-mega-blog" key="competitive-exams" onMouseEnter={handleMouseEnter}
-        onMouseLeave={handleMouseLeave}>
+                  <li
+                    className="ruby-menu-mega-blog"
+                    key="competitive-exams"
+                    onMouseEnter={handleMouseEnter}
+                    onMouseLeave={handleMouseLeave}
+                  >
                     <a href="#">Competitive exams</a>
                     <div>
                       <ul className="ruby-menu-mega-blog-nav">
@@ -222,8 +231,11 @@ const Header = ({ onHeaderHover }) => {
                     </div>
                   </li>
 
-                  <li className="ruby-menu-mega-blog" onMouseEnter={handleMouseEnter}
-        onMouseLeave={handleMouseLeave}>
+                  <li
+                    className="ruby-menu-mega-blog"
+                    onMouseEnter={handleMouseEnter}
+                    onMouseLeave={handleMouseLeave}
+                  >
                     <a href="#">Admission test</a>
                     <div>
                       <ul className="ruby-menu-mega-blog-nav">
@@ -278,8 +290,11 @@ const Header = ({ onHeaderHover }) => {
                       </ul>
                     </div>
                   </li>
-                  <li className="ruby-menu-mega-blog" onMouseEnter={handleMouseEnter}
-        onMouseLeave={handleMouseLeave}>
+                  <li
+                    className="ruby-menu-mega-blog"
+                    onMouseEnter={handleMouseEnter}
+                    onMouseLeave={handleMouseLeave}
+                  >
                     <a href="#">Events</a>
                     <div>
                       <ul className="ruby-menu-mega-blog-nav">
@@ -334,8 +349,11 @@ const Header = ({ onHeaderHover }) => {
                       </ul>
                     </div>
                   </li>
-                  <li className="ruby-menu-mega-blog" onMouseEnter={handleMouseEnter}
-        onMouseLeave={handleMouseLeave}>
+                  <li
+                    className="ruby-menu-mega-blog"
+                    onMouseEnter={handleMouseEnter}
+                    onMouseLeave={handleMouseLeave}
+                  >
                     <a href="#">Downloads</a>
                     <div>
                       <ul className="ruby-menu-mega-blog-nav">
@@ -398,6 +416,7 @@ const Header = ({ onHeaderHover }) => {
               {/* END:   RUBY HORIZONTAL MENU */}
               {/* ########################### */}
             </div>
+            </nav>
             {/* END:   RUBY DEMO HEADER */}
             {/* ######################### */}
           </div>{" "}
