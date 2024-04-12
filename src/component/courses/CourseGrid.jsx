@@ -348,6 +348,7 @@ const CourseGrid = ({ course }) => {
   <div className="button-wrapper">
     <input
       type="submit"
+      value={"Apply filters"}
       defaultValue="Apply filters"
       className="p-bg-color tran3s"
     />

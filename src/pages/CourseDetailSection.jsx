@@ -146,6 +146,30 @@ const CourseDetailSection = ({ getData }) => {
     return { ratingPerc, review: total_review_according_star.length };
   };
 
+  
+const StarRating = ({ averageRating }) => {
+  const renderStars = () => {
+    const stars = [];
+    // Render full stars
+    for (let i = 0; i < Math.floor(averageRating); i++) {
+      stars.push(<i key={i} className="fa fa-star" aria-hidden="true" />);
+    }
+    // Render half star if applicable
+    if (averageRating % 1 !== 0) {
+      stars.push(<i key="half" className="fa fa-star-half-o" aria-hidden="true" />);
+    }
+    // Render empty stars if necessary
+    const emptyStarsCount = 5 - Math.ceil(averageRating);
+    for (let i = 0; i < emptyStarsCount; i++) {
+      stars.push(<i key={`empty-${i}`} className="fa fa-star-o" aria-hidden="true" />);
+    }
+    return stars;
+  };
+
+  return <div>{renderStars()}</div>;
+};
+
+
   const reviewMutation = GiveReview();
 
   const handleSubmit = (event) => {
@@ -365,14 +389,14 @@ const CourseDetailSection = ({ getData }) => {
                           ) || 0}
                         </h2>
                         <p>
-                          Number of reviews (
+                          Avarage rating (
                           {getData?.matchedSubprogram?.numOfReviews || 0})
                         </p>
                         <ul>
                           <li>
-                            <i className="fa fa-star" aria-hidden="true" />
+                          <StarRating averageRating={getData?.matchedSubprogram?.averageRating || 0} />
                           </li>
-                          <li>
+                          {/* <li>
                             <i className="fa fa-star" aria-hidden="true" />
                           </li>
                           <li>
@@ -386,7 +410,7 @@ const CourseDetailSection = ({ getData }) => {
                               className="fa fa-star-half-o"
                               aria-hidden="true"
                             />
-                          </li>
+                          </li> */}
                         </ul>
                       </li>
                       <li className="float-left">
