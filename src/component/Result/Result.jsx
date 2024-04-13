@@ -12,7 +12,7 @@ const Result = () => {
     };
     return (
         <div class="main-page-wrapper">
-             <Header onHeaderHover={handleHeaderHover} />
+             <Header onHeaderHover={handleHeaderHover} styleData={{zIndex:"999"}}/>
             <div className={`main-page-wrapper ${isHeaderHovered ? 'blur' : ''}`}>
                 <InnerBanner title="OUR RESULT" />
                 <ResultSection />

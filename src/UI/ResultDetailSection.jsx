@@ -6,20 +6,36 @@ import Loading from "./Loading";
 import Gallery from "../component/Result/Gallery";
 
 const customStyles = {
+    overlay: {
+        position: "fixed",
+        top: 0,
+        left: 0,
+        right: 0,
+        bottom: 0,
+        backgroundColor: "rgba(0, 0, 0, 0.5)", // semi-transparent black background
+        zIndex: 12000, // Increase the z-index to 12000
+    },
     content: {
-        top: "50%",
-        left: "50%",
-        right: "auto",
-        bottom: "auto",
-        marginRight: "-50%",
-        transform: "translate(-50%, -50%)",
-        width: "500px", // Fixed width
-        height: "590px", // Fixed height
-        overflow: "auto", // Enables scrolling for the content inside
-        flex: 1,
+        position: "absolute",
+        display: "grid",
+        inset: "50% auto auto 50%",
+        border: "1px solid rgb(204, 204, 204)",
+        background: "rgb(255, 255, 255)",
+        borderRadius: "4px",
+        outline: "none",
         overflowY: "auto",
+        left: "40%",
+        padding: "1.2em",
+        margin: "0.5em",
+        transform: "translate(-50%, -50%)",
+        width: "70vw",
+        maxWidth: "870px",
+        height: "590px",
+      
     },
 };
+
+
 
 const ResultDetailSection = () => {
     const [modalOpen, setModalOpen] = useState(false);
@@ -55,7 +71,7 @@ const ResultDetailSection = () => {
     return (
         <>
             <div className="our-portfolio">
-                <div className="container">
+                <div className="container" >
                     <Modal
                         isOpen={modalOpen}
                         onRequestClose={closeModal}
@@ -87,8 +103,8 @@ const ResultDetailSection = () => {
                                             src={`http://35.154.95.255:8000/uploads/${val}`}
                                             alt={`Image ${index + 1}`}
                                             style={{
-                                                width: "370px", // Set your desired width
-                                                height: "320px", // Set your desired height
+                                                width: "255px", // Set your desired width
+                                                height: "215px", // Set your desired height
                                                 objectFit: "cover", // Maintain aspect ratio and cover the container
                                                 margin: "1%", // Add margin between images
                                                 boxSizing: "border-box",
