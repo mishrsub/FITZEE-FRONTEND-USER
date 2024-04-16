@@ -5,6 +5,7 @@ import { getAllData } from "../../react-query/api/Home";
 import Loading from "../../UI/Loading";
 import CourseDetail from "../CourseDetail/CourseDetail";
 import { getAllCompetitiveCourse } from "../../react-query/api/Course";
+import { getAllMenu } from "../../react-query/api/Download";
 
 const Header = ({ onHeaderHover }) => {
   const navigate = useNavigate();
@@ -12,6 +13,13 @@ const Header = ({ onHeaderHover }) => {
     "http://35.154.95.255:8000/api/course",
     "class"
   );
+  // const { isLoading:loader1, error:error1, data:menuData } = getAllMenu(
+  //   "http://localhost:8000/api/downloads/menu/",
+  // );
+
+  // console.log('====================================');
+  // console.log(menuData);
+  // console.log('====================================');
 
   //get competitive course data
   const {

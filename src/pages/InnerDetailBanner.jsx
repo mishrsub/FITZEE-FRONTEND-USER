@@ -1,6 +1,6 @@
 import React from "react";
 
-const InnerDetailBanner = ({ title,keywordData }) => {
+const InnerDetailBanner = ({ title, keywordData }) => {
   console.log("====================================");
   console.log("Title:--------> ", keywordData);
   console.log("====================================");
@@ -10,25 +10,20 @@ const InnerDetailBanner = ({ title,keywordData }) => {
         <div className="container">
           <h2>{title}</h2>
           <h4 style={{ color: "#fff", marginBottom: 12 }}>
-            {
-              keywordData?.length > 0 && (
-                keywordData.slice(0,3).map((val) => (
-                  <>
-                <button
-                key={val._id}
-                className="full_form"
-                data-tooltip-anchor="top"
-                data-tooltip={val?.fullForm}
-              >
-                {val?.keywordName}
-              </button>
-              {" "}
-                  </>
-              
-                ))
-              )
-            }
-
+            {keywordData?.length > 0 &&
+              keywordData.slice(0, 3).map((val) => (
+                <>
+                  <button
+                    key={val._id}
+                    className="full_form"
+                    data-tooltip-anchor="top"
+                    data-tooltip={val?.fullForm}
+                  >
+                    {val?.keywordName}
+                    {","}
+                  </button>
+                </>
+              ))}
 
             {/* <button
               className="full_form"

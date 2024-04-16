@@ -281,13 +281,13 @@
     > li
     > a:before,
   ul.ruby-menu > li.ruby-menu-mega-shop > div > ul > li > a:before {
-    content: "";
-    width: 50px;
+    /* content: ""; */
+    /* width: 50px;
     height: 50px;
     background: #333;
     position: absolute;
     left: 0;
-    top: 0;
+    top: 0; */
   }
   ul.ruby-menu > li > ul > li > a:before,
   ul.ruby-menu

@@ -33,11 +33,12 @@ ul.ruby-menu > li.ruby-menu-right {
 ul.ruby-menu > li > a {
   display: block;
   line-height: 50px;
-  padding: 0 25px 0 15px;
+  padding: 0 15px 0 15px;
   color: #000;
   text-decoration: none;
-  font-family: "Lato", sans-serif;
+  font-family: 'Montserrat';
   font-weight: 600;
+
 }
 ul.ruby-menu > li > a:only-child {
   padding: 0 15px;
@@ -250,9 +251,9 @@ ul.ruby-menu > li.ruby-menu-mega-blog > div > ul.ruby-menu-mega-blog-nav {
   position: relative;
   width: 200px;
   height: 100%;
-  left: 0;
+  left: 100px;
   top: 0;
-  background: #efefef;
+  background: #fff;
 }
 ul.ruby-menu > li.ruby-menu-mega-blog > div > ul.ruby-menu-mega-blog-nav > li {
   font-size: 14px;
@@ -266,7 +267,7 @@ ul.ruby-menu
   display: block;
   line-height: 40px;
   padding: 0 15px;
-  background: #efefef;
+  background: #fff;
   color: #666;
   text-decoration: none;
 }
@@ -276,7 +277,7 @@ ul.ruby-menu
   > ul.ruby-menu-mega-blog-nav
   > li.ruby-active-menu-item
   > a {
-  background: #e6e6e6;
+  background: #fff;
 }
 ul.ruby-menu
   > li.ruby-menu-mega-blog
@@ -298,7 +299,8 @@ ul.ruby-menu
   > ul.ruby-menu-mega-blog-nav
   > li:hover
   > a {
-  background: #ddd;
+  background: #ff3a46;
+  color: #fff;
 }
 ul.ruby-menu > li.ruby-menu-mega-shop > div {
   text-align: center;
@@ -547,6 +549,7 @@ span.ruby-c-title a {
   line-height: 20px;
   margin-top: -5px;
   color: #222;
+  font-family: 'Montserrat';
 }
 span.ruby-c-title{
   font-size: 16px;
@@ -722,7 +725,7 @@ span.ruby-c-content {
   ul.ruby-menu > li.ruby-menu-mega-shop > div > ul > li > a:after {
     height: 1px;
     position: absolute;
-    content: "";
+    /* content: ""; */
     background-color: #ff3a46;
     width: 0;
   }
@@ -757,9 +760,9 @@ span.ruby-c-content {
     width: 90%;
   }
   ul.ruby-menu > li > a:after {
-    font-family: "FontAwesome";
+    font-family: 'Montserrat';
     text-decoration: none;
-/*    content: "\f107";*/
+   /* content: "\f107"; */
     position: absolute;
     margin-left: 5px;
   }
@@ -773,7 +776,7 @@ span.ruby-c-content {
   ul.ruby-menu > li > ul > li > a:after,
   ul.ruby-menu > li > ul > li > ul > li > a:after,
   ul.ruby-menu > li > ul > li > ul > li > ul > li > a:after {
-    font-family: "FontAwesome";
+    font-family: 'Montserrat';
     text-decoration: none;
     font-size: 16px;
     padding: 0;
@@ -826,14 +829,14 @@ span.ruby-c-content {
     > ul.ruby-menu-mega-blog-nav
     > li:hover
     > a:after {
-    content: "";
-    position: absolute;
+    /* content: ""; */
+    /* position: absolute;
     right: 0;
     margin-top: 13px;
     width: 0;
     height: 0;
     border-style: solid;
     border-width: 6px 8px 6px 0;
-    border-color: transparent #fff transparent transparent;
+    border-color: transparent #fff transparent transparent; */
   }
 }
