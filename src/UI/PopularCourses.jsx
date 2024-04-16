@@ -48,7 +48,7 @@ const PopularCourses = () => {
               </div>
               <div className="table__body">
                 {testData.map((val, i) => (
-                  <div className="table__row fade-in-down">
+                  <div className="table__row fade-in-down" key={val._id}>
                     <div className="table__cell" data-title="Name of Exam">
                       {val.examName}
                     </div>

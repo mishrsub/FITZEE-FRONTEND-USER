@@ -127,7 +127,9 @@ const MultiStepForm = ({ isOpen, onClose }) => {
       title: "Step 3",
       content: (
         <>
-          <h3 style={{marginTop:"6%",textAlign:"center"}}>Please Fill the below details.</h3>
+          <h3 style={{ marginTop: "6%", textAlign: "center" }}>
+            Please Fill the below details.
+          </h3>
           <div className="wrapper">
             <div className="row">
               <div className="col-md-6">
@@ -289,7 +291,6 @@ const MultiStepForm = ({ isOpen, onClose }) => {
           top: "50%",
           boxShadow: "rgba(0, 0, 0, 0.2) 0px 0px 20px",
         },
-        
       }}
     >
       {/* <div className="modal-dialog">
@@ -302,8 +303,13 @@ const MultiStepForm = ({ isOpen, onClose }) => {
         aria-hidden="true"
         onClick={onClose}
         onMouseEnter={handleMouseEnter}
-      onMouseLeave={handleMouseLeave}
-        style={{ marginTop: "3%", marginRight: "6%", fontSize: "40px",color: isHovered ? "red" : "black" }}
+        onMouseLeave={handleMouseLeave}
+        style={{
+          marginTop: "3%",
+          marginRight: "6%",
+          fontSize: "40px",
+          color: isHovered ? "red" : "black",
+        }}
       >
         &times;
       </button>

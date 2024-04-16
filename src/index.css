@@ -7533,31 +7533,31 @@ div.activity.active {
 }
 
 /* Media query for screens with a minimum width of 768px and a maximum width of 991px */
-@media screen and (min-width: 768px) and (max-width: 991px) {
+/* @media screen and (min-width: 768px) and (max-width: 991px) {
   ul.ruby-menu > li.ruby-menu-mega > div,
 ul.ruby-menu > li.ruby-menu-mega-blog > div,
 ul.ruby-menu > li.ruby-menu-mega-shop > div {
   left: -115px !important;
 }
-}
+} */
 
 /* Media query for screens with a minimum width of 992px and a maximum width of 1199px */
-@media screen and (min-width: 992px) and (max-width: 1199px) {
+/* @media screen and (min-width: 992px) and (max-width: 1199px) {
    ul.ruby-menu > li.ruby-menu-mega > div,
 ul.ruby-menu > li.ruby-menu-mega-blog > div,
 ul.ruby-menu > li.ruby-menu-mega-shop > div {
   left: -170px !important;
 }
-}
+} */
 
 /* Media query for screens with a minimum width of 1200px */
-@media screen and (min-width: 1200px) {
+/* @media screen and (min-width: 1200px) {
   ul.ruby-menu > li.ruby-menu-mega > div,
 ul.ruby-menu > li.ruby-menu-mega-blog > div,
 ul.ruby-menu > li.ruby-menu-mega-shop > div {
   left: -415px !important;
 }
-}
+} */
 
 
 
@@ -7571,3 +7571,17 @@ ul.ruby-menu > li.ruby-menu-mega-shop > div {
   content: "-";
 }
 
+/* //For caurousel slider */
+.pag_nav_0{
+  display: none !important;
+}
+.pag_nav_1 {
+ opacity: 0;
+}
+.camera_commands {
+    display: none ;
+}
+
+.camera_pie {
+  display: none;
+}
