@@ -122,8 +122,11 @@ const CourseGrid = ({ course }) => {
             <div className="row">
               {data.programs.flatMap((program) =>
                 program.subprograms.map((programData, i) => (
-                  <div className="col-lg-4 col-md-4 col-sm-6 col-xs-6" key={programData._id}>
-                    <div className="single-course" >
+                  <div
+                    className="col-lg-4 col-md-4 col-sm-6 col-xs-6"
+                    key={programData._id}
+                  >
+                    <div className="single-course">
                       <div className="image-box">
                         <img
                           src={`http://35.154.95.255:8000/uploads/${programData.programImg}`}
@@ -325,34 +328,33 @@ const CourseGrid = ({ course }) => {
 										</div> */}
                   {/* /.course-price-filter */}
                   <div className="course-location">
-    <h5>Location</h5>
-    <div className="form-group">
-      <div>
-        <select
-          multiple
-          id="loaction"
-          className="selectpicker show-tick form-control"
-          data-live-search="true"
-          data-placeholder="Choose your location..."
-        >
-          <option>Andheri</option>
-          <option>Kandivali</option>
-          <option>Thane</option>
-          <option>Navi Mumbai</option>
-          <option>Chembur</option>
-        </select>
-      </div>
-    </div>
-  </div>{" "}
-  {/* /.course-location */}
-  <div className="button-wrapper">
-    <input
-      type="submit"
-      defaultValue="Apply filters"
-      className="p-bg-color tran3s"
-    />
-  </div>
-
+                    <h5>Location</h5>
+                    <div className="form-group">
+                      <div>
+                        <select
+                          multiple
+                          id="loaction"
+                          className="selectpicker show-tick form-control"
+                          data-live-search="true"
+                          data-placeholder="Choose your location..."
+                        >
+                          <option>Andheri</option>
+                          <option>Kandivali</option>
+                          <option>Thane</option>
+                          <option>Navi Mumbai</option>
+                          <option>Chembur</option>
+                        </select>
+                      </div>
+                    </div>
+                  </div>{" "}
+                  {/* /.course-location */}
+                  <div className="button-wrapper">
+                    <input
+                      type="submit"
+                      defaultValue="Apply filters"
+                      className="p-bg-color tran3s"
+                    />
+                  </div>
                 </form>{" "}
                 {/* /.main-wrapper */}
               </div>

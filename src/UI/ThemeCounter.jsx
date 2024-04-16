@@ -5,7 +5,6 @@ import ScrollTrigger from "react-scroll-trigger";
 
 const ThemeCounter = () => {
     const [counterOn, setCounterOn] = useState(false);
-
     return (
         <ScrollTrigger
             onEnter={() => setCounterOn(true)}
