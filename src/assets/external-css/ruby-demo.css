@@ -5,9 +5,7 @@
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
-body {
-  font-family: "Open Sans", sans-serif;
-}
+
 div.ruby-wrapper {
   position: relative;
 /*  width: 980px;*/
@@ -118,7 +116,7 @@ ul.ruby-menu.ruby-menu-dividers
   background: none;
   color: #efefef;
   border: none;
-  font-family: "Open Sans", sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-size: 14px;
   font-weight: 700;
   text-transform: uppercase;
@@ -546,9 +544,16 @@ span.ruby-c-title a {
 span.ruby-c-title{
   font-size: 16px;
 }
+span.ruby-c-title:hover{
+  background-color: #ff3a46;
+
+  padding: 15px 15px;
+}
+span.ruby-c-title:hover a {
+  color: #fff;
+}
 span.ruby-c-title a:hover {
-  color: #444;
-  text-decoration: underline;
+  color: #fff;
 }
 span.ruby-c-category,
 span.ruby-c-category a {
@@ -821,7 +826,7 @@ span.ruby-c-content {
     > ul.ruby-menu-mega-blog-nav
     > li:hover
     > a:after {
-    content: "";
+    /* content: ""; */
     position: absolute;
     right: 0;
     margin-top: 13px;

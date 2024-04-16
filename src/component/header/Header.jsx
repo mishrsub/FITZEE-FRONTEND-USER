@@ -13,13 +13,13 @@ const Header = ({ onHeaderHover }) => {
     "http://35.154.95.255:8000/api/course",
     "class"
   );
-  // const { isLoading:loader1, error:error1, data:menuData } = getAllMenu(
-  //   "http://localhost:8000/api/downloads/menu/",
-  // );
+  const { isLoading:loader1, error:error1, data:menuData } = getAllMenu(
+    "http://localhost:8000/api/downloads/menu/",
+  );
 
-  // console.log('====================================');
-  // console.log(menuData);
-  // console.log('====================================');
+  console.log('====================================');
+  console.log("Download sections: ",menuData);
+  console.log('====================================');
 
   //get competitive course data
   const {

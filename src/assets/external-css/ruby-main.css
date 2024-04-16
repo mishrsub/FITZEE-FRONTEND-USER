@@ -5,9 +5,6 @@
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
-body {
-  font-family: "Open Sans", sans-serif;
-}
 div.ruby-wrapper {
   position: relative;
 /*  width: 980px;*/
@@ -119,7 +116,7 @@ ul.ruby-menu.ruby-menu-dividers
   background: none;
   color: #efefef;
   border: none;
-  font-family: "Open Sans", sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-size: 14px;
   font-weight: 700;
   text-transform: uppercase;
@@ -555,8 +552,8 @@ span.ruby-c-title{
   font-size: 16px;
 }
 span.ruby-c-title a:hover {
-  color: #444;
-  text-decoration: underline;
+  /* color: #444;
+  text-decoration: underline; */
 }
 span.ruby-c-category,
 span.ruby-c-category a {
