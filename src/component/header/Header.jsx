@@ -523,7 +523,7 @@ const Header = ({ onHeaderHover }) => {
                                                                                                     <div className="ruby-col-12">
                                                                                                         <span className="ruby-c-title">
                                                                                                             <Link
-                                                                                                                to={`http://localhost:8000/downloads/${value.pdfFile}`}
+                                                                                                                to={`http://35.154.95.255:8000/downloads/${value.pdfFile}`}
                                                                                                                 target="_blank"
                                                                                                             >
                                                                                                                 {
