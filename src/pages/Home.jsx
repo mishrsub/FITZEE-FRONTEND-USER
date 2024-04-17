@@ -39,6 +39,7 @@ const Home = () => {
       });
     };
 
+    //hello sanjay
     const scriptsToLoad = [
       // "https://cdnjs.cloudflare.com/ajax/libs/Camera/1.3.4/scripts/jquery.mobile.customized.min.js",
       "https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.1/js/bootstrap-select.min.js",
