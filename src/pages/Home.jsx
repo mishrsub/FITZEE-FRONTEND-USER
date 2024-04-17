@@ -46,6 +46,7 @@ const Home = () => {
       "/vendor/particles.js-master/demo/js/lib/stats.js",
       "/vendor/particles.js-master/demo/js/app.js",
       "/vendor/WOW-master/dist/wow.min.js",
+      // "/vendor/bootstrap/bootstrap.min.js",
       // "/vendor/Camera-master/scripts/camera.min.js",
       // "/vendor/Camera-master/scripts/jquery.mobile.customized.min.js",
       "/vendor/bootstrap-mega-menu/js/menu.js",
