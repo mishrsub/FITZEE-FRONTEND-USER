@@ -1,0 +1,8 @@
+.custom-select {
+    height: 40px; /* Adjust height as needed */
+  }
+  
+  .custom-select option {
+    color: grey;
+  }
+  
