@@ -16,14 +16,14 @@ const Header = ({ onHeaderHover }) => {
         isLoading: loader1,
         error: error1,
         newData: menuData,
-    } = getAllData("http://localhost:8000/api/downloads/menu/", "menus");
+    } = getAllData("http://35.154.95.255:8000/api/downloads/menu/", "menus");
 
     const {
         isLoading: loader2,
         error: error2,
         newData: menuLink,
     } = getAllData(
-        "http://localhost:8000/api/admissionTest/menu/",
+        "http://35.154.95.255:8000/api/admissionTest/menu/",
         "menusLink"
     );
 
@@ -31,7 +31,7 @@ const Header = ({ onHeaderHover }) => {
     console.log("Download sections: ", menuData);
     console.log("====================================");
 
-    //get competitive course data
+    //get competitive course data..
     const {
         isLoading: compLoader,
         error: compError,
