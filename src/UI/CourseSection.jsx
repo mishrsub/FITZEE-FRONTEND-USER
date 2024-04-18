@@ -7,7 +7,7 @@ import FitjeeCourse3 from "../assets/images/course/fiitjee_course-3.jpg";
 import OwlCarousel from "react-owl-carousel";
 import "owl.carousel/dist/assets/owl.carousel.css";
 import "owl.carousel/dist/assets/owl.theme.default.css";
-import { getAllData } from "../react-query/api/Home";
+import { getAllClassItem, getAllData } from "../react-query/api/Home";
 import Loading from "./Loading";
 import { Link } from "react-router-dom";
 
@@ -95,7 +95,10 @@ const CourseCard = ({ studentClass, program, subPrograms, classId }) => {
     return (
         <div key="1" className="single-course" style={{ marginRight: 25 }}>
             <div className="image-box">
-                <img src={FitjeeCourse1} alt="" />
+                <img
+                    src={`http://35.154.95.255:8000/uploads/${subPrograms.programImg}`}
+                    alt=""
+                />
             </div>
             <div className="text">
                 <div className="image">
@@ -168,37 +171,37 @@ const CourseSection = () => {
         return <h3>Error: {error.message}</h3>;
     }
 
-const options = {
-    dots: true,
-    items: 3,
-    loop: true,
-    margin: 10,
-    autoplay: true,
-    autoplayTimeout: 3000,
-    animateOut: "fadeOut",
-    animateIn: "fadeIn",
-    responsive: {
-      0: {
-        items: 1,
-      },
-      450: {
-        items: 2,
-      },
-      600: {
+    const options = {
+        dots: true,
         items: 3,
-      },
-      992: {
-        items: 3,
-      },
-    },
-  };
+        loop: true,
+        margin: 10,
+        autoplay: true,
+        autoplayTimeout: 3000,
+        animateOut: "fadeOut",
+        animateIn: "fadeIn",
+        responsive: {
+            0: {
+                items: 1,
+            },
+            450: {
+                items: 2,
+            },
+            600: {
+                items: 3,
+            },
+            992: {
+                items: 3,
+            },
+        },
+    };
 
     const items = newData.flatMap((classData) =>
         classData.programs
-            .slice(0, 1)
+            // .slice(0, 1)
             .flatMap((program) =>
                 program.subprograms
-                    .slice(0, 1)
+                    // .slice(0, 1)
                     .map((programData, i) => (
                         <CourseCard
                             key={programData._id}

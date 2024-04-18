@@ -21,27 +21,23 @@ const Header = ({ onHeaderHover }) => {
         data: compNewData,
     } = getAllCompetitiveCourse();
 
-
     // Show Admission Test data
     const {
-      isLoading:testLoader,
-      error:testError,
-      newData: testNewData,
+        isLoading: testLoader,
+        error: testError,
+        newData: testNewData,
     } = getAllData(
-      "http://35.154.95.255:8000/api/upcomingTest/getUpcomingTest?enable=true",
-      "test"
+        "http://35.154.95.255:8000/api/upcomingTest/getUpcomingTest?enable=true",
+        "test"
     );
-    
-  
-    if (error) {
-      return <h3>Error: {error.message}</h3>;
-    }
 
+    if (error) {
+        return <h3>Error: {error.message}</h3>;
+    }
 
     if (isLoading || compLoader || testLoader) {
         return <Loading />;
     }
-
 
     const handleMouseEnter = () => {
         onHeaderHover(true);
@@ -76,7 +72,11 @@ const Header = ({ onHeaderHover }) => {
                         </ul>
                         <ul className="float-right right-content">
                             <li>
-                                <a href="https://www.facebook.com/fiitjeemumbai/" className="tran3s social" target="_blank">
+                                <a
+                                    href="https://www.facebook.com/fiitjeemumbai/"
+                                    className="tran3s social"
+                                    target="_blank"
+                                >
                                     <i
                                         className="fa fa-facebook"
                                         aria-hidden="true"
@@ -84,7 +84,11 @@ const Header = ({ onHeaderHover }) => {
                                 </a>
                             </li>
                             <li>
-                                <a href="https://twitter.com/i/flow/login?redirect_after_login=%2Ffiitjeemumbai" className="tran3s social" target="_blank">
+                                <a
+                                    href="https://twitter.com/i/flow/login?redirect_after_login=%2Ffiitjeemumbai"
+                                    className="tran3s social"
+                                    target="_blank"
+                                >
                                     <i
                                         className="fa fa-twitter"
                                         aria-hidden="true"
@@ -92,7 +96,11 @@ const Header = ({ onHeaderHover }) => {
                                 </a>
                             </li>
                             <li>
-                                <a href="https://www.instagram.com/mumbaifiitjee/" className="tran3s social" target="_blank">
+                                <a
+                                    href="https://www.instagram.com/mumbaifiitjee/"
+                                    className="tran3s social"
+                                    target="_blank"
+                                >
                                     <i
                                         className="fa fa-instagram"
                                         aria-hidden="true"
@@ -346,7 +354,10 @@ const Header = ({ onHeaderHover }) => {
                                                                         val._id
                                                                     }
                                                                 >
-                                                                    <Link to={`${val.urlName}`} target="_blank">
+                                                                    <Link
+                                                                        to={`${val.urlName}`}
+                                                                        target="_blank"
+                                                                    >
                                                                         {
                                                                             val?.examName
                                                                         }
@@ -354,24 +365,22 @@ const Header = ({ onHeaderHover }) => {
                                                                     <div className="ruby-grid ruby-grid-lined">
                                                                         <div className="ruby-row">
                                                                             <div className="ruby-col-12">
-                            
-                                                                                            <div
-                                                                                                className="ruby-row"
+                                                                                <div className="ruby-row">
+                                                                                    <div className="ruby-col-12">
+                                                                                        <span className="ruby-c-title">
+                                                                                            <Link
+                                                                                                to={`${val.urlName}`}
+                                                                                                target="_blank"
                                                                                             >
-                                                                                                <div className="ruby-col-12">
-                                                                                                    <span className="ruby-c-title">
-                                                                                                        <Link
-                                                                                                            to={`${val.urlName}`}
-                                                                                                            target="_blank"
-                                                                                                        >
-                                                                                                            {
-                                                                                                                val?.examDate.slice(0, 10)
-                                                                                                            }
-                                                                                                        </Link>
-                                                                                                    </span>
-                                                                                                </div>
-                                                                                            </div>
-                                                                                        {/* )
+                                                                                                {val?.examDate.slice(
+                                                                                                    0,
+                                                                                                    10
+                                                                                                )}
+                                                                                            </Link>
+                                                                                        </span>
+                                                                                    </div>
+                                                                                </div>
+                                                                                {/* )
                                                                                     )} */}
                                                                             </div>
                                                                         </div>
@@ -527,24 +536,23 @@ const Header = ({ onHeaderHover }) => {
 
 export default Header;
 
+// Menu Link Purpose
+// const {
+//     isLoading: loader2,
+//     error: error2,
+//     newData: menuLink,
+// } = getAllData(
+//     "http://35.154.95.255:8000/api/admissionTest/menu/",
+//     "menusLink"
+// );
 
-    // Menu Link Purpose
-    // const {
-    //     isLoading: loader2,
-    //     error: error2,
-    //     newData: menuLink,
-    // } = getAllData(
-    //     "http://35.154.95.255:8000/api/admissionTest/menu/",
-    //     "menusLink"
-    // );
+// console.log("====================================");
+// console.log("Download sections: ", menuLink);
+// console.log("====================================");
 
-    // console.log("====================================");
-    // console.log("Download sections: ", menuLink);
-    // console.log("====================================");
-
-    // For download purpose
-    // const {
-    //     isLoading: loader1,
-    //     error: error1,
-    //     newData: menuData,
-    // } = getAllData("http://35.154.95.255:8000/api/downloads/menu/", "menus");
+// For download purpose
+// const {
+//     isLoading: loader1,
+//     error: error1,
+//     newData: menuData,
+// } = getAllData("http://35.154.95.255:8000/api/downloads/menu/", "menus");
