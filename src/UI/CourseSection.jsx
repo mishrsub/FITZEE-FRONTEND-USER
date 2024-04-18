@@ -155,14 +155,16 @@ const CourseCard = ({ studentClass, program, subPrograms, classId }) => {
 };
 
 const CourseSection = () => {
-    const { isLoading, error, newData } = getAllData(
-        "http://35.154.95.255:8000/api/course",
-        "class"
-    );
+    // For All Course Data..
+    // const { isLoading, error, newData } = getAllData(
+    //     "http://35.154.95.255:8000/api/course",
+    //     "class"
+    // );
 
-    // console.log('====================================');
-    // console.log("NEW DATA: ",newData);
-    // console.log('====================================');
+    const { isLoading, error, newData } = getAllClassItem(
+        "http://35.154.95.255:8000/api/course/separate/programs",
+        "classItems"
+    );
     if (isLoading) {
         return <Loading />;
     }
