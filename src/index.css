@@ -1618,6 +1618,7 @@ header.menu-style-two.fixed .logo {
   position: absolute;
   top: 0;
   left: 0;
+  opacity: 0.4;
 }
 /*------------------- Our Pricing Plan -------------------*/
 .our-pricing-plan .theme-title span {

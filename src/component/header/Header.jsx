@@ -83,7 +83,7 @@ const Header = ({ onHeaderHover }) => {
                         </ul>
                         <ul className="float-right right-content">
                             <li>
-                                <a href="#" className="tran3s social">
+                                <a href="https://www.facebook.com/fiitjeemumbai/" className="tran3s social" target="_blank">
                                     <i
                                         className="fa fa-facebook"
                                         aria-hidden="true"
@@ -91,7 +91,7 @@ const Header = ({ onHeaderHover }) => {
                                 </a>
                             </li>
                             <li>
-                                <a href="#" className="tran3s social">
+                                <a href="https://twitter.com/i/flow/login?redirect_after_login=%2Ffiitjeemumbai" className="tran3s social" target="_blank">
                                     <i
                                         className="fa fa-twitter"
                                         aria-hidden="true"
@@ -99,7 +99,7 @@ const Header = ({ onHeaderHover }) => {
                                 </a>
                             </li>
                             <li>
-                                <a href="#" className="tran3s social">
+                                <a href="https://www.instagram.com/mumbaifiitjee/" className="tran3s social" target="_blank">
                                     <i
                                         className="fa fa-instagram"
                                         aria-hidden="true"

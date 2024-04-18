@@ -241,14 +241,14 @@ ul.ruby-menu > li.ruby-menu-mega-shop > div {
   z-index: 9999;
 }
 .theme-menu-wrapper.fixed ul.ruby-menu > li.ruby-menu-mega-blog > div {
-  top: 15%;
+  top: 12.5%;
 }
 
 ul.ruby-menu > li.ruby-menu-mega-blog > div > ul.ruby-menu-mega-blog-nav {
   position: relative;
   width: 200px;
   height: 100%;
-  left: 100px;
+  left: 80px;
   top: 0;
   background: #fff;
 }
@@ -541,7 +541,7 @@ span.ruby-c-date a {
 span.ruby-c-title,
 span.ruby-c-title a {
   font-size: 12px;
-  font-weight: 700;
+  font-weight: 500;
   text-transform: capitalize;
   line-height: 20px;
   margin-top: -5px;
@@ -549,7 +549,8 @@ span.ruby-c-title a {
   font-family: 'Montserrat';
 }
 span.ruby-c-title{
-  font-size: 16px;
+  font-size: 13px;
+  font-weight: 600;
 }
 span.ruby-c-title a:hover {
   /* color: #444;
