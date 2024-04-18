@@ -103,7 +103,7 @@ const Home = () => {
         <ThemeCounter />
         <CourseSection />
         <Testimonial />
-        <RecentNews />
+        {/* <RecentNews /> */}
         <InstructorBanner />
         <PartnerLogo />
         <Footer />

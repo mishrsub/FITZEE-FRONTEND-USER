@@ -1,45 +1,53 @@
 import React, { useEffect, useState } from "react";
 import { getGroups, getGroupsById } from "../react-query/api/GroupApi";
-import Loading from "./Loading";
+import { useNavigate,Link } from 'react-router-dom';
 
 const FindCourse = () => {
-    const [options1, setOptions1] = useState([]);
-  const [options2, setOptions2] = useState([]);
-  const [options3, setOptions3] = useState([]);
+    const navigate = useNavigate();
+
     const [catHandler, setCatHandle] = useState({
         catHandler1: "",
         catHandler2: "",
         catHandler3: "",
     });
-    const [classItem, setClassItem] = useState([]);
 
-    
 
-    const fetchDataForSelectBox1 = async () => {
-        try {
-            const { isLoading, error, data: groups, refetch } = getGroups();
-
-            if(isLoading) {
-                return <Loading/>
-            }
-            setOptions1(groups);
-        } catch (error) {
-          console.error('Error fetching data for Select Box 1:', error);
-        }
-      };
-
-    useEffect(() => {
-        // Fetch data for the first select box when the component mounts
-        fetchDataForSelectBox1();
-      }, []);
-
+    const { isLoading, error, data: groups, refetch } = getGroups();
     const {
-        isLoading: loader1,
+        isLoading: groupDataLoading,
         error: error1,
         data: groupData,
         refetch: refetch1,
     } = getGroupsById(catHandler?.catHandler1);
 
+    // console.log("DATA----------->>>>>", groupData);
+    // // console.log("_id: ", catHandler.catHandler1);
+    // console.log("Cat handler 1 -------->", catHandler.catHandler1);
+    // console.log("Cat handler 2 -------->", catHandler.catHandler2);
+    const [classData,setClassData] = useState([]);
+    const [programData,setProgramData] = useState([]);
+
+
+    useEffect(() => {
+        if (!groupDataLoading && groupData) {
+            setClassData(groupData.classData);
+        }
+    }, [groupDataLoading, groupData]);
+
+    useEffect(() => {
+        if (!groupDataLoading && groupData && catHandler.catHandler2) {
+            const classPrograms = classData.find((val) => val._id.toString() === catHandler.catHandler2.toString());
+            if (classPrograms) {
+                setProgramData(classPrograms.programData);
+            }
+        }
+    }, [groupDataLoading, classData, catHandler.catHandler2]);
+
+    const handleButtonClick = () => {
+        // Redirect to the desired route
+        navigate(`/fiitjee_mumbai-v22/courses/class/${catHandler.catHandler2}/program/${catHandler.catHandler3}`);
+    };
+    
 
     const handleSelectChange = (e, fieldName) => {
         const { value } = e.target;
@@ -47,13 +55,26 @@ const FindCourse = () => {
             ...prevCatHandler,
             [fieldName]: value,
         }));
+
+        // if(fieldName === "catHandler1") {
+        //     setClassData(groupData?.classData)
+        // }
+        // if(fieldName === "catHandler2") {
+        //     const classPrograms = classData.find((val) =>val._id.toString() === catHandler.catHandler2.toString());
+        //     setProgramData(classPrograms?.programData)
+        // }
+
     };
 
+    console.log('====================================');
+    console.log("Class Data: ",classData);
+    console.log("Program Data: ",programData);
+    console.log('====================================');
+    console.log("Cat handler 2",catHandler.catHandler2);
+    console.log("Cat handler 3",catHandler.catHandler3);
+    console.log('====================================');
+    console.log('====================================');
 
-    // console.log('====================================');
-    // console.log("Groups: ",groups);
-    // console.log("Groups Data: ",groupData);
-    // console.log('====================================');
     return (
         <div className="find-course">
             <div className="opacity color-one">
@@ -70,8 +91,8 @@ const FindCourse = () => {
                                         }
                                     >
                                         <option value="">All Groups</option>
-                                        {options1?.length > 0 &&
-                                            options1.map((val) => (
+                                        {groups?.length > 0 &&
+                                            groups.map((val) => (
                                                 <option
                                                     value={val._id}
                                                     key={val._id}
@@ -131,23 +152,28 @@ const FindCourse = () => {
                                             handleSelectChange(e, "catHandler3")
                                         }
                                     >
-                                        <option>Items</option>
+                                        {
+                                            programData.length >0 && programData.map((val) =>(
+                                                <option key={val._id} value={val._id}>{val.name}</option>
+                                            ))
+                                        }
+                                        {/* <option>Items</option>
                                         <option>Green Olympiad</option>
                                         <option>ANMC</option>
-                                        <option>NMTC</option>
+                                        <option>NMTC</option> */}
                                     </select>
                                 </div>{" "}
                                 {/* /.single-input */}
                             </div>{" "}
                             {/* /.col */}
                             <div className="col-md-2 col-sm-4 col-xs-12">
-                                <button className="action-button tran3s">
-                                    Search Now{" "}
-                                    <i
-                                        className="fa fa-search"
-                                        aria-hidden="true"
-                                    />
-                                </button>
+                                    <button className="action-button tran3s" onClick={handleButtonClick}>
+                                        Search Now{" "}
+                                        <i
+                                            className="fa fa-search"
+                                            aria-hidden="true"
+                                        />
+                                    </button>
                             </div>
                         </div>{" "}
                         {/* /.row */}

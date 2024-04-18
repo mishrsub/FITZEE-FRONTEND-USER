@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { getAllData } from "../react-query/api/Home";
 import Loading from "./Loading";
+import { Link } from "react-router-dom";
 
 const PopularCourses = () => {
   const [testData, setTestData] = useState([]);
@@ -63,9 +64,9 @@ const PopularCourses = () => {
                       {val.eligibleClass.map((val) => `${val.className}, `)}
                     </div>
                     <div className="table__cell">
-                      <a href="#" className="custom-btn btn-3">
+                      <Link to={val.urlName} target="_blank" className="custom-btn btn-3">
                         To Know More
-                      </a>
+                      </Link>
                     </div>
                   </div>
                 ))}

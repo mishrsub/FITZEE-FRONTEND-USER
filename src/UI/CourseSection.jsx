@@ -195,10 +195,10 @@ const options = {
 
     const items = newData.flatMap((classData) =>
         classData.programs
-            // .slice(0, 1)
+            .slice(0, 1)
             .flatMap((program) =>
                 program.subprograms
-                    // .slice(0, 1)
+                    .slice(0, 1)
                     .map((programData, i) => (
                         <CourseCard
                             key={programData._id}
