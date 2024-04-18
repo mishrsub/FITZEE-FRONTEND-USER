@@ -215,7 +215,7 @@ const CourseSection = () => {
     );
 
     // console.log('====================================');
-    // console.log("CARD LIST ITEM: ",items);
+    // console.log("CARD LIST ITEM:: ",items);
     // console.log('====================================');
     return (
         <div className="popular-course">
