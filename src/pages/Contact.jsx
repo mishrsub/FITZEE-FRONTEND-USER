@@ -222,7 +222,7 @@ const Contact = () => {
                       <hr />
                       <a
                         className="read-more-hide read"
-                        href=""
+                        href="#"
                         onClick={toggleAddresses}
                       >
                         View Less
@@ -240,7 +240,7 @@ const Contact = () => {
                       <hr />
                       <a
                         className="read-more-show read"
-                        href=""
+                        href="#"
                         onClick={toggleAddresses}
                       >
                         View All

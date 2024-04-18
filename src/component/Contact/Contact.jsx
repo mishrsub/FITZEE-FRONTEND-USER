@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Header from '../header/Header'
 import Footer from '../footer/Footer'
 import InnerBanner from '../../pages/InnerBanner'

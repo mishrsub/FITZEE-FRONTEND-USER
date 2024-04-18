@@ -1,5 +1,5 @@
 import { useNavigate, Link } from "react-router-dom";
-import React from "react";
+import React, { useState } from "react";
 import Logo5 from "../../assets/images/logo/logo5.png";
 import { getAllData } from "../../react-query/api/Home";
 import Loading from "../../UI/Loading";
@@ -8,28 +8,11 @@ import { getAllCompetitiveCourse } from "../../react-query/api/Course";
 
 const Header = ({ onHeaderHover }) => {
     const navigate = useNavigate();
+    const [testData, setTestData] = useState([]);
     const { isLoading, error, newData } = getAllData(
         "http://35.154.95.255:8000/api/course",
         "class"
     );
-    const {
-        isLoading: loader1,
-        error: error1,
-        newData: menuData,
-    } = getAllData("http://35.154.95.255:8000/api/downloads/menu/", "menus");
-
-    const {
-        isLoading: loader2,
-        error: error2,
-        newData: menuLink,
-    } = getAllData(
-        "http://35.154.95.255:8000/api/admissionTest/menu/",
-        "menusLink"
-    );
-
-    console.log("====================================");
-    console.log("Download sections: ", menuData);
-    console.log("====================================");
 
     //get competitive course data..
     const {
@@ -38,17 +21,27 @@ const Header = ({ onHeaderHover }) => {
         data: compNewData,
     } = getAllCompetitiveCourse();
 
-    console.log("====================================");
-    console.log("Competitive exam loader: ", compNewData);
-    console.log("====================================");
 
-    if (isLoading || compLoader) {
+    // Show Admission Test data
+    const {
+      isLoading:testLoader,
+      error:testError,
+      newData: testNewData,
+    } = getAllData(
+      "http://35.154.95.255:8000/api/upcomingTest/getUpcomingTest?enable=true",
+      "test"
+    );
+    
+  
+    if (error) {
+      return <h3>Error: {error.message}</h3>;
+    }
+
+
+    if (isLoading || compLoader || testLoader) {
         return <Loading />;
     }
 
-    if (error) {
-        return <h3>Error: {error.message}</h3>;
-    }
 
     const handleMouseEnter = () => {
         onHeaderHover(true);
@@ -340,8 +333,8 @@ const Header = ({ onHeaderHover }) => {
                                             <a href="#">Admission test</a>
                                             <div>
                                                 <ul className="ruby-menu-mega-blog-nav">
-                                                    {menuLink?.length > 0 &&
-                                                        menuLink.map(
+                                                    {testNewData?.length > 0 &&
+                                                        testNewData.map(
                                                             (val, i) => (
                                                                 <li
                                                                     className={
@@ -353,43 +346,33 @@ const Header = ({ onHeaderHover }) => {
                                                                         val._id
                                                                     }
                                                                 >
-                                                                    <a href="#">
+                                                                    <Link to={`${val.urlName}`} target="_blank">
                                                                         {
-                                                                            val?.title
+                                                                            val?.examName
                                                                         }
-                                                                    </a>
+                                                                    </Link>
                                                                     <div className="ruby-grid ruby-grid-lined">
                                                                         <div className="ruby-row">
                                                                             <div className="ruby-col-12">
-                                                                                {val
-                                                                                    .subMenus
-                                                                                    .length >
-                                                                                    0 &&
-                                                                                    val.subMenus.map(
-                                                                                        (
-                                                                                            val
-                                                                                        ) => (
+                            
                                                                                             <div
                                                                                                 className="ruby-row"
-                                                                                                key={
-                                                                                                    val._id
-                                                                                                }
                                                                                             >
                                                                                                 <div className="ruby-col-12">
                                                                                                     <span className="ruby-c-title">
                                                                                                         <Link
-                                                                                                            to={`${val.link}`}
+                                                                                                            to={`${val.urlName}`}
                                                                                                             target="_blank"
                                                                                                         >
                                                                                                             {
-                                                                                                                val?.title
+                                                                                                                val?.examDate.slice(0, 10)
                                                                                                             }
                                                                                                         </Link>
                                                                                                     </span>
                                                                                                 </div>
                                                                                             </div>
-                                                                                        )
-                                                                                    )}
+                                                                                        {/* )
+                                                                                    )} */}
                                                                             </div>
                                                                         </div>
                                                                     </div>
@@ -438,39 +421,11 @@ const Header = ({ onHeaderHover }) => {
                                                             </div>
                                                         </div>
                                                     </li>
-                                                    <li>
-                                                        <a href="#">Camps</a>
-                                                        <div className="ruby-grid ruby-grid-lined">
-                                                            <div className="ruby-row">
-                                                                <div className="ruby-col-12">
-                                                                    <div className="ruby-row">
-                                                                        <div className="ruby-col-12">
-                                                                            <span className="ruby-c-title">
-                                                                                <a href="#">
-                                                                                    Item
-                                                                                    1
-                                                                                </a>
-                                                                            </span>
-                                                                        </div>
-                                                                    </div>
-                                                                    <div className="ruby-row">
-                                                                        <div className="ruby-col-12">
-                                                                            <span className="ruby-c-title">
-                                                                                <a href="#">
-                                                                                    Item
-                                                                                    2
-                                                                                </a>
-                                                                            </span>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </li>
                                                 </ul>
                                             </div>
                                         </li>
-                                        <li
+                                        {/* Downloads Section */}
+                                        {/* <li
                                             className="ruby-menu-mega-blog"
                                             onMouseEnter={handleMouseEnter}
                                             onMouseLeave={handleMouseLeave}
@@ -544,7 +499,7 @@ const Header = ({ onHeaderHover }) => {
                                                         )}
                                                 </ul>
                                             </div>
-                                        </li>
+                                        </li> */}
                                         <li>
                                             <Link
                                                 to={`/fiitjee_mumbai-v22/result`}
@@ -571,3 +526,25 @@ const Header = ({ onHeaderHover }) => {
 };
 
 export default Header;
+
+
+    // Menu Link Purpose
+    // const {
+    //     isLoading: loader2,
+    //     error: error2,
+    //     newData: menuLink,
+    // } = getAllData(
+    //     "http://35.154.95.255:8000/api/admissionTest/menu/",
+    //     "menusLink"
+    // );
+
+    // console.log("====================================");
+    // console.log("Download sections: ", menuLink);
+    // console.log("====================================");
+
+    // For download purpose
+    // const {
+    //     isLoading: loader1,
+    //     error: error1,
+    //     newData: menuData,
+    // } = getAllData("http://35.154.95.255:8000/api/downloads/menu/", "menus");
