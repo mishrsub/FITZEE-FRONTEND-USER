@@ -22,17 +22,17 @@ const Footer = () => {
                 </p>
                 <ul>
                   <li>
-                    <a href="#" className="tran3s">
+                    <a href="https://www.facebook.com/fiitjeemumbai/" className="tran3s" target="_blank">
                       <i className="fa fa-facebook" aria-hidden="true" />
                     </a>
                   </li>
                   <li>
-                    <a href="#" className="tran3s">
+                    <a href="https://twitter.com/i/flow/login?redirect_after_login=%2Ffiitjeemumbai" className="tran3s" target="_blank">
                       <i className="fa fa-twitter" aria-hidden="true" />
                     </a>
                   </li>
                   <li>
-                    <a href="#" className="tran3s">
+                    <a href="https://www.instagram.com/mumbaifiitjee/" className="tran3s" target="_blank">
                       <i className="fa fa-instagram" aria-hidden="true" />
                     </a>
                   </li>

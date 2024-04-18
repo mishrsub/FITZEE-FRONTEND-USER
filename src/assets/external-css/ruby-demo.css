@@ -535,16 +535,16 @@ span.ruby-c-date a {
 span.ruby-c-title,
 span.ruby-c-title a {
   font-size: 12px;
-  font-weight: 700;
+  font-weight: 500;
   text-transform: capitalize;
   line-height: 20px;
   margin-top: -5px;
   color: #222;
 }
 span.ruby-c-title{
-  font-size: 16px;
+  font-size: 13px;
 }
-span.ruby-c-title:hover{
+/* span.ruby-c-title:hover{
   background-color: #ff3a46;
 
   padding: 15px 15px;
@@ -554,7 +554,7 @@ span.ruby-c-title:hover a {
 }
 span.ruby-c-title a:hover {
   color: #fff;
-}
+} */
 span.ruby-c-category,
 span.ruby-c-category a {
   font-size: 11px;
