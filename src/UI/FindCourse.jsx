@@ -50,10 +50,10 @@ const FindCourse = () => {
     };
 
 
-    console.log('====================================');
-    console.log("Groups: ",groups);
-    console.log("Groups Data: ",groupData);
-    console.log('====================================');
+    // console.log('====================================');
+    // console.log("Groups: ",groups);
+    // console.log("Groups Data: ",groupData);
+    // console.log('====================================');
     return (
         <div className="find-course">
             <div className="opacity color-one">
@@ -70,8 +70,8 @@ const FindCourse = () => {
                                         }
                                     >
                                         <option value="">All Groups</option>
-                                        {groups?.length > 0 &&
-                                            groups.map((val) => (
+                                        {options1?.length > 0 &&
+                                            options1.map((val) => (
                                                 <option
                                                     value={val._id}
                                                     key={val._id}
