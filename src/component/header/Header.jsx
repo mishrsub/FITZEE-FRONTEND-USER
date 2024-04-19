@@ -36,7 +36,7 @@ const Header = ({ onHeaderHover }) => {
     isLoading: eventMenuLoader,
     error: eventMenuError,
     newData: eventMenuData,
-  } = getAllData("http://localhost:8000/api/event/menu/", "eventMenus");
+  } = getAllData("http://35.154.95.255:8000/api/event/menu/", "eventMenus");
 
   console.log("====================================");
   console.log("Event Menu Data: ", eventMenuData);
